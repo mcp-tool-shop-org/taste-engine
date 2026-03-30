@@ -13,6 +13,12 @@ import {
   extractExemplarsCommand,
 } from "./commands/extract.js";
 import {
+  reviewRunCommand,
+  reviewShowCommand,
+  reviewListCommand,
+  reviewPacketCommand,
+} from "./commands/review.js";
+import {
   curateQueueCommand,
   curateInspectCommand,
   curateAcceptCommand,
@@ -225,6 +231,50 @@ curate
       action: opts.action as "resolve" | "accept_tension",
       note: opts.note,
     });
+  });
+
+// Review commands
+const review = program
+  .command("review")
+  .description("Artifact review commands");
+
+review
+  .command("run")
+  .description("Review a candidate artifact against canon")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("--file <path>", "Path to candidate artifact file")
+  .option("--artifact <id>", "Existing candidate artifact ID")
+  .requiredOption("--type <type>", "Artifact type (readme_section, package_blurb, feature_brief, cli_help, release_note, naming_proposal)")
+  .requiredOption("--purpose <text>", "Intended purpose of the artifact")
+  .option("--canon-version <version>", "Canon version to review against (default: current)")
+  .action(async (opts: { root?: string; file?: string; artifact?: string; type: string; purpose: string; canonVersion?: string }) => {
+    await reviewRunCommand({ ...opts, canonVersion: opts.canonVersion ?? "" });
+  });
+
+review
+  .command("show <review-id>")
+  .description("Show a review result")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .action(async (reviewId: string, opts: { root?: string }) => {
+    await reviewShowCommand(reviewId, opts);
+  });
+
+review
+  .command("list")
+  .description("List stored reviews")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("--canon-version <version>", "Filter by canon version")
+  .option("--verdict <verdict>", "Filter by verdict")
+  .action(async (opts: { root?: string; canonVersion?: string; verdict?: string }) => {
+    await reviewListCommand(opts);
+  });
+
+review
+  .command("packet <run-id>")
+  .description("Show canon packet composition for a review")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .action(async (runId: string, opts: { root?: string }) => {
+    await reviewPacketCommand(runId, opts);
   });
 
 program.parse();
