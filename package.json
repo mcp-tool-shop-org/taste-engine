@@ -1,0 +1,31 @@
+{
+  "name": "@mcptoolshop/taste-engine",
+  "version": "0.1.0",
+  "description": "Canon-and-judgment system for creative and product work",
+  "type": "module",
+  "bin": {
+    "taste": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "author": "mcp-tool-shop",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "zod": "^3.24.2",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.13.14",
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
+  }
+}
