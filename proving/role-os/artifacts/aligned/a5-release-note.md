@@ -1,0 +1,3 @@
+## v2.3.0 — Dogfood Swarm Mission
+
+Added the dogfood swarm mission: multi-pass convergence through three health stages (bug/security, proactive hardening, humanization) then iterative feature delivery. 7 new swarm roles with exclusive file ownership per domain agent. Build gates enforce lint, typecheck, and test after every wave. Domain auto-detection generates manifests from repo structure. Evidence persistence bridges findings to dogfood-labs. Proven on claude-collaborate: 35 to 129 tests, 106 findings fixed, v1.1.0 shipped. 9 missions, 61 roles, 10 packs. 1150 tests.

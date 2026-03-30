@@ -7,7 +7,7 @@ import type {
 import type { OllamaGenerateRequest, OllamaGenerateResponse } from "./ollama-types.js";
 import { checkOllamaHealth } from "./ollama-health.js";
 
-const DEFAULT_TIMEOUT_MS = 120_000; // 2 minutes for generation
+const DEFAULT_TIMEOUT_MS = 300_000; // 5 minutes for generation
 const HEALTH_TIMEOUT_MS = 5_000;
 
 export class OllamaProvider implements LlmProvider {

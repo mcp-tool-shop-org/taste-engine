@@ -1,0 +1,1 @@
+A multi-Claude operating system that staffs, routes, validates, and runs work through 61 specialized role contracts. Prevents drift, false completion, and contamination through structured evidence, role boundaries, and honest escalation. Routes tasks through mission, pack, or free routing based on confidence scoring. 1150 tests. Zero external dependencies.

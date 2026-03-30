@@ -1,0 +1,1 @@
+Role OS is an AI-powered prompt management system that helps teams organize and deploy specialized AI assistants. Choose from a library of 61 pre-built prompts, each designed for specific development tasks. Role OS recommends the best prompt for your situation and helps coordinate handoffs between different AI helpers.

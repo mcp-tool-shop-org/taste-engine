@@ -1,0 +1,1 @@
+Role OS is a curated collection of AI persona templates for Claude. Browse 61 ready-to-use personas, each fine-tuned for specific tasks like coding, writing, reviewing, and brainstorming. Simply pick the persona that matches your need, paste it into your Claude conversation, and get better results instantly. No configuration needed — just copy, paste, and go.

@@ -1,0 +1,3 @@
+## Recovery and Escalation
+
+When work stalls, Role OS does not pretend completion. Blocked or rejected steps route automatically to the correct resolver with a structured reason, recovery type, and required artifact. Escalation stays honest — the system documents what was completed and what remains rather than bluffing progress. Every intervention (retry, reroute, block, reopen) is a first-class operation with operator guidance.

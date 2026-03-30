@@ -1,0 +1,398 @@
+{
+  "project": {
+    "slug": "role-os",
+    "name": "Role-OS",
+    "version": "canon-v1"
+  },
+  "statements": [
+    {
+      "id": "b54880ee-57ac-47f2-9467-9accb2d49673",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS is a multi-Claude operating system that staffs, routes, validates, and runs work through specialized role contracts.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "core-concept",
+        "definition"
+      ],
+      "rationale": "This statement directly reflects the purpose and core functionality of Role OS as described in the README. It captures what Role OS fundamentally is without delving into specific capabilities or features.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:45.811+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "a58b9bac-7533-46c4-a8e5-1a6b4e2e221a",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS is not a generic AI workflow tool; it prevents specific failures like drift, false completion, contamination, and vibes-based progress.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "definition",
+        "differentiation"
+      ],
+      "rationale": "This statement reflects the explicit differentiation Role OS makes from generic AI workflows in its README. It captures what Role OS explicitly is not while highlighting key benefits.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:45.939+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "8a7e7eac-bf56-4070-a091-cfc7a6ac2a75",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Relying on vibes-based progress",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "structured-evidence",
+        "vibes-based-progress"
+      ],
+      "rationale": "The product explicitly states that every handoff must be structured and evidence-backed, rejecting the concept of 'vibes-based progress'. Relying on this would contradict core principles.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.175+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "ea68d8ef-6c61-4fb5-9358-51a33c23f0d5",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Skipping verification or solving a different problem",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "verification",
+        "false-completion"
+      ],
+      "rationale": "The product warns against work that hides gaps, skips verification, or solves a different problem than the one described. This directly contradicts the stated principles.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.291+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "1883f566-1e0e-46a7-acd7-0b874bd8ce63",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Drifting toward generic AI workflows",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "generic-ai-workflows",
+        "drift"
+      ],
+      "rationale": "The product explicitly warns against the failures that generic AI workflows produce, such as drift and false completion. Drifting towards a generic workflow would contradict this stance.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.412+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "a5e51951-f95d-4ec2-ad07-1dd90b65be91",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Inventing product direction without a structured process",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "structured-direction",
+        "invention"
+      ],
+      "rationale": "The README states that roles should stay in lane and prevents backend or frontend from inventing product direction. Inventing without structure would contradict this.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.527+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "67f93a4d-16f7-4263-9a8c-ee9cbbcf15f5",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Allowing cross-project drift in terminology, visuals, or mental models",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "cross-project-drift",
+        "terminology-visuals"
+      ],
+      "rationale": "The product explicitly rejects cross-project drift and mandates detection and rejection of such practices. Allowing this would be contrary to the established principles.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.641+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "52d7fcc3-8158-410b-a769-a32e5d5d1caf",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Ignoring the distinction between mission, pack, and free routing",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "structured-decision",
+        "fallback-ladder"
+      ],
+      "rationale": "The product emphasizes a clear structure with fallback ladder (mission, pack, free routing). Ignoring these distinctions would lead to undefined behavior.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:05:55.748+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "ebf09f01-3d99-4f82-9223-b22fe1817dc4",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "The system includes a comprehensive set of roles (61 total) each with detailed contracts.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "roles",
+        "contracts"
+      ],
+      "rationale": "This pattern is evident in the README table listing all 61 roles and their descriptions.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:06:05.113+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "6d740e6c-5718-4a5a-8427-ea1117b59665",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "The system uses a multi-level fallback ladder for task routing with confidence scores and alternatives.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "routing",
+        "fallback"
+      ],
+      "rationale": "This pattern is described in the README under 'How it works', indicating that Role OS automatically picks between mission, pack, or free routing based on task description.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:06:05.231+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "dc308a51-cdaa-4b0c-b951-043a06c01e0d",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "The system supports a structured brainstorm mission with multi-perspective inquiry and traceable disagreement.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "brainstorm",
+        "multi-perspective"
+      ],
+      "rationale": "This pattern is highlighted in the README under 'Brainstorm mission', detailing its specialized roles and two-layer architecture.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:06:05.338+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "05a1c965-befa-44ac-8da3-4ced0ff36a46",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS utilizes a deep audit mission to decompose repositories into components and dispatch specialized auditors.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "audit",
+        "decomposition"
+      ],
+      "rationale": "The AUDIT-SUMMARY mentions the dynamic dispatch of auditors based on repo graph, emphasizing this as a unique pattern.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:06:05.463+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "f7874ae1-be0b-4170-93a0-61dfb1b64056",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS employs a layered architecture with clear dependency boundaries between components.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "layered",
+        "dependency"
+      ],
+      "rationale": "The AUDIT-SUMMARY highlights this pattern, noting clean architecture and known dependencies (only trial.mjs → dispatch.mjs cycle).",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:06:05.574+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "a29e319e-abda-4e8d-bf06-71ddfa1cfa20",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "The voice of Role OS emphasizes specific failures and concrete outcomes, avoiding generic language like 'false completion'.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "specificity",
+        "concrete-outcomes"
+      ],
+      "rationale": "The README explicitly describes the system's purpose to prevent vague or misleading conclusions such as false completions. This is a defining trait of its communication style.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:09:40.272+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "e6028684-3ded-47ad-984b-9bf87141bb59",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS uses 'mission' and 'pack' to describe task management workflows.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "cli"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "naming-conventions",
+        "specific-vocabulary"
+      ],
+      "rationale": "The README and CHANGELOG use specific vocabulary such as 'mission', 'pack', 'role contract', etc., avoiding generic assistant language like 'task'.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:09:40.401+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "8d72912d-d383-4ff5-b0dc-8b61eaaa1f37",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS employs 'packet' and 'verdict' to denote task execution phases.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "cli"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "naming-conventions",
+        "specific-vocabulary"
+      ],
+      "rationale": "These specific terms are used throughout the README, CHANGELOG, and other documentation for describing workflow stages.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:09:40.567+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    },
+    {
+      "id": "713050a2-4006-43c2-b5db-c147f58435f2",
+      "project_id": "3287a9ff-de95-4cc3-bbfe-db665fa20e98",
+      "canon_version": "canon-v1",
+      "text": "Role OS avoids phrases like 'feels done' in favor of structured evidence and concrete task definitions.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "task-definition",
+        "evidence-framework"
+      ],
+      "rationale": "The README explicitly states that the system rejects tasks where the definition of done is vague or impression-based. This is a clear indication of its language preferences.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T20:09:40.709+00:00",
+      "updated_at": "2026-03-30T20:09:50.869+00:00"
+    }
+  ],
+  "evidence": [],
+  "metadata": {
+    "generated_at": "2026-03-30T20:09:50.876+00:00",
+    "source_count": 17
+  }
+}
