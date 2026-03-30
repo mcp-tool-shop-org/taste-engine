@@ -19,6 +19,12 @@ import {
   reviewPacketCommand,
 } from "./commands/review.js";
 import {
+  reviewFeedbackCommand,
+  calibrateSummaryCommand,
+  calibrateStatementsCommand,
+  calibrateFindingsCommand,
+} from "./commands/calibrate.js";
+import {
   curateQueueCommand,
   curateInspectCommand,
   curateAcceptCommand,
@@ -275,6 +281,60 @@ review
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
   .action(async (runId: string, opts: { root?: string }) => {
     await reviewPacketCommand(runId, opts);
+  });
+
+// Feedback command (under review)
+review
+  .command("feedback <review-id>")
+  .description("Record feedback on a review")
+  .option("-r, --root <path>", "Project root directory")
+  .requiredOption("--overall <rating>", "Overall: correct, mostly_correct, mixed, mostly_wrong, wrong")
+  .requiredOption("--verdict <agreement>", "Verdict: agree, soft_disagree, hard_disagree")
+  .option("--false-rigidity", "Flag as too rigid")
+  .option("--missed-drift", "Flag as missed important drift")
+  .option("--wrong-packet", "Flag canon packet as wrong")
+  .option("--weak-evidence", "Flag evidence as weak")
+  .option("--weak-revision", "Flag revision guidance as weak")
+  .option("--good-revision", "Flag revision guidance as helpful")
+  .option("--uncertainty-helpful", "Uncertainty note was appropriate")
+  .option("--notes <text>", "Freeform feedback note")
+  .option("--dimensions <dims>", "Dimension feedback: thesis=correct,pattern=too_harsh,...")
+  .option("--noisy-statements <ids>", "Comma-separated noisy statement IDs")
+  .action(async (reviewId: string, opts: any) => {
+    await reviewFeedbackCommand(reviewId, opts);
+  });
+
+// Calibrate commands
+const calibrate = program
+  .command("calibrate")
+  .description("Calibration diagnostics");
+
+calibrate
+  .command("summary")
+  .description("Show project-level calibration metrics")
+  .option("-r, --root <path>", "Project root directory")
+  .action(async (opts: { root?: string }) => {
+    await calibrateSummaryCommand(opts);
+  });
+
+calibrate
+  .command("statements")
+  .description("Show canon statement utility diagnostics")
+  .option("-r, --root <path>", "Project root directory")
+  .option("-t, --type <type>", "Filter by statement type")
+  .option("--noisy", "Show only noisy statements")
+  .option("--underused", "Show only underused statements")
+  .action(async (opts: { root?: string; type?: string; noisy?: boolean; underused?: boolean }) => {
+    await calibrateStatementsCommand(opts);
+  });
+
+calibrate
+  .command("findings")
+  .description("Show calibration findings")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--refresh", "Regenerate findings from current feedback")
+  .action(async (opts: { root?: string; refresh?: boolean }) => {
+    await calibrateFindingsCommand(opts);
   });
 
 program.parse();
