@@ -12,6 +12,18 @@ import {
   extractContradictionsCommand,
   extractExemplarsCommand,
 } from "./commands/extract.js";
+import {
+  curateQueueCommand,
+  curateInspectCommand,
+  curateAcceptCommand,
+  curateEditCommand,
+  curateRejectCommand,
+  curateDeferCommand,
+  curateMergeCommand,
+  curateContradictionsCommand,
+  curateResolveContradictionCommand,
+  canonFreezeCommand,
+} from "./commands/curate.js";
 
 const program = new Command();
 
@@ -57,6 +69,17 @@ canon
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
   .action(async (opts: { root?: string }) => {
     await canonStatusCommand(opts);
+  });
+
+canon
+  .command("freeze")
+  .description("Freeze accepted canon into a versioned snapshot")
+  .requiredOption("-l, --label <label>", "Version label (e.g., canon-v1)")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("-n, --notes <notes>", "Version notes")
+  .option("-f, --force", "Override freeze blockers")
+  .action(async (opts: { root?: string; label: string; notes?: string; force?: boolean }) => {
+    await canonFreezeCommand(opts);
   });
 
 // Extract commands
@@ -107,6 +130,101 @@ extract
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
   .action(async (opts: { root?: string }) => {
     await extractExemplarsCommand(opts);
+  });
+
+// Curate commands
+const curate = program
+  .command("curate")
+  .description("Canon curation commands");
+
+curate
+  .command("queue")
+  .description("Show pending candidates for curation")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("-t, --type <type>", "Filter by statement type")
+  .option("-c, --min-confidence <n>", "Minimum confidence threshold")
+  .option("-s, --status <status>", "Filter by status (default: proposed)")
+  .action(async (opts: { root?: string; type?: string; minConfidence?: string; status?: string }) => {
+    await curateQueueCommand(opts);
+  });
+
+curate
+  .command("inspect <candidate-id>")
+  .description("Inspect a candidate in detail")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .action(async (candidateId: string, opts: { root?: string }) => {
+    await curateInspectCommand(candidateId, opts);
+  });
+
+curate
+  .command("accept <candidate-id>")
+  .description("Accept a candidate into canon")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("--hardness <level>", "Override hardness (hard, strong, soft, experimental)")
+  .option("--scope <scopes>", "Override scope (comma-separated)")
+  .option("--tag <tags>", "Override tags (comma-separated)")
+  .action(async (candidateId: string, opts: { root?: string; hardness?: string; scope?: string; tag?: string }) => {
+    await curateAcceptCommand(candidateId, opts);
+  });
+
+curate
+  .command("edit <candidate-id>")
+  .description("Edit and accept a candidate into canon")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .requiredOption("--text <text>", "Revised statement text")
+  .option("--hardness <level>", "Override hardness")
+  .option("--scope <scopes>", "Override scope (comma-separated)")
+  .action(async (candidateId: string, opts: { root?: string; text: string; hardness?: string; scope?: string }) => {
+    await curateEditCommand(candidateId, opts);
+  });
+
+curate
+  .command("reject <candidate-id>")
+  .description("Reject a candidate with reason")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .requiredOption("--reason <reason>", "Rejection reason")
+  .action(async (candidateId: string, opts: { root?: string; reason: string }) => {
+    await curateRejectCommand(candidateId, opts);
+  });
+
+curate
+  .command("defer <candidate-id>")
+  .description("Defer a candidate for later review")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .option("--reason <reason>", "Reason for deferral")
+  .action(async (candidateId: string, opts: { root?: string; reason?: string }) => {
+    await curateDeferCommand(candidateId, opts);
+  });
+
+curate
+  .command("merge <candidate-id>")
+  .description("Merge a candidate into an existing canon statement")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .requiredOption("--into <statement-id>", "Target canon statement ID")
+  .action(async (candidateId: string, opts: { root?: string; into: string }) => {
+    await curateMergeCommand(candidateId, opts);
+  });
+
+curate
+  .command("contradictions")
+  .description("Show contradictions and accepted tensions")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .action(async (opts: { root?: string }) => {
+    await curateContradictionsCommand(opts);
+  });
+
+curate
+  .command("resolve-contradiction <finding-id>")
+  .description("Resolve or accept a contradiction as tension")
+  .option("-r, --root <path>", "Project root directory (defaults to cwd)")
+  .requiredOption("--action <action>", "Action: resolve or accept_tension")
+  .requiredOption("--note <note>", "Resolution note")
+  .action(async (findingId: string, opts: { root?: string; action: string; note: string }) => {
+    await curateResolveContradictionCommand(findingId, {
+      root: opts.root,
+      action: opts.action as "resolve" | "accept_tension",
+      note: opts.note,
+    });
   });
 
 program.parse();

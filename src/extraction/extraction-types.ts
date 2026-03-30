@@ -54,7 +54,7 @@ export type ExtractionPassResult = {
 
 // ── Extracted Statement Candidate ──────────────────────────────
 
-export const CANDIDATE_STATUSES = ["proposed", "merged", "rejected"] as const;
+export const CANDIDATE_STATUSES = ["proposed", "accepted", "merged", "rejected", "deferred"] as const;
 export type CandidateStatus = (typeof CANDIDATE_STATUSES)[number];
 
 export type ExtractedStatementCandidate = {
