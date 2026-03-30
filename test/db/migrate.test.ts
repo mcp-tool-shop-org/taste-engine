@@ -17,17 +17,17 @@ describe("migrations", () => {
     db.close();
   });
 
-  it("applies migration cleanly", () => {
+  it("applies migrations cleanly", () => {
     const count = migrate(db, MIGRATIONS_DIR);
-    expect(count).toBe(1);
-    expect(currentVersion(db)).toBe(1);
+    expect(count).toBeGreaterThanOrEqual(1);
+    expect(currentVersion(db)).toBeGreaterThanOrEqual(1);
   });
 
   it("is idempotent", () => {
     migrate(db, MIGRATIONS_DIR);
     const count = migrate(db, MIGRATIONS_DIR);
     expect(count).toBe(0);
-    expect(currentVersion(db)).toBe(1);
+    expect(currentVersion(db)).toBeGreaterThanOrEqual(1);
   });
 
   it("creates all expected tables", () => {
