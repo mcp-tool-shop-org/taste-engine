@@ -24,6 +24,7 @@ import {
   calibrateStatementsCommand,
   calibrateFindingsCommand,
 } from "./commands/calibrate.js";
+import { reviseRunCommand } from "./commands/revise.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -281,6 +282,21 @@ review
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
   .action(async (runId: string, opts: { root?: string }) => {
     await reviewPacketCommand(runId, opts);
+  });
+
+// Revise command
+const revise = program
+  .command("revise")
+  .description("Revision mode commands");
+
+revise
+  .command("run")
+  .description("Generate canon-preserving revisions for a reviewed artifact")
+  .requiredOption("--artifact <id>", "Candidate artifact ID (must have been reviewed)")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--canon-version <version>", "Canon version (default: current)")
+  .action(async (opts: { root?: string; artifact: string; canonVersion?: string }) => {
+    await reviseRunCommand(opts);
   });
 
 // Feedback command (under review)
