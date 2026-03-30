@@ -1,0 +1,1 @@
+Multi-Claude is an AI agent orchestration platform that manages multiple Claude sessions working together on complex projects. It automatically distributes work across agents, monitors progress, and handles coordination. Just describe your task and Multi-Claude figures out the best way to parallelize it.

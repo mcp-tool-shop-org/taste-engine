@@ -1,0 +1,3 @@
+## v1.5.0 — Monitor Phase 13C
+
+Shipped the React-based operator dashboard. Five panes: overview (system health, lane utilization), queue (sortable with inline actions), item detail (situation banner, decision workbench), lane health (per-lane metrics), and activity (real-time event timeline). Queries read from the SQLite execution database through an Express API layer. All monitor actions route through canonical law modules — no direct DB writes from the UI. 69 monitor tests green.

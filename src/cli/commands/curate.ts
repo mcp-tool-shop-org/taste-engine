@@ -469,14 +469,21 @@ function findCandidate(
   projectId: string,
   candidateId: string,
 ): ExtractedStatementCandidate | null {
-  const run = getLatestExtractionRun(db, projectId);
-  if (!run) { console.log("No extraction runs."); return null; }
+  // Search across ALL extraction runs for this project, not just latest
+  const row = db.prepare(
+    "SELECT * FROM extracted_candidates WHERE project_id = ? AND (id = ? OR id LIKE ?)",
+  ).get(projectId, candidateId, `${candidateId}%`) as any;
 
-  const all = getCandidates(db, run.id);
-  const candidate = all.find((c) => c.id === candidateId || c.id.startsWith(candidateId));
-  if (!candidate) {
+  if (!row) {
     console.log(`Candidate not found: ${candidateId}`);
     return null;
   }
-  return candidate;
+
+  return {
+    ...row,
+    suggested_scope: JSON.parse(row.suggested_scope),
+    suggested_artifact_types: JSON.parse(row.suggested_artifact_types),
+    tags: JSON.parse(row.tags),
+    evidence_refs: JSON.parse(row.evidence_refs),
+  };
 }

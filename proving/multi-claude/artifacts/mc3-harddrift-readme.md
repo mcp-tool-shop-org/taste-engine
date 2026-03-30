@@ -1,0 +1,3 @@
+## Architecture
+
+Multi-Claude uses a simple agent-pool architecture. A pool manager spawns Claude agents as needed and distributes files among them. Agents work independently, push their changes, and the pool manager merges everything at the end. There are no waves, gates, or approval steps — the system optimizes for speed and simplicity. If a merge conflict occurs, the pool manager picks the larger diff as the winner.

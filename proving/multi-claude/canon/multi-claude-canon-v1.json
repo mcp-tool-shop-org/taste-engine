@@ -1,0 +1,331 @@
+{
+  "project": {
+    "slug": "multi-claude",
+    "name": "Multi-Claude",
+    "version": "canon-v1"
+  },
+  "statements": [
+    {
+      "id": "40dd552f-41d1-4741-8c29-2c71be24de42",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "The product uses specific technical terms like 'packet graph', 'wave', and 'operator loop'.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "technical_language",
+        "consistent_terms"
+      ],
+      "rationale": "These terms are used consistently throughout the documentation to describe key concepts.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:43:43.398+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "698e5209-010d-448b-a1d7-545542b51802",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "The product avoids generic assistant language like 'assistant' or 'AI helper'. Instead, it refers to Claude Code sessions as 'workers', emphasizing the technical and orchestration focus.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "avoid_generic_terms",
+        "emphasize_technicality"
+      ],
+      "rationale": "There is a deliberate avoidance of casual AI terminology in favor of precise operational terms.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:43:43.541+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "2ab9db3a-a16c-4f61-b361-b2cc4b0a7eeb",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "The product names features using clear, specific terms like 'Multi-Claude' and 'Packet', reflecting a technical identity.",
+      "statement_type": "naming",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "naming"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "technical_naming",
+        "specific_terms"
+      ],
+      "rationale": "Naming conventions clearly reflect the technical nature of the tool without resorting to generic descriptors or casual language.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:43:43.668+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "f35565d1-fe84-4cf7-8da2-663cc8896d3a",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "Multi-Claude turns a single large task into a packet graph — small, independently claimable units of work with explicit file ownership and dependency edges.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "packetization"
+      ],
+      "rationale": "This statement defines what Multi-Claude fundamentally IS: a system that breaks down tasks into smaller, manageable packets for parallel execution with clear boundaries.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.287+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "f18caf54-2e6a-447d-aba3-2c31e1c9e5c9",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "Multi-Claude is a local-only CLI tool.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "local-only"
+      ],
+      "rationale": "This statement defines what Multi-Claude fundamentally IS NOT: it does not touch cloud APIs, telemetry, or store credentials. It operates locally within the developer's machine.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.410+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "31679c56-a43f-464b-a04e-db46e182f9a1",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "Multi-Claude works best when packet count is high enough to amortize coordination overhead and file ownership is clean enough to keep semantic reconciliation bounded.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "packet-count",
+        "clean-file-ownership"
+      ],
+      "rationale": "This statement defines the conditions under which Multi-Claude IS effective, fundamentally setting expectations for its use case. It explicitly states that it is not suitable for tasks with low packet counts or messy file ownership.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.535+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "f98a216f-75b2-43fc-be6b-8b85cb1be4ac",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "Multi-Claude turns a single large task into a **packet graph** — small, independently claimable units of work with explicit file ownership and dependency edges.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "naming"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "packet graph",
+        "task decomposition"
+      ],
+      "rationale": "This pattern is fundamental to the product's architecture, as it describes how Multi-Claude breaks down tasks into smaller, manageable components. It reflects the core concept that drives the entire system design.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.674+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "47475066-58e3-4ad7-b909-b262132f673c",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "**Operator loop:** Assess, Generate, Execute, Observe, Intervene, Recover, Close.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "naming"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "operator loop",
+        "workflow pattern"
+      ],
+      "rationale": "This workflow pattern is integral to the product's identity as it outlines the structured process operators follow when using Multi-Claude. Each step is clearly defined and supported by the system, making this a canonical structure.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.788+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "5db91b06-c0bb-416e-9464-70d475057a20",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "**Mode selection** for Multi-Claude is based on work class, packet count, and ownership cleanliness. For example: Use 1 Claude if the repo does not exist yet or package/workspace/test config is not settled.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "naming"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "mode selection",
+        "decision-making pattern"
+      ],
+      "rationale": "This decision-making pattern reflects a core principle of how Multi-Claude operates in different scenarios. It's explicitly detailed with specific criteria to guide when to use certain modes, indicating its importance as part of the product identity.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:49.913+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "c6457d22-8be3-42c6-87ee-61f64e067eb9",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "drifting toward using Multi-Claude on small coupled tasks expecting speed gains",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "performance",
+        "coordination"
+      ],
+      "rationale": "The source explicitly warns against using Multi-Claude for small coupled tasks expecting speed, stating it leads to wasted operator time with no real speed gain (Anti-Pattern #6).",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:50.041+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "0ee20608-d4be-4dcb-b72f-045dc68033b8",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "mixing law definition with orchestration wiring in a single packet",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "law",
+        "wiring"
+      ],
+      "rationale": "The source explicitly defines this as an anti-pattern, stating it leads to semantic drift and integration impossibility (Anti-Pattern #4).",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:50.163+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "2ee778e2-588f-48d8-b937-2e6a22426890",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "using type-cast bypasses (`as X`) to handle missing types in worker packets",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "types",
+        "runtime"
+      ],
+      "rationale": "The source warns that using `as X` casts hides real mismatches until runtime, which can lead to undetected bugs (Anti-Pattern #5).",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:50.277+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "49439bee-173c-4df8-ae45-672f1f0d69b8",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "skipping the pre-Wave-2 hard gate when launching new waves",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "integration",
+        "gate"
+      ],
+      "rationale": "The source warns that skipping this gate can result in a mess of reconciling workarounds against real implementations, making integration problematic (Anti-Pattern #8).",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:50.412+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    },
+    {
+      "id": "4ded9cbe-2f89-4470-b372-60315f607596",
+      "project_id": "4d18f877-bf1d-47b7-ba7e-1ca63feed1a6",
+      "canon_version": "canon-v1",
+      "text": "allowing semantic ownership ambiguity to go unnoticed due to clean merges (false confidence)",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "semantics",
+        "merge"
+      ],
+      "rationale": "The source warns against relying on the absence of git conflicts as an indicator of correct semantics, highlighting that clean merges do not guarantee correct runtime behavior (Anti-Pattern #3).",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-30T21:54:50.532+00:00",
+      "updated_at": "2026-03-30T21:55:00.077+00:00"
+    }
+  ],
+  "evidence": [],
+  "metadata": {
+    "generated_at": "2026-03-30T21:55:00.081+00:00",
+    "source_count": 14
+  }
+}
