@@ -25,6 +25,7 @@ import {
   calibrateFindingsCommand,
 } from "./commands/calibrate.js";
 import { reviseRunCommand } from "./commands/revise.js";
+import { repairRunCommand } from "./commands/repair.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -297,6 +298,22 @@ revise
   .option("--canon-version <version>", "Canon version (default: current)")
   .action(async (opts: { root?: string; artifact: string; canonVersion?: string }) => {
     await reviseRunCommand(opts);
+  });
+
+// Repair commands
+const repair = program
+  .command("repair")
+  .description("Structural repair commands");
+
+repair
+  .command("run")
+  .description("Structural repair: replace canon-breaking concepts while preserving goals")
+  .requiredOption("--artifact <id>", "Candidate artifact ID (must have been reviewed)")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--canon-version <version>", "Canon version (default: current)")
+  .option("--max-concepts <n>", "Maximum repair concepts to generate (default: 3)")
+  .action(async (opts: { root?: string; artifact: string; canonVersion?: string; maxConcepts?: string }) => {
+    await repairRunCommand(opts);
   });
 
 // Feedback command (under review)
