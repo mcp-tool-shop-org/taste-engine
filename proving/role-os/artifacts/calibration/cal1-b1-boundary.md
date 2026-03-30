@@ -1,0 +1,1 @@
+Role OS is an AI prompt management system that organizes 61 specialized role contracts into missions, packs, and free routing workflows. It coordinates handoffs between roles and validates work through structured evidence before completion.

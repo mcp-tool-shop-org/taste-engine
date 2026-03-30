@@ -1,0 +1,3 @@
+## How it works
+
+Role OS is your AI-powered development assistant. Just tell it what you need in plain language. The smart assistant automatically figures out the best approach and handles all the complexity for you. No need to learn about routing, missions, or role selection — Role OS does the thinking so you don't have to. It's like having a brilliant helper who always knows the right expert to call.

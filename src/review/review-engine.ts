@@ -27,7 +27,7 @@ import {
   insertSuggestions,
   getReviewRun,
 } from "./review-store.js";
-import { synthesizeVerdict, extractRatings, reconcileVerdict } from "./verdict-synthesis.js";
+import { synthesizeVerdict, extractRatings, reconcileVerdict, buildVerdictContext } from "./verdict-synthesis.js";
 import { now } from "../util/timestamps.js";
 import { z } from "zod";
 
@@ -173,7 +173,9 @@ export async function runReview(
 
   // Step 4: Deterministic verdict synthesis
   const ratings = extractRatings(dimensionEvals);
-  const ruleVerdict = synthesizeVerdict(ratings);
+  // Build verdict context from candidate text and ratings
+  const verdictContext = buildVerdictContext(candidate.body, ratings);
+  const ruleVerdict = synthesizeVerdict(ratings, verdictContext);
 
   // Step 5: Model synthesis for summary/observations/suggestions
   const dimResultsText = dimensionEvals.map((e) =>

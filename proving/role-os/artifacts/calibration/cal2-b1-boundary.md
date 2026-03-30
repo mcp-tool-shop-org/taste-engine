@@ -1,0 +1,1 @@
+A library of 61 ready-to-use AI role templates with automatic routing. Role OS picks the best roles for your task using mission, pack, or free routing, then manages the workflow with handoffs and review gates. Prevents drift and false completion through structured evidence.
