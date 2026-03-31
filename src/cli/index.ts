@@ -26,6 +26,7 @@ import {
 } from "./commands/calibrate.js";
 import { reviseRunCommand } from "./commands/revise.js";
 import { repairRunCommand } from "./commands/repair.js";
+import { gateRunCommand } from "./commands/gate.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -314,6 +315,24 @@ repair
   .option("--max-concepts <n>", "Maximum repair concepts to generate (default: 3)")
   .action(async (opts: { root?: string; artifact: string; canonVersion?: string; maxConcepts?: string }) => {
     await repairRunCommand(opts);
+  });
+
+// Gate command
+const gate = program
+  .command("gate")
+  .description("Workflow gate commands");
+
+gate
+  .command("run")
+  .description("Run taste gate on changed artifacts")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--files <paths...>", "Explicit file paths to check")
+  .option("--staged", "Check git staged files only")
+  .option("--mode <mode>", "Enforcement: advisory (default), warn, required")
+  .option("--canon-version <version>", "Canon version (default: current)")
+  .option("--json", "Output machine-readable JSON")
+  .action(async (opts: { root?: string; files?: string[]; staged?: boolean; mode?: string; canonVersion?: string; json?: boolean }) => {
+    await gateRunCommand(opts);
   });
 
 // Feedback command (under review)
