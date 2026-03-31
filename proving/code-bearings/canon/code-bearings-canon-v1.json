@@ -1,0 +1,259 @@
+{
+  "project": {
+    "slug": "code-bearings",
+    "name": "Code Bearings",
+    "version": "canon-v1"
+  },
+  "statements": [
+    {
+      "id": "e0297b82-ab3f-454d-8843-fae0867358e0",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "Code Bearings is a source-grounded control surface for modern codebases.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "definition",
+        "essential-identity"
+      ],
+      "rationale": "This sentence defines what Code Bearings fundamentally is, capturing its essential nature as described in the README introduction.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.411+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "f961079e-b5a7-4791-970f-7c191461f8f9",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "Code Bearings does not collect, transmit, or store any telemetry, usage data, or analytics.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "definition",
+        "essential-identity"
+      ],
+      "rationale": "This statement explicitly defines what Code Bearings is NOT in terms of its operational practices, as per the SECURITY.md file’s threat model section.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.413+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "bde6c4a5-d2fd-4563-b85e-cedde6f91370",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "drifting toward complex command structures",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "cli"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "simplicity",
+        "command-line"
+      ],
+      "rationale": "The product emphasizes simplicity in its CLI commands and avoids complex subcommands.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.413+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "aef4a208-d0b7-496f-aea1-57b348483b7c",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "moving away from networked services or cloud dependencies",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "local-only",
+        "no-cloud"
+      ],
+      "rationale": "The product explicitly states it has no network access, telemetry, analytics, and does not require API keys.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.414+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "0f754a26-b4ec-4161-8acd-6597d90e67b7",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The product architecture consists of three distinct packages with strict layering.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "modular",
+        "layered-architecture"
+      ],
+      "rationale": "This pattern reflects the modular approach Code Bearings takes to organize its functionality across CLI, core logic, and VS Code integration.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.414+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "22da1302-0b67-4aef-a09b-77bf8dbbfd32",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The CLI commands are thin wrappers around core logic.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "thin-cli",
+        "core-logic"
+      ],
+      "rationale": "This statement captures the essence of how Code Bearings is structured to keep the CLI simple and focused on consuming core functionality.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.414+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "5fab0be6-c9a2-4d86-a2bd-3dd7adba4f47",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "Three layers of truth (Extracted Truth, Derived Structure, Human Narration) form the basis for all product interactions.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "truth-layers",
+        "data-flow"
+      ],
+      "rationale": "This pattern is fundamental to how Code Bearings processes and presents information to users across different surfaces like CLI, VS Code, and CI.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.415+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "29fea778-2913-4e76-a831-e8b24d1e3c86",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The product supports five distinct purpose modes (General, Bug Hunter, Learning, Architecture, Exploration) to tailor the review experience.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "purpose-modes",
+        "review-lenses"
+      ],
+      "rationale": "This pattern highlights how Code Bearings provides a versatile tool for developers by adapting its analysis and presentation based on specific use cases.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.415+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "95c781da-b42b-41a1-bcc5-c154aece113b",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The product uses specific technical terms such as 'graph', 'module', 'symbol', 'risk score', and 'cursor context'.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "technical_terms"
+      ],
+      "rationale": "These words are consistently used throughout the README, CHANGELOG, and SECURITY sections to describe the functionality of Code Bearings.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.415+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "2a2873db-05f1-4b95-8688-aad50bc9aa36",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The product avoids soft language such as 'assistant', 'guide', or 'helper'.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "avoid_soft_language"
+      ],
+      "rationale": "The README and CHANGELOG use precise technical terminology without any conversational or assistant-like phrases.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.415+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    },
+    {
+      "id": "a604df6a-7629-4764-b0e2-869b35c64e67",
+      "project_id": "441e3b27-edef-4022-81a3-73a4a18a71c3",
+      "canon_version": "canon-v1",
+      "text": "The product names features using exact and descriptive terms such as 'CLI', 'VS Code extension', 'CI artifacts'.",
+      "statement_type": "naming",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "descriptive_naming"
+      ],
+      "rationale": "Throughout the README, CHANGELOG, and SECURITY sections, these feature names are used to clearly denote specific functionalities of the tool.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.416+00:00",
+      "updated_at": "2026-03-31T01:36:07.593+00:00"
+    }
+  ],
+  "evidence": [],
+  "metadata": {
+    "generated_at": "2026-03-31T01:36:07.596+00:00",
+    "source_count": 11
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "project": {
+    "slug": "dogfood-labs",
+    "name": "Dogfood Labs",
+    "version": "canon-v1"
+  },
+  "statements": [
+    {
+      "id": "f921b0d3-3012-40c1-9ca8-6d23cff2122d",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "dogfood-labs is a centralized evidence system for proving that repositories have been exercised in a meaningful way through dogfooding.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "purpose",
+        "identity"
+      ],
+      "rationale": "The README clearly states this purpose and it defines the fundamental identity of the product.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.483+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "d00cbf7b-9b6a-4926-9bf0-49b1bb59f7db",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "dogfood-labs does not collect user credentials, authentication tokens, external APIs beyond GitHub Actions API for repository_dispatch, personal data, telemetry, or analytics.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "identity",
+        "boundaries"
+      ],
+      "rationale": "The SECURITY document explicitly lists what the system does NOT touch and this is critical to defining its operational boundaries.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.487+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "0eea1739-e8e2-4ecb-b895-97b39c8b4431",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "dogfood-labs is not a user-facing tool; it operates entirely through GitHub Actions workflows and APIs.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "identity",
+        "purpose"
+      ],
+      "rationale": "The README, SECURITY, and other sections indicate that the product interacts exclusively with CI/CD systems rather than end-users directly.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.488+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "197213f4-5933-425a-b361-2aadf7dfa2cf",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "dogfood-labs does not use databases or persistent state beyond Git; all data is stored in repositories.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "identity",
+        "boundaries"
+      ],
+      "rationale": "The SECURITY section explicitly states that no external databases are used and Git-based persistence is the only form of storage.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.488+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "a522028c-5f9d-4e04-901d-fc3ce0c06cb8",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "dogfood-labs does not have a user interface or user-facing components.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "identity",
+        "purpose"
+      ],
+      "rationale": "The SECURITY document and other sections indicate there is no UI, only GitHub Actions workflows and APIs for interaction.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.488+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "96eb8388-2b8c-4e95-bbbb-d9d8be604d81",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "drifting toward less rigorous evidence requirements",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "evidence"
+      ],
+      "rationale": "The product explicitly warns against requiring artificial evidence over natural outputs.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.489+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "c92e0f78-e5a9-4d69-86d2-3f022b9ef4a7",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "using non-standard surface types in policies",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "surface truth"
+      ],
+      "rationale": "The product mandates exact matches to predefined surfaces like cli, desktop, etc.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.489+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "a6d2780b-6dba-4bec-b5f8-a5ccd3bf81d1",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "ignoring runtime details in API testing scenarios",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "strong",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "runtime truth"
+      ],
+      "rationale": "The product enforces the inclusion of actual port and route discovery.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.489+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "ce72abba-d26a-4478-8ad8-29a499d27625",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "skipping evidence collection during execution",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "soft",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "evidence truth"
+      ],
+      "rationale": "The product discourages scenarios that do not naturally produce artifacts.",
+      "confidence": 0.75,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.490+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "4ad395a2-374e-4b0b-a498-27bbbaa7ebec",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "assuming CLI flags and positions without verifying them",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "entrypoint truth"
+      ],
+      "rationale": "The product mandates that scenarios use actual CLI interfaces.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.490+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "bc1f5308-f609-4e52-bbed-216c4e0c3ea9",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "relying on quick fixes instead of thorough vetting",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "anti-pattern",
+        "on failure"
+      ],
+      "rationale": "The product discourages weakening enforcement to address immediate issues.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.490+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "3446c7e8-28d3-4873-83b2-ae94f299d4f2",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "Policies are defined by two levels: global policy and repo-specific policies.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "policy",
+        "hierarchy"
+      ],
+      "rationale": "This statement reflects the hierarchical structure of policies within dogfood-labs, which is a fundamental aspect of its governance model.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.490+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "9df4035c-0968-4318-bbe0-a294491a071d",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "Central ingestion via `repository_dispatch` with atomic persistence is used.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "ingestion",
+        "atomicity"
+      ],
+      "rationale": "The source explicitly mentions the use of repository dispatch for central ingestion, which aligns with the architectural pattern that ensures data integrity through atomic operations.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.491+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "8682f085-ee14-4c53-960b-1711b97b0b3f",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "The system defines seven contracts that govern various aspects of dogfood runs.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "contracts",
+        "governance"
+      ],
+      "rationale": "This reflects the use of well-defined, formalized contracts to ensure clarity and enforceability in the governance structure.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.491+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "385b001a-b4af-4cf7-9e6c-0ad95ebe6219",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "Intelligence layer processes turn dogfood evidence into reusable portfolio memory.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "intelligence",
+        "workflow"
+      ],
+      "rationale": "This statement captures the workflow pattern of converting raw data (dogfood evidence) into structured knowledge (portfolio memory), which is a core feature of the product's operation.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.491+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "36ccc519-188b-4b37-bb30-8c4c8e3b400a",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "The enforcement tiers define three modes for dogfood policy compliance.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "enforcement",
+        "tiers"
+      ],
+      "rationale": "This reflects the structural use of distinct enforcement modes (required, warn-only, exempt) which are a key pattern in defining operational behavior.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.491+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "97815691-2513-4b1e-8e23-c8927338a43b",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "Scenario definitions are located in `dogfood/scenarios/*.yaml` files.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "architecture",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "scenarios",
+        "location"
+      ],
+      "rationale": "This statement reflects the structural pattern of where scenario definitions reside, which is a consistent and documented location within each source repo.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.492+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "5032af35-4060-4dde-a88c-7709bf1f8ba6",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "The product uses specific vocabulary such as 'dogfood', 'scenario', 'policy', and 'verdict'.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "cli",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "terminology",
+        "vocabulary"
+      ],
+      "rationale": "These terms are used consistently throughout the documentation and are central to how the system operates.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.492+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "0a1053ba-62b0-43cc-9d6a-cc2bc449218d",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "The product avoids generic assistant speak and uses domain-specific language.",
+      "statement_type": "voice",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "cli"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "language_avoidance",
+        "domain_specific"
+      ],
+      "rationale": "Terms like 'repository_dispatch', 'dogfood', and specific API calls are used instead of phrases like 'verify compliance'.",
+      "confidence": 0.8,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.492+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    },
+    {
+      "id": "24a000fb-acc7-4d7d-82ab-8b12a12f67f6",
+      "project_id": "db512a55-6c29-42f5-aa97-3a705709accd",
+      "canon_version": "canon-v1",
+      "text": "Naming conventions include kebab-case identifiers for scenarios and policies.",
+      "statement_type": "naming",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "architecture"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "naming_convention",
+        "kebab_case"
+      ],
+      "rationale": "Scenario IDs are consistently in kebab-case (e.g., 'scenario-id'), and filenames follow a similar convention.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:32:00.492+00:00",
+      "updated_at": "2026-03-31T01:36:07.887+00:00"
+    }
+  ],
+  "evidence": [],
+  "metadata": {
+    "generated_at": "2026-03-31T01:36:07.890+00:00",
+    "source_count": 20
+  }
+}

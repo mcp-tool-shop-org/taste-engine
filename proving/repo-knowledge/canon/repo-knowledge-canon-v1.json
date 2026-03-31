@@ -1,0 +1,217 @@
+{
+  "project": {
+    "slug": "repo-knowledge",
+    "name": "Repo Knowledge",
+    "version": "canon-v1"
+  },
+  "statements": [
+    {
+      "id": "91b41d44-749c-4e79-9e1a-5729cda752a1",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "repo-knowledge is a local-first repo knowledge system built on SQLite and FTS5.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs",
+        "ux"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "core-identity",
+        "database"
+      ],
+      "rationale": "This sentence captures the core identity of the product as stated in the README section 'Why'.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.404+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "44b9d8d7-7fef-4ac1-975f-c90e48c78466",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "repo-knowledge does not read source code from GitHub.",
+      "statement_type": "thesis",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "what-it-is-not",
+        "data-model"
+      ],
+      "rationale": "The security model explicitly states that no source code is read, only metadata like repo names and descriptions are fetched via the `gh` CLI.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.408+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "6ee28f46-84aa-4241-8f02-547c67c2415d",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "drifting toward generic README descriptions",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "knowledge-quality",
+        "generic-descriptions"
+      ],
+      "rationale": "The KNOWLEDGE-CONTRACT explicitly warns against providing generic, uninformative notes like 'This is a Node.js project' or 'Has a README'. It emphasizes the need for human-quality knowledge that demonstrates understanding of the repo.",
+      "confidence": 0.9,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.409+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "5d7362cb-e625-4c1e-a07a-88cf4d29962e",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "treating README alone as sufficient understanding",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "code-reading",
+        "documentation"
+      ],
+      "rationale": "The KNOWLEDGE-CONTRACT states that 'README alone is not sufficient. Read the actual code.' This implies that relying solely on README for comprehension is an anti-pattern.",
+      "confidence": 0.95,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.409+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "f70a907e-e931-4aa9-8d12-3a66052abe2d",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "creating unnecessary relationships between repos",
+      "statement_type": "anti_pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "relationship-mapping",
+        "repo-connections"
+      ],
+      "rationale": "The KNOWLEDGE-CONTRACT warns against creating random connections without explanation and advises to only record meaningful cross-repo edges. This implies that gratuitous or unnecessary relationship mappings are anti-patterns.",
+      "confidence": 0.85,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.409+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "68cb95ee-9ba8-4e70-8817-a1a13bdc06b5",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "Every repo MUST get at minimum a thesis and architecture note.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "mandatory_notes",
+        "architecture_pattern"
+      ],
+      "rationale": "This is explicitly stated in the KNOWLEDGE-CONTRACT section 'What you are populating' as mandatory fields for every repo, establishing it as an architectural pattern of the system.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.410+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "47bf3c49-b6fd-4930-a028-3d44a4717e68",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "Repo knowledge includes structured metadata, thesis notes, architecture docs, and inter-repo relationships.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "knowledge_structure",
+        "architecture_pattern"
+      ],
+      "rationale": "This is described in the README section 'Data Model', indicating that this structure is inherent to how repo-knowledge operates as a system for cataloging repository knowledge.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.410+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "4d772d3d-6f7f-4a09-8131-79a93805b845",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "Cross-repo relationships are recorded with specific types like 'depends_on', 'related_to', and 'supersedes'.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "relationship_types",
+        "naming_pattern"
+      ],
+      "rationale": "These relationship types are defined in the KNOWLEDGE-CONTRACT section 'Relationships' as part of the system's workflow to document connections between repositories, demonstrating a naming pattern.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.410+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    },
+    {
+      "id": "c647f65c-7743-4dde-b33d-431e9c9fea35",
+      "project_id": "372f75c9-e020-440d-8790-25f416817fdb",
+      "canon_version": "canon-v1",
+      "text": "Each repo is enriched with human-quality durable knowledge and structured notes.",
+      "statement_type": "pattern",
+      "lifecycle": "accepted",
+      "hardness": "hard",
+      "scope": [
+        "product",
+        "docs"
+      ],
+      "artifact_types": [],
+      "tags": [
+        "enrichment_process",
+        "workflow_pattern"
+      ],
+      "rationale": "This pattern is evident in the KNOWLEDGE-CONTRACT section 'What you are populating' where detailed requirements for enriching repositories with high-quality, context-specific information are outlined.",
+      "confidence": 1,
+      "replacement_statement_id": null,
+      "created_at": "2026-03-31T01:35:54.411+00:00",
+      "updated_at": "2026-03-31T01:36:08.169+00:00"
+    }
+  ],
+  "evidence": [],
+  "metadata": {
+    "generated_at": "2026-03-31T01:36:08.173+00:00",
+    "source_count": 9
+  }
+}
