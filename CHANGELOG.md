@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-03-31
+
+### Added
+
+- `taste extract run --retry <n>` — retry failed passes with exponential backoff (1s/2s/4s)
+- Only retries on retryable errors (malformed JSON, Zod validation); network/Ollama errors fail immediately
+- Addresses extraction failures on table-heavy READMEs (registry-stats pilot finding)
+
 ## [1.0.0] - 2026-03-31
 
 ### Added (Phase 5D — Release Hardening)

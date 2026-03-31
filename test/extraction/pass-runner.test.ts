@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { isGenericStatement } from "../../src/extraction/pass-runner.js";
+import { describe, it, expect, vi } from "vitest";
+import { isGenericStatement, isRetryableError } from "../../src/extraction/pass-runner.js";
 
 describe("pass-runner helpers", () => {
   describe("isGenericStatement", () => {
@@ -22,6 +22,22 @@ describe("pass-runner helpers", () => {
 
     it("is case-insensitive", () => {
       expect(isGenericStatement("THE TOOL IS POWERFUL AND ROBUST")).toBe(true);
+    });
+  });
+
+  describe("isRetryableError", () => {
+    it("marks JSON parse failures as retryable", () => {
+      expect(isRetryableError("Malformed JSON from model for LlmPassOutput: {bad")).toBe(true);
+    });
+
+    it("marks Zod validation failures as retryable", () => {
+      expect(isRetryableError("Invalid LLM output: Expected array, received string")).toBe(true);
+    });
+
+    it("does NOT retry network/Ollama errors", () => {
+      expect(isRetryableError("Ollama returned HTTP 500: internal error")).toBe(false);
+      expect(isRetryableError("Ollama request timed out after 300000ms")).toBe(false);
+      expect(isRetryableError("Ollama request failed: fetch failed")).toBe(false);
     });
   });
 });

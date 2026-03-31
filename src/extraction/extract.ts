@@ -41,6 +41,7 @@ export async function runExtraction(
     projectId: string;
     sources: SourceArtifact[];
     passes?: PassType[];
+    retries?: number;
     onPassStart?: (passType: PassType) => void;
     onPassComplete?: (result: PassRunResult) => void;
   },
@@ -70,6 +71,7 @@ export async function runExtraction(
       runId: run.id,
       projectId: opts.projectId,
       sources: opts.sources,
+      retries: opts.retries,
     });
 
     passResults.push(result);

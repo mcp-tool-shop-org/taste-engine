@@ -128,7 +128,8 @@ extract
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
   .option("--core", "Run only core passes (thesis, anti-pattern, pattern, contradiction)")
   .option("--passes <passes>", "Comma-separated list of passes to run")
-  .action(async (opts: { root?: string; core?: boolean; passes?: string }) => {
+  .option("--retry <n>", "Retry retryable errors (JSON parse, validation) up to N times with exponential backoff", "0")
+  .action(async (opts: { root?: string; core?: boolean; passes?: string; retry?: string }) => {
     await extractRunCommand(opts);
   });
 

@@ -30,6 +30,23 @@ import {
 import { getPassPrompt, buildSourceBlock } from "./prompts.js";
 import { now } from "../util/timestamps.js";
 
+// ── Retry helpers ─────────────────────────────────────────────
+
+/** Errors that are worth retrying (LLM gave bad output, not a network failure). */
+export function isRetryableError(error: string): boolean {
+  return error.includes("Malformed JSON") || error.includes("Invalid LLM output");
+}
+
+/** Sleep for ms, used for exponential backoff between retries. */
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** Backoff durations: 1s, 2s, 4s, ... */
+function backoffMs(attempt: number): number {
+  return 1000 * Math.pow(2, attempt);
+}
+
 /** Map pass type to the statement type it produces. */
 const PASS_TO_STATEMENT_TYPE: Record<string, StatementType> = {
   thesis: "thesis",
@@ -60,9 +77,11 @@ export async function runPass(
     runId: string;
     projectId: string;
     sources: SourceArtifact[];
+    retries?: number;
   },
 ): Promise<PassRunResult> {
   const { passId, passType, runId, projectId, sources } = opts;
+  const maxRetries = opts.retries ?? 0;
   const errors: string[] = [];
   const ts = now();
 
@@ -76,88 +95,115 @@ export async function runPass(
 
   // Handle different pass types
   if (passType === "contradiction") {
-    return runContradictionPass(db, provider, { passId, runId, projectId, system: prompt.system, prompt: filledPrompt, errors });
+    return runContradictionPass(db, provider, { passId, runId, projectId, system: prompt.system, prompt: filledPrompt, errors, retries: maxRetries });
   }
 
   if (passType === "exemplar") {
-    return runExemplarPass(db, provider, { passId, runId, projectId, sources, system: prompt.system, prompt: filledPrompt, errors });
+    return runExemplarPass(db, provider, { passId, runId, projectId, sources, system: prompt.system, prompt: filledPrompt, errors, retries: maxRetries });
   }
 
-  // Standard statement extraction pass
-  const result = await provider.completeJson<LlmPassOutput>({
-    task: `${passType}_extraction`,
-    system: prompt.system,
-    prompt: filledPrompt,
-    schemaName: "LlmPassOutput",
-  });
-
-  if (!result.ok) {
-    errors.push(result.error);
-    updatePassResult(db, passId, {
-      status: "failed",
-      completed_at: now(),
-      error_count: 1,
-      error_detail: result.error,
-    });
-    return { passType, candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors };
-  }
-
-  // Validate LLM output
-  const parsed = LlmPassOutputSchema.safeParse(result.data);
-  if (!parsed.success) {
-    const msg = `Invalid LLM output: ${parsed.error.message}`;
-    errors.push(msg);
-    updatePassResult(db, passId, {
-      status: "failed",
-      completed_at: now(),
-      error_count: 1,
-      error_detail: msg,
-    });
-    return { passType, candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors };
-  }
-
-  let candidateCount = 0;
-  for (const raw of parsed.data.candidates) {
-    // Determine statement type
-    let stmtType: StatementType;
-    if (passType === "voice_naming") {
-      // Heuristic: if the text talks about naming conventions, it's "naming"
-      stmtType = raw.text.toLowerCase().includes("naming") || raw.text.toLowerCase().includes("name") ? "naming" : "voice";
-    } else {
-      stmtType = PASS_TO_STATEMENT_TYPE[passType] ?? "thesis";
+  // Standard statement extraction pass (with retry)
+  let lastError: string | undefined;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      const delay = backoffMs(attempt - 1);
+      console.log(`  [${passType}] retry ${attempt}/${maxRetries} after ${delay}ms...`);
+      await sleep(delay);
     }
 
-    // Flag generic candidates with lower confidence
-    const genericPenalty = isGenericStatement(raw.text) ? 0.3 : 0;
-    const adjustedConfidence = Math.max(0, Math.min(1, raw.confidence - genericPenalty));
-
-    insertCandidate(db, {
-      project_id: projectId,
-      extraction_run_id: runId,
-      pass_type: passType,
-      text: raw.text,
-      statement_type: stmtType,
-      rationale: raw.rationale,
-      confidence: adjustedConfidence,
-      suggested_hardness: normalizeHardness(raw.suggested_hardness),
-      suggested_scope: normalizeScopes(raw.suggested_scope),
-      suggested_artifact_types: [],
-      tags: raw.tags,
-      evidence_refs: raw.evidence_section ? [raw.evidence_section] : [],
-      status: "proposed",
-      merged_into_id: null,
+    const result = await provider.completeJson<LlmPassOutput>({
+      task: `${passType}_extraction`,
+      system: prompt.system,
+      prompt: filledPrompt,
+      schemaName: "LlmPassOutput",
     });
-    candidateCount++;
+
+    if (!result.ok) {
+      lastError = result.error;
+      if (isRetryableError(result.error) && attempt < maxRetries) {
+        continue;
+      }
+      errors.push(result.error);
+      updatePassResult(db, passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: result.error,
+      });
+      return { passType, candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors };
+    }
+
+    // Validate LLM output
+    const parsed = LlmPassOutputSchema.safeParse(result.data);
+    if (!parsed.success) {
+      const msg = `Invalid LLM output: ${parsed.error.message}`;
+      lastError = msg;
+      if (attempt < maxRetries) {
+        continue;
+      }
+      errors.push(msg);
+      updatePassResult(db, passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: msg,
+      });
+      return { passType, candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors };
+    }
+
+    // Success — break out of retry loop with valid parsed data
+    lastError = undefined;
+
+    let candidateCount = 0;
+    for (const raw of parsed.data.candidates) {
+      let stmtType: StatementType;
+      if (passType === "voice_naming") {
+        stmtType = raw.text.toLowerCase().includes("naming") || raw.text.toLowerCase().includes("name") ? "naming" : "voice";
+      } else {
+        stmtType = PASS_TO_STATEMENT_TYPE[passType] ?? "thesis";
+      }
+
+      const genericPenalty = isGenericStatement(raw.text) ? 0.3 : 0;
+      const adjustedConfidence = Math.max(0, Math.min(1, raw.confidence - genericPenalty));
+
+      insertCandidate(db, {
+        project_id: projectId,
+        extraction_run_id: runId,
+        pass_type: passType,
+        text: raw.text,
+        statement_type: stmtType,
+        rationale: raw.rationale,
+        confidence: adjustedConfidence,
+        suggested_hardness: normalizeHardness(raw.suggested_hardness),
+        suggested_scope: normalizeScopes(raw.suggested_scope),
+        suggested_artifact_types: [],
+        tags: raw.tags,
+        evidence_refs: raw.evidence_section ? [raw.evidence_section] : [],
+        status: "proposed",
+        merged_into_id: null,
+      });
+      candidateCount++;
+    }
+
+    updatePassResult(db, passId, {
+      status: "completed",
+      completed_at: now(),
+      candidate_count: candidateCount,
+      error_count: errors.length,
+    });
+
+    return { passType, candidateCount, contradictionCount: 0, exemplarCount: 0, errors };
   }
 
+  // Should not reach here, but safety net
+  errors.push(lastError ?? "Unknown error after retries");
   updatePassResult(db, passId, {
-    status: "completed",
+    status: "failed",
     completed_at: now(),
-    candidate_count: candidateCount,
-    error_count: errors.length,
+    error_count: 1,
+    error_detail: lastError ?? "Unknown error after retries",
   });
-
-  return { passType, candidateCount, contradictionCount: 0, exemplarCount: 0, errors };
+  return { passType, candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors };
 }
 
 // ── Contradiction pass ─────────────────────────────────────────
@@ -172,65 +218,86 @@ async function runContradictionPass(
     system: string;
     prompt: string;
     errors: string[];
+    retries?: number;
   },
 ): Promise<PassRunResult> {
-  const result = await provider.completeJson<LlmContradictionOutput>({
-    task: "contradiction_detection",
-    system: opts.system,
-    prompt: opts.prompt,
-    schemaName: "LlmContradictionOutput",
-  });
+  const maxRetries = opts.retries ?? 0;
 
-  if (!result.ok) {
-    opts.errors.push(result.error);
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      const delay = backoffMs(attempt - 1);
+      console.log(`  [contradiction] retry ${attempt}/${maxRetries} after ${delay}ms...`);
+      await sleep(delay);
+    }
+
+    const result = await provider.completeJson<LlmContradictionOutput>({
+      task: "contradiction_detection",
+      system: opts.system,
+      prompt: opts.prompt,
+      schemaName: "LlmContradictionOutput",
+    });
+
+    if (!result.ok) {
+      if (isRetryableError(result.error) && attempt < maxRetries) {
+        continue;
+      }
+      opts.errors.push(result.error);
+      updatePassResult(db, opts.passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: result.error,
+      });
+      return { passType: "contradiction", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
+    }
+
+    const parsed = LlmContradictionOutputSchema.safeParse(result.data);
+    if (!parsed.success) {
+      const msg = `Invalid LLM output: ${parsed.error.message}`;
+      if (attempt < maxRetries) {
+        continue;
+      }
+      opts.errors.push(msg);
+      updatePassResult(db, opts.passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: msg,
+      });
+      return { passType: "contradiction", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
+    }
+
+    let count = 0;
+    for (const raw of parsed.data.contradictions) {
+      const severity = (["low", "medium", "high"] as const).includes(raw.severity as any)
+        ? (raw.severity as "low" | "medium" | "high")
+        : "medium";
+
+      insertContradiction(db, {
+        extraction_run_id: opts.runId,
+        title: raw.title,
+        description: raw.description,
+        conflicting_candidate_ids: [],
+        evidence_refs: raw.evidence_sections,
+        severity,
+        status: "open",
+      });
+      count++;
+    }
+
     updatePassResult(db, opts.passId, {
-      status: "failed",
+      status: "completed",
       completed_at: now(),
-      error_count: 1,
-      error_detail: result.error,
+      candidate_count: count,
+      error_count: opts.errors.length,
     });
-    return { passType: "contradiction", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
+
+    return { passType: "contradiction", candidateCount: 0, contradictionCount: count, exemplarCount: 0, errors: opts.errors };
   }
 
-  const parsed = LlmContradictionOutputSchema.safeParse(result.data);
-  if (!parsed.success) {
-    const msg = `Invalid LLM output: ${parsed.error.message}`;
-    opts.errors.push(msg);
-    updatePassResult(db, opts.passId, {
-      status: "failed",
-      completed_at: now(),
-      error_count: 1,
-      error_detail: msg,
-    });
-    return { passType: "contradiction", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
-  }
-
-  let count = 0;
-  for (const raw of parsed.data.contradictions) {
-    const severity = (["low", "medium", "high"] as const).includes(raw.severity as any)
-      ? (raw.severity as "low" | "medium" | "high")
-      : "medium";
-
-    insertContradiction(db, {
-      extraction_run_id: opts.runId,
-      title: raw.title,
-      description: raw.description,
-      conflicting_candidate_ids: [],
-      evidence_refs: raw.evidence_sections,
-      severity,
-      status: "open",
-    });
-    count++;
-  }
-
-  updatePassResult(db, opts.passId, {
-    status: "completed",
-    completed_at: now(),
-    candidate_count: count,
-    error_count: opts.errors.length,
-  });
-
-  return { passType: "contradiction", candidateCount: 0, contradictionCount: count, exemplarCount: 0, errors: opts.errors };
+  // Safety net
+  opts.errors.push("Unknown error after retries");
+  return { passType: "contradiction", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
 }
 
 // ── Exemplar pass ──────────────────────────────────────────────
@@ -246,70 +313,91 @@ async function runExemplarPass(
     system: string;
     prompt: string;
     errors: string[];
+    retries?: number;
   },
 ): Promise<PassRunResult> {
-  const result = await provider.completeJson<LlmExemplarOutput>({
-    task: "exemplar_nomination",
-    system: opts.system,
-    prompt: opts.prompt,
-    schemaName: "LlmExemplarOutput",
-  });
+  const maxRetries = opts.retries ?? 0;
 
-  if (!result.ok) {
-    opts.errors.push(result.error);
-    updatePassResult(db, opts.passId, {
-      status: "failed",
-      completed_at: now(),
-      error_count: 1,
-      error_detail: result.error,
-    });
-    return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
-  }
-
-  const parsed = LlmExemplarOutputSchema.safeParse(result.data);
-  if (!parsed.success) {
-    const msg = `Invalid LLM output: ${parsed.error.message}`;
-    opts.errors.push(msg);
-    updatePassResult(db, opts.passId, {
-      status: "failed",
-      completed_at: now(),
-      error_count: 1,
-      error_detail: msg,
-    });
-    return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
-  }
-
-  // Match exemplar source_title to actual source artifacts
-  const sourceMap = new Map(opts.sources.map((s) => [s.title.toLowerCase(), s.id]));
-  let count = 0;
-
-  for (const raw of parsed.data.exemplars) {
-    const sourceId = sourceMap.get(raw.source_title.toLowerCase());
-    if (!sourceId) {
-      opts.errors.push(`Exemplar references unknown source: "${raw.source_title}"`);
-      continue;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      const delay = backoffMs(attempt - 1);
+      console.log(`  [exemplar] retry ${attempt}/${maxRetries} after ${delay}ms...`);
+      await sleep(delay);
     }
 
-    insertExemplar(db, {
-      extraction_run_id: opts.runId,
-      source_artifact_id: sourceId,
-      locator_kind: raw.locator_kind,
-      locator_value: raw.locator_value,
-      why_it_matters: raw.why_it_matters,
-      candidate_traits: raw.candidate_traits,
-      confidence: raw.confidence,
+    const result = await provider.completeJson<LlmExemplarOutput>({
+      task: "exemplar_nomination",
+      system: opts.system,
+      prompt: opts.prompt,
+      schemaName: "LlmExemplarOutput",
     });
-    count++;
+
+    if (!result.ok) {
+      if (isRetryableError(result.error) && attempt < maxRetries) {
+        continue;
+      }
+      opts.errors.push(result.error);
+      updatePassResult(db, opts.passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: result.error,
+      });
+      return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
+    }
+
+    const parsed = LlmExemplarOutputSchema.safeParse(result.data);
+    if (!parsed.success) {
+      const msg = `Invalid LLM output: ${parsed.error.message}`;
+      if (attempt < maxRetries) {
+        continue;
+      }
+      opts.errors.push(msg);
+      updatePassResult(db, opts.passId, {
+        status: "failed",
+        completed_at: now(),
+        error_count: 1,
+        error_detail: msg,
+      });
+      return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
+    }
+
+    // Match exemplar source_title to actual source artifacts
+    const sourceMap = new Map(opts.sources.map((s) => [s.title.toLowerCase(), s.id]));
+    let count = 0;
+
+    for (const raw of parsed.data.exemplars) {
+      const sourceId = sourceMap.get(raw.source_title.toLowerCase());
+      if (!sourceId) {
+        opts.errors.push(`Exemplar references unknown source: "${raw.source_title}"`);
+        continue;
+      }
+
+      insertExemplar(db, {
+        extraction_run_id: opts.runId,
+        source_artifact_id: sourceId,
+        locator_kind: raw.locator_kind,
+        locator_value: raw.locator_value,
+        why_it_matters: raw.why_it_matters,
+        candidate_traits: raw.candidate_traits,
+        confidence: raw.confidence,
+      });
+      count++;
+    }
+
+    updatePassResult(db, opts.passId, {
+      status: "completed",
+      completed_at: now(),
+      candidate_count: count,
+      error_count: opts.errors.length,
+    });
+
+    return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: count, errors: opts.errors };
   }
 
-  updatePassResult(db, opts.passId, {
-    status: "completed",
-    completed_at: now(),
-    candidate_count: count,
-    error_count: opts.errors.length,
-  });
-
-  return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: count, errors: opts.errors };
+  // Safety net
+  opts.errors.push("Unknown error after retries");
+  return { passType: "exemplar", candidateCount: 0, contradictionCount: 0, exemplarCount: 0, errors: opts.errors };
 }
 
 // ── Helpers ────────────────────────────────────────────────────

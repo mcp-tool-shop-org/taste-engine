@@ -36,6 +36,7 @@ export async function extractRunCommand(opts: {
   root?: string;
   core?: boolean;
   passes?: string;
+  retry?: string;
 }): Promise<void> {
   const root = resolve(opts.root ?? process.cwd());
   const config = ensureInit(root);
@@ -92,15 +93,21 @@ export async function extractRunCommand(opts: {
     return;
   }
 
+  const retries = opts.retry ? parseInt(opts.retry, 10) : 0;
+
   console.log(`Extracting canon from ${sources.length} source artifact(s)`);
   console.log(`Passes: ${passes.join(", ")}`);
   console.log(`Model: ${config.provider.model}`);
+  if (retries > 0) {
+    console.log(`Retries: ${retries} (exponential backoff)`);
+  }
   console.log();
 
   const result = await runExtraction(db, provider, {
     projectId: project.id,
     sources,
     passes,
+    retries,
     onPassStart: (passType) => {
       process.stdout.write(`  [${passType}] running...`);
     },
