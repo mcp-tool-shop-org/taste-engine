@@ -28,6 +28,7 @@ import { reviseRunCommand } from "./commands/revise.js";
 import { repairRunCommand } from "./commands/repair.js";
 import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverrideCommand, gateReportCommand } from "./commands/gate.js";
 import { redirectRunCommand } from "./commands/redirect.js";
+import { onboardRunCommand, onboardReportCommand } from "./commands/onboard.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -435,5 +436,27 @@ calibrate
   .action(async (opts: { root?: string; refresh?: boolean }) => {
     await calibrateFindingsCommand(opts);
   });
+
+// Onboard commands
+const onboard = program
+  .command("onboard")
+  .description("Repo onboarding commands");
+
+onboard
+  .command("run")
+  .description("Set up taste-engine for a new repo")
+  .requiredOption("--slug <slug>", "Project slug")
+  .option("-n, --name <name>", "Project display name")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--repo-path <path>", "Path to repo to scan (default: root)")
+  .option("--preset <preset>", "Policy preset: advisory-starter, docs-heavy, product-copy")
+  .option("--auto-ingest", "Automatically ingest high-priority sources")
+  .action(async (opts: any) => { await onboardRunCommand(opts); });
+
+onboard
+  .command("report")
+  .description("Show onboarding readiness report")
+  .option("-r, --root <path>", "Project root directory")
+  .action(async (opts: { root?: string }) => { await onboardReportCommand(opts); });
 
 program.parse();
