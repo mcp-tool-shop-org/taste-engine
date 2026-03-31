@@ -27,6 +27,7 @@ import {
 import { reviseRunCommand } from "./commands/revise.js";
 import { repairRunCommand } from "./commands/repair.js";
 import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverrideCommand, gateReportCommand } from "./commands/gate.js";
+import { redirectRunCommand } from "./commands/redirect.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -365,6 +366,21 @@ gate
   .option("-r, --root <path>", "Project root directory")
   .option("--json", "Output as JSON")
   .action(async (opts: { root?: string; json?: boolean }) => { await gateReportCommand(opts); });
+
+// Redirect command
+const redirect = program
+  .command("redirect")
+  .description("Goal redirection for irreparable artifacts");
+
+redirect
+  .command("run")
+  .description("Generate a Goal Redirection Brief for a blocked artifact")
+  .requiredOption("--artifact <id>", "Candidate artifact ID")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--canon-version <version>", "Canon version (default: current)")
+  .action(async (opts: { root?: string; artifact: string; canonVersion?: string }) => {
+    await redirectRunCommand(opts);
+  });
 
 // Feedback command (under review)
 review
