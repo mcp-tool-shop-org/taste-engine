@@ -26,7 +26,7 @@ import {
 } from "./commands/calibrate.js";
 import { reviseRunCommand } from "./commands/revise.js";
 import { repairRunCommand } from "./commands/repair.js";
-import { gateRunCommand } from "./commands/gate.js";
+import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverrideCommand, gateReportCommand } from "./commands/gate.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -334,6 +334,37 @@ gate
   .action(async (opts: { root?: string; files?: string[]; staged?: boolean; mode?: string; canonVersion?: string; json?: boolean }) => {
     await gateRunCommand(opts);
   });
+
+gate
+  .command("policy-init")
+  .description("Initialize gate policy file")
+  .option("-r, --root <path>", "Project root directory")
+  .action(async (opts: { root?: string }) => { await gatePolicyInitCommand(opts); });
+
+gate
+  .command("policy")
+  .description("Show current gate policy")
+  .option("-r, --root <path>", "Project root directory")
+  .action(async (opts: { root?: string }) => { await gatePolicyShowCommand(opts); });
+
+gate
+  .command("override")
+  .description("Record an override receipt for a bypassed gate")
+  .option("-r, --root <path>", "Project root directory")
+  .requiredOption("--artifact <path>", "Artifact file path")
+  .requiredOption("--type <type>", "Artifact type")
+  .requiredOption("--verdict <verdict>", "Original verdict")
+  .requiredOption("--gate <result>", "Original gate result")
+  .requiredOption("--action <action>", "Action: bypass, defer_repair, accept_as_is")
+  .requiredOption("--reason <reason>", "Reason for override")
+  .action(async (opts: any) => { await gateOverrideCommand(opts); });
+
+gate
+  .command("report")
+  .description("Show rollout report with promotion readiness")
+  .option("-r, --root <path>", "Project root directory")
+  .option("--json", "Output as JSON")
+  .action(async (opts: { root?: string; json?: boolean }) => { await gateReportCommand(opts); });
 
 // Feedback command (under review)
 review

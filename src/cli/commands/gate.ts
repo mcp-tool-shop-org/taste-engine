@@ -10,6 +10,10 @@ import { detectArtifacts, getChangedFiles } from "../../gate/artifact-detector.j
 import { runGate, gateResultToJson } from "../../gate/gate-engine.js";
 import type { EnforcementMode } from "../../gate/gate-types.js";
 import { ENFORCEMENT_MODES } from "../../gate/gate-types.js";
+import { loadPolicy, savePolicy, getModeForArtifact, shouldSkip, recordOverride, getOverrides } from "../../gate/policy.js";
+import { DEFAULT_POLICY } from "../../gate/policy-types.js";
+import { computeRolloutReport } from "../../gate/rollout-report.js";
+import { tasteDir } from "../config.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -125,6 +129,147 @@ export async function gateRunCommand(opts: {
     // Exit code for CI
     if (mode === "required" && result.overall === "block") {
       process.exitCode = 1;
+    }
+  }
+
+  closeDb();
+}
+
+// ── Policy Init ────────────────────────────────────────────────
+
+export async function gatePolicyInitCommand(opts: { root?: string }): Promise<void> {
+  const root = resolve(opts.root ?? process.cwd());
+  if (!isInitialized(root)) { console.log("Not initialized."); process.exitCode = 1; return; }
+  const config = loadConfig(root)!;
+  const td = tasteDir(root);
+
+  const policy = { ...DEFAULT_POLICY, canon_version: config.projectSlug === "role-os" ? "canon-v1" : "canon-v1" };
+  savePolicy(td, policy);
+  console.log(`Gate policy initialized at ${join(td, "gate-policy.json")}`);
+  console.log(`  Mode: ${policy.default_mode}`);
+  console.log(`  Canon: ${policy.canon_version}`);
+  console.log("  Edit the file to add surface-specific enforcement.");
+}
+
+// ── Policy Show ────────────────────────────────────────────────
+
+export async function gatePolicyShowCommand(opts: { root?: string }): Promise<void> {
+  const root = resolve(opts.root ?? process.cwd());
+  if (!isInitialized(root)) { console.log("Not initialized."); process.exitCode = 1; return; }
+  const td = tasteDir(root);
+  const policy = loadPolicy(td);
+
+  console.log(`=== Gate Policy ===`);
+  console.log(`  Canon version: ${policy.canon_version}`);
+  console.log(`  Default mode: ${policy.default_mode}`);
+  console.log(`  Require override receipts: ${policy.require_override_receipts}`);
+
+  if (policy.surfaces.length > 0) {
+    console.log();
+    console.log("  Surfaces:");
+    for (const s of policy.surfaces) {
+      console.log(`    ${s.artifact_type}: ${s.mode}${s.globs.length > 0 ? ` (${s.globs.join(", ")})` : ""}`);
+      if (s.notes) console.log(`      ${s.notes}`);
+    }
+  }
+
+  if (policy.skip_globs.length > 0) {
+    console.log();
+    console.log(`  Skip: ${policy.skip_globs.join(", ")}`);
+  }
+}
+
+// ── Override ───────────────────────────────────────────────────
+
+export async function gateOverrideCommand(opts: {
+  root?: string;
+  artifact: string;
+  type: string;
+  verdict: string;
+  gate: string;
+  action: string;
+  reason: string;
+}): Promise<void> {
+  const root = resolve(opts.root ?? process.cwd());
+  if (!isInitialized(root)) { console.log("Not initialized."); process.exitCode = 1; return; }
+  const config = loadConfig(root)!;
+  const db = openDb(join(root, config.dbPath));
+  migrate(db, MIGRATIONS_DIR);
+  const project = getProject(db, config.projectSlug);
+  if (!project) { console.log("Project not found."); closeDb(); process.exitCode = 1; return; }
+
+  const override = recordOverride(db, {
+    project_id: project.id,
+    artifact_path: opts.artifact,
+    artifact_type: opts.type,
+    original_verdict: opts.verdict,
+    original_gate_result: opts.gate,
+    action: opts.action as any,
+    reason: opts.reason,
+    follow_up_artifact_id: null,
+  });
+
+  console.log(`Override recorded: ${override.id}`);
+  console.log(`  Artifact: ${opts.artifact}`);
+  console.log(`  Action: ${opts.action}`);
+  console.log(`  Reason: ${opts.reason}`);
+
+  closeDb();
+}
+
+// ── Rollout Report ─────────────────────────────────────────────
+
+export async function gateReportCommand(opts: { root?: string; json?: boolean }): Promise<void> {
+  const root = resolve(opts.root ?? process.cwd());
+  if (!isInitialized(root)) { console.log("Not initialized."); process.exitCode = 1; return; }
+  const config = loadConfig(root)!;
+  const db = openDb(join(root, config.dbPath));
+  migrate(db, MIGRATIONS_DIR);
+  const project = getProject(db, config.projectSlug);
+  if (!project) { console.log("Project not found."); closeDb(); process.exitCode = 1; return; }
+
+  const canonVersion = project.current_version ?? "canon-v1";
+  const report = computeRolloutReport(db, project.id, config.projectSlug, canonVersion);
+
+  if (opts.json) {
+    console.log(JSON.stringify(report, null, 2));
+    closeDb();
+    return;
+  }
+
+  console.log(`=== Rollout Report: ${report.project_slug} ===`);
+  console.log(`Canon: ${report.canon_version}`);
+  console.log();
+  console.log(`Gate runs: ${report.total_gate_runs}`);
+  console.log(`  Passed: ${report.pass_count}`);
+  console.log(`  Warned: ${report.warn_count}`);
+  console.log(`  Blocked: ${report.block_count}`);
+  console.log(`  Overrides: ${report.override_count}`);
+  console.log(`  Repairs used: ${report.repair_usage_count}`);
+
+  if (Object.keys(report.by_artifact_type).length > 0) {
+    console.log();
+    console.log("By artifact type:");
+    for (const [type, counts] of Object.entries(report.by_artifact_type)) {
+      const passRate = counts.checked > 0 ? ((counts.passed / counts.checked) * 100).toFixed(0) : "0";
+      console.log(`  ${type}: ${counts.checked} checked, ${passRate}% pass, ${counts.blocked} blocked, ${counts.overridden} overridden`);
+    }
+  }
+
+  if (report.hot_spots.length > 0) {
+    console.log();
+    console.log("Hot spots:");
+    for (const hs of report.hot_spots) {
+      console.log(`  [!] ${hs.artifact_type}: ${hs.issue} (${hs.count})`);
+    }
+  }
+
+  if (Object.keys(report.promotion_readiness).length > 0) {
+    console.log();
+    console.log("Promotion readiness:");
+    for (const [type, pr] of Object.entries(report.promotion_readiness)) {
+      const arrow = pr.recommended_mode !== pr.current_mode ? ` → ${pr.recommended_mode}` : "";
+      console.log(`  ${type}: ${pr.current_mode}${arrow} — ${pr.reason}`);
     }
   }
 
