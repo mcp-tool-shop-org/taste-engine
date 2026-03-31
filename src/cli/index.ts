@@ -28,7 +28,7 @@ import { reviseRunCommand } from "./commands/revise.js";
 import { repairRunCommand } from "./commands/repair.js";
 import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverrideCommand, gateReportCommand } from "./commands/gate.js";
 import { redirectRunCommand } from "./commands/redirect.js";
-import { onboardRunCommand, onboardReportCommand } from "./commands/onboard.js";
+import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from "./commands/onboard.js";
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
 import {
   curateQueueCommand,
@@ -471,6 +471,13 @@ onboard
   .description("Show onboarding readiness report")
   .option("-r, --root <path>", "Project root directory")
   .action(async (opts: { root?: string }) => { await onboardReportCommand(opts); });
+
+onboard
+  .command("recommend")
+  .description("Generate adoption recommendations for a repo")
+  .requiredOption("--repo-path <path>", "Path to the target repo")
+  .option("--portfolio-dir <path>", "Portfolio directory for cross-repo evidence")
+  .action(async (opts: { repoPath: string; portfolioDir?: string }) => { await onboardRecommendCommand(opts); });
 
 // Portfolio commands
 const portfolio = program

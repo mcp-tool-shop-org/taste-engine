@@ -8,6 +8,8 @@ import { getProject } from "../../canon/canon-store.js";
 import { scanForSources } from "../../onboard/source-scanner.js";
 import { getPreset } from "../../onboard/policy-presets.js";
 import { generateOnboardReport } from "../../onboard/onboard-report.js";
+import { generateRecommendation } from "../../onboard/recommend.js";
+import { discoverRepos, buildPortfolioMatrix, detectDriftFamilies } from "../../portfolio/portfolio-engine.js";
 import { savePolicy } from "../../gate/policy.js";
 import { tasteDir } from "../config.js";
 import { initCommand } from "./init.js";
@@ -114,6 +116,108 @@ export async function onboardReportCommand(opts: { root?: string }): Promise<voi
   printReport(report);
 
   closeDb();
+}
+
+export async function onboardRecommendCommand(opts: {
+  repoPath: string;
+  portfolioDir?: string;
+}): Promise<void> {
+  const repoPath = resolve(opts.repoPath);
+  const sources = scanForSources(repoPath);
+
+  // Build portfolio context if available
+  let portfolioContext: Parameters<typeof generateRecommendation>[1] | undefined;
+  if (opts.portfolioDir) {
+    const repos = discoverRepos(resolve(opts.portfolioDir));
+    if (repos.length > 0) {
+      const matrix = buildPortfolioMatrix(repos);
+      const driftFamilies = detectDriftFamilies(repos);
+
+      const strongRepos = repos.filter((r) => r.canon_confidence === "strong");
+      const avgStrong = strongRepos.length > 0
+        ? Math.round(strongRepos.reduce((s, r) => s + r.statement_count, 0) / strongRepos.length)
+        : 17;
+
+      // Find commonly promoted surfaces
+      const surfaceCounts = new Map<string, number>();
+      for (const r of repos) {
+        for (const s of r.surfaces_at_warn) surfaceCounts.set(s, (surfaceCounts.get(s) ?? 0) + 1);
+      }
+      const reliableSurfaces = [...surfaceCounts.entries()]
+        .filter(([_, count]) => count >= 2)
+        .map(([surface]) => surface);
+
+      portfolioContext = {
+        avg_strong_statements: avgStrong,
+        common_drift_families: driftFamilies.filter((d) => d.is_portfolio_wide).map((d) => d.name + " — " + d.description),
+        reliable_first_surfaces: reliableSurfaces,
+      };
+    }
+  }
+
+  const rec = generateRecommendation(sources, portfolioContext);
+
+  console.log("=== Adoption Recommendation ===");
+  console.log();
+  console.log(`Repo shape: ${rec.repo_shape}`);
+  console.log(`  ${rec.shape_reason}`);
+  console.log();
+
+  console.log(`Recommended preset: ${rec.recommended_preset}`);
+  console.log(`  ${rec.preset_reason}`);
+  console.log();
+
+  console.log(`Likely confidence: ${rec.likely_confidence}`);
+  console.log(`  ${rec.confidence_reason}`);
+  console.log();
+
+  console.log(`=== Sources (${rec.source_recommendation.recommended_count}/${rec.source_recommendation.total_found}) ===`);
+  for (const s of rec.source_recommendation.recommended_sources) {
+    console.log(`  [ingest] ${s.path}`);
+    console.log(`    ${s.reason}`);
+  }
+  if (rec.source_recommendation.deferred_sources.length > 0) {
+    console.log();
+    console.log("  Deferred (over token budget):");
+    for (const s of rec.source_recommendation.deferred_sources) {
+      console.log(`    [later] ${s.path}`);
+    }
+  }
+  if (rec.source_recommendation.needs_voice_split) {
+    console.log();
+    console.log(`  [!] ${rec.source_recommendation.voice_split_reason}`);
+  }
+  console.log(`  Estimated tokens: ~${rec.source_recommendation.estimated_tokens}`);
+  console.log();
+
+  console.log("=== Gate Policy ===");
+  if (rec.gate_recommendation.initial_surfaces.length > 0) {
+    console.log("  Initial surfaces:");
+    for (const s of rec.gate_recommendation.initial_surfaces) {
+      console.log(`    ${s.artifact_type}: ${s.mode} — ${s.reason}`);
+    }
+  }
+  if (rec.gate_recommendation.deferred_surfaces.length > 0) {
+    console.log("  Deferred:");
+    for (const s of rec.gate_recommendation.deferred_surfaces) {
+      console.log(`    ${s.artifact_type}: advisory — ${s.reason}`);
+    }
+  }
+  console.log();
+
+  if (rec.risk_briefing.length > 0) {
+    console.log("=== Risks ===");
+    for (const r of rec.risk_briefing) console.log(`  [!] ${r}`);
+    console.log();
+  }
+
+  if (rec.drift_watchlist.length > 0) {
+    console.log("=== Drift Watchlist ===");
+    for (const d of rec.drift_watchlist) console.log(`  ~ ${d}`);
+    console.log();
+  }
+
+  console.log("To proceed: taste onboard run --slug <name> --repo-path <path> --preset " + rec.recommended_preset + " --auto-ingest");
 }
 
 function printReport(report: ReturnType<typeof generateOnboardReport>): void {
