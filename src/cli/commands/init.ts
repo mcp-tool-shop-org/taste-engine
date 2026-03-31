@@ -14,11 +14,13 @@ export async function initCommand(opts: {
   slug: string;
   name?: string;
   root?: string;
+  check?: boolean;
 }): Promise<void> {
   const root = resolve(opts.root ?? process.cwd());
 
   if (isInitialized(root)) {
     console.log("Already initialized in", tasteDir(root));
+    console.log("\nRun 'taste doctor' to check health.");
     return;
   }
 
@@ -53,4 +55,16 @@ export async function initCommand(opts: {
   console.log(`  config: ${join(td, "taste.json")}`);
   console.log(`  db:     ${fullDbPath}`);
   console.log(`  canon:  ${canonDir}`);
+
+  // Auto-run doctor if --check
+  if (opts.check) {
+    console.log();
+    const { doctorCommand } = await import("./doctor.js");
+    await doctorCommand({ root: opts.root });
+  } else {
+    console.log("\nNext steps:");
+    console.log("  taste doctor                     # verify Ollama is running");
+    console.log("  taste ingest README.md docs/      # ingest source docs");
+    console.log("  taste extract run                 # extract canon statements");
+  }
 }

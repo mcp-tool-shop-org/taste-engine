@@ -76,5 +76,8 @@ export async function watchtowerDigestCommand(opts: { dir: string; json?: boolea
     console.log();
     console.log("Action items:");
     for (const item of digest.action_items) console.log(`  -> ${item}`);
+  } else {
+    console.log();
+    console.log("No action items. Portfolio is healthy.");
   }
 }

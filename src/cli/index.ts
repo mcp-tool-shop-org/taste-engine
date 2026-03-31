@@ -32,7 +32,9 @@ import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
 import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand, orgActionsQueueCommand, orgActionsPreviewCommand, orgActionsApplyCommand, orgActionsRollbackCommand, orgActionsHistoryCommand } from "./commands/org.js";
 import { workbenchCommand } from "./commands/workbench.js";
+import { statusCommand } from "./commands/status.js";
 import { watchtowerScanCommand, watchtowerHistoryCommand, watchtowerDeltaCommand, watchtowerDigestCommand } from "./commands/watchtower.js";
+import { backupRepoCommand, backupPortfolioCommand, restoreCommand, exportStateCommand, importStateCommand } from "./commands/backup.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -49,6 +51,16 @@ import {
 
 const program = new Command();
 
+// Default portfolio dir from env
+const defaultPortfolioDir = process.env.TASTE_PORTFOLIO_DIR;
+
+function requireDir(opts: { dir?: string }): string | null {
+  if (opts.dir) return opts.dir;
+  console.error("Error: --dir required (or set TASTE_PORTFOLIO_DIR)");
+  process.exitCode = 1;
+  return null;
+}
+
 program
   .name("taste")
   .description("Canon-and-judgment system for creative and product work")
@@ -59,8 +71,9 @@ program
   .description("Initialize taste-engine for a project")
   .option("-n, --name <name>", "Project display name (defaults to slug)")
   .option("-r, --root <path>", "Project root directory (defaults to cwd)")
-  .action(async (slug: string, opts: { name?: string; root?: string }) => {
-    await initCommand({ slug, name: opts.name, root: opts.root });
+  .option("-c, --check", "Auto-run doctor after init")
+  .action(async (slug: string, opts: { name?: string; root?: string; check?: boolean }) => {
+    await initCommand({ slug, name: opts.name, root: opts.root, check: opts.check });
   });
 
 program
@@ -453,6 +466,16 @@ calibrate
     await calibrateFindingsCommand(opts);
   });
 
+// Status command
+program
+  .command("status")
+  .description("One-line portfolio status: repos, alerts, queue, action items")
+  .option("--dir <path>", "Portfolio directory", defaultPortfolioDir)
+  .action(async (opts: { dir?: string }) => {
+    if (!opts.dir) { console.error("Error: --dir required (or set TASTE_PORTFOLIO_DIR)"); process.exitCode = 1; return; }
+    await statusCommand({ dir: opts.dir });
+  });
+
 // Onboard commands
 const onboard = program
   .command("onboard")
@@ -490,53 +513,75 @@ const portfolio = program
 portfolio
   .command("matrix")
   .description("Show portfolio matrix: all repos, canon state, gate readiness")
-  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir)
   .action(async (opts: { dir: string }) => { await portfolioMatrixCommand(opts); });
 
 portfolio
   .command("findings")
   .description("Show portfolio-level findings: drift families, patterns, gaps")
-  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir)
   .action(async (opts: { dir: string }) => { await portfolioFindingsCommand(opts); });
 
 portfolio
   .command("export")
   .description("Export portfolio data as JSON")
-  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir)
   .action(async (opts: { dir: string }) => { await portfolioExportCommand(opts); });
 
 // Org commands
 const org = program.command("org").description("Org-level rollout control plane");
-org.command("matrix").description("Org rollout matrix: all repos, canon, gates, surfaces").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgMatrixCommand(opts); });
-org.command("queue").description("Promotion and demotion queue").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgQueueCommand(opts); });
-org.command("overrides").description("Override hotspot analysis").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgOverridesCommand(opts); });
-org.command("hotspots").description("Drift-family hotspots across repos").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgHotspotsCommand(opts); });
-org.command("recommendations").description("Org-level action recommendations").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgRecommendationsCommand(opts); });
-org.command("alerts").description("Org-level alerts: promotions, demotions, spikes, enrichment").requiredOption("--dir <path>", "Portfolio directory").option("--severity <level>", "Filter: critical, warning, info").option("--category <cat>", "Filter by category").option("--repo <slug>", "Filter by repo").action(async (opts: { dir: string; severity?: string; category?: string; repo?: string }) => { await orgAlertsCommand(opts); });
-org.command("stale").description("Show stale rollout and sparse canon repos").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgStaleCommand(opts); });
+org.command("matrix").description("Org rollout matrix: all repos, canon, gates, surfaces").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgMatrixCommand(opts); });
+org.command("queue").description("Promotion and demotion queue").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgQueueCommand(opts); });
+org.command("overrides").description("Override hotspot analysis").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgOverridesCommand(opts); });
+org.command("hotspots").description("Drift-family hotspots across repos").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgHotspotsCommand(opts); });
+org.command("recommendations").description("Org-level action recommendations").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgRecommendationsCommand(opts); });
+org.command("alerts").description("Org-level alerts: promotions, demotions, spikes, enrichment").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).option("--severity <level>", "Filter: critical, warning, info").option("--category <cat>", "Filter by category").option("--repo <slug>", "Filter by repo").action(async (opts: { dir: string; severity?: string; category?: string; repo?: string }) => { await orgAlertsCommand(opts); });
+org.command("stale").description("Show stale rollout and sparse canon repos").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgStaleCommand(opts); });
 // Org actions sub-commands
 const orgActions = org.command("actions").description("Rollout action management");
-orgActions.command("queue").description("Show actionable promotion/demotion queue").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgActionsQueueCommand(opts); });
-orgActions.command("preview").description("Preview a policy change before applying").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target enforcement mode").action(async (opts: any) => { await orgActionsPreviewCommand(opts); });
-orgActions.command("apply").description("Apply a policy change with receipt").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target mode").requiredOption("--reason <text>", "Reason for change").action(async (opts: any) => { await orgActionsApplyCommand(opts); });
-orgActions.command("rollback").description("Rollback an applied action").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--id <id>", "Action ID (prefix match)").requiredOption("--reason <text>", "Rollback reason").action(async (opts: any) => { await orgActionsRollbackCommand(opts); });
-orgActions.command("history").description("Show action history with receipts").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgActionsHistoryCommand(opts); });
+orgActions.command("queue").description("Show actionable promotion/demotion queue").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgActionsQueueCommand(opts); });
+orgActions.command("preview").description("Preview a policy change before applying").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target enforcement mode").action(async (opts: any) => { await orgActionsPreviewCommand(opts); });
+orgActions.command("apply").description("Apply a policy change with receipt").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target mode").requiredOption("--reason <text>", "Reason for change").action(async (opts: any) => { await orgActionsApplyCommand(opts); });
+orgActions.command("rollback").description("Rollback an applied action").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("--id <id>", "Action ID (prefix match)").requiredOption("--reason <text>", "Rollback reason").action(async (opts: any) => { await orgActionsRollbackCommand(opts); });
+orgActions.command("history").description("Show action history with receipts").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgActionsHistoryCommand(opts); });
 
-org.command("export").description("Export org data as JSON").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgExportCommand(opts); });
+org.command("export").description("Export org data as JSON").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await orgExportCommand(opts); });
+
+// Backup commands
+const backup = program.command("backup").description("Backup, export, and restore state");
+backup.command("repo").description("Back up a single repo's .taste/ and canon/").requiredOption("-r, --root <path>", "Repo root directory").requiredOption("-o, --output <path>", "Output directory for backup").action(async (opts: { root: string; output: string }) => { await backupRepoCommand(opts); });
+backup.command("portfolio").description("Back up entire portfolio state").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("-o, --output <path>", "Output directory for backup").action(async (opts: { dir: string; output: string }) => { await backupPortfolioCommand(opts); });
+backup.command("restore").description("Restore from a backup directory").requiredOption("--from <path>", "Backup directory to restore from").requiredOption("--to <path>", "Target directory to restore into").option("--dry-run", "Preview without writing").action(async (opts: { from: string; to: string; dryRun?: boolean }) => { await restoreCommand(opts); });
+backup.command("export").description("Export org state as JSON bundle").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("-o, --output <path>", "Output JSON file path").action(async (opts: { dir: string; output: string }) => { await exportStateCommand(opts); });
+backup.command("import").description("Import org state from JSON bundle").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).requiredOption("--from <path>", "JSON file to import").option("--dry-run", "Preview without writing").action(async (opts: { dir: string; from: string; dryRun?: boolean }) => { await importStateCommand(opts); });
 
 // Workbench
 program
   .command("workbench")
   .description("Start the Operator Workbench (web UI)")
-  .requiredOption("--dir <path>", "Portfolio directory")
+  .option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir)
   .option("--port <port>", "Port (default: 3200)")
   .action(async (opts: { dir: string; port?: string }) => { await workbenchCommand(opts); });
 
 // Watchtower
 const watchtower = program.command("watchtower").description("Scheduled scans and change detection");
-watchtower.command("scan").description("Run org scan and capture snapshot").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerScanCommand(opts); });
-watchtower.command("history").description("Show scan history").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerHistoryCommand(opts); });
-watchtower.command("delta").description("Show changes since last scan").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerDeltaCommand(opts); });
-watchtower.command("digest").description("Daily digest with action items").requiredOption("--dir <path>", "Portfolio directory").option("--json", "JSON output").action(async (opts: { dir: string; json?: boolean }) => { await watchtowerDigestCommand(opts); });
+watchtower.command("scan").description("Run org scan and capture snapshot").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await watchtowerScanCommand(opts); });
+watchtower.command("history").description("Show scan history").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await watchtowerHistoryCommand(opts); });
+watchtower.command("delta").description("Show changes since last scan").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).action(async (opts: { dir: string }) => { await watchtowerDeltaCommand(opts); });
+watchtower.command("digest").description("Daily digest with action items").option("--dir <path>", "Portfolio directory (or TASTE_PORTFOLIO_DIR)", defaultPortfolioDir).option("--json", "JSON output").action(async (opts: { dir: string; json?: boolean }) => { await watchtowerDigestCommand(opts); });
 
-program.parse();
+program.parseAsync().catch((err) => {
+  if (err?.code === "commander.missingMandatoryOptionValue" || err?.code === "commander.missingArgument") {
+    // Commander already printed the error
+    process.exitCode = 1;
+    return;
+  }
+  const message = err instanceof Error ? err.message : String(err);
+  console.error(`\nError: ${message}`);
+  if (process.env.TASTE_DEBUG) {
+    console.error(err);
+  } else {
+    console.error("Set TASTE_DEBUG=1 for full stack trace.");
+  }
+  process.exitCode = 1;
+});

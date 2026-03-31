@@ -73,5 +73,20 @@
     "rolled_back_at": null,
     "rollback_reason": null,
     "created_at": "2026-03-31T03:56:57.660+00:00"
+  },
+  {
+    "id": "ce47539e-71d4-4369-9d84-aa853091ff9f",
+    "kind": "promote",
+    "repo_slug": "dogfood-labs",
+    "surface": "readme_section",
+    "from_mode": null,
+    "to_mode": "warn",
+    "reason": "Dogfood: strong canon, 20 statements",
+    "evidence": "Org queue recommendation",
+    "status": "rolled_back",
+    "applied_at": "2026-03-31T04:57:09.874+00:00",
+    "rolled_back_at": "2026-03-31T04:57:17.568+00:00",
+    "rollback_reason": "Testing rollback path",
+    "created_at": "2026-03-31T04:57:09.869+00:00"
   }
 ]
