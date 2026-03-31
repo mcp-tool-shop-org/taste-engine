@@ -1,6 +1,6 @@
 {
   "name": "@mcptoolshop/taste-engine",
-  "version": "1.0.0",
+  "version": "1.0.0-rc1",
   "description": "Canon-and-judgment system for creative and product work",
   "type": "module",
   "bin": {
