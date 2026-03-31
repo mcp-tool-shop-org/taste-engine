@@ -3,3 +3,7 @@ dist/
 *.db
 *.db-journal
 .taste/
+site/.astro/
+site/dist/
+site/node_modules/
+.polyglot-cache.json

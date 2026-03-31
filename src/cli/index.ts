@@ -52,7 +52,7 @@ const program = new Command();
 program
   .name("taste")
   .description("Canon-and-judgment system for creative and product work")
-  .version("0.1.0");
+  .version("1.0.0");
 
 program
   .command("init <slug>")
