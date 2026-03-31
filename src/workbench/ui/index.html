@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taste Engine — Operator Workbench</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
+    .app { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    h1 { color: #58a6ff; margin-bottom: 8px; font-size: 24px; }
+    h2 { color: #58a6ff; margin: 24px 0 12px; font-size: 18px; }
+    h3 { color: #8b949e; margin: 16px 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .subtitle { color: #8b949e; margin-bottom: 20px; }
+    nav { display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid #21262d; padding-bottom: 12px; }
+    nav button { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    nav button.active { background: #1f6feb; border-color: #1f6feb; color: #fff; }
+    nav button:hover { background: #30363d; }
+    .card { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .badge { padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge.strong { background: #238636; color: #fff; }
+    .badge.moderate { background: #d29922; color: #000; }
+    .badge.sparse { background: #da3633; color: #fff; }
+    .badge.empty { background: #484f58; color: #fff; }
+    .badge.required { background: #da3633; color: #fff; }
+    .badge.warn { background: #d29922; color: #000; }
+    .badge.advisory { background: #238636; color: #fff; }
+    .badge.info { background: #1f6feb; color: #fff; }
+    .badge.warning { background: #d29922; color: #000; }
+    .badge.critical { background: #da3633; color: #fff; }
+    .badge.applied { background: #238636; color: #fff; }
+    .badge.rolled_back { background: #da3633; color: #fff; }
+    .badge.proposed { background: #1f6feb; color: #fff; }
+    .stats { display: flex; gap: 24px; margin-bottom: 16px; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 28px; font-weight: 700; color: #58a6ff; }
+    .stat-label { font-size: 12px; color: #8b949e; }
+    .surfaces { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+    .risk { color: #d29922; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; padding: 8px; color: #8b949e; font-size: 12px; border-bottom: 1px solid #21262d; }
+    td { padding: 8px; border-bottom: 1px solid #21262d; font-size: 13px; }
+    .action-btn { background: #238636; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; margin-right: 4px; }
+    .action-btn.danger { background: #da3633; }
+    .action-btn:hover { opacity: 0.9; }
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; }
+    .modal { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; width: 480px; }
+    .modal input, .modal textarea { width: 100%; background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; padding: 8px; border-radius: 4px; margin: 8px 0; }
+    .modal textarea { height: 80px; resize: vertical; }
+    .empty { color: #484f58; text-align: center; padding: 40px; }
+    .mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

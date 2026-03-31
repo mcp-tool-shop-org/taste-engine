@@ -7,7 +7,7 @@
     "taste": "./dist/cli/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node -e \"const{cpSync}=require('fs');cpSync('src/workbench/ui','dist/workbench/ui',{recursive:true})\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "tsc --noEmit"
@@ -19,11 +19,15 @@
   },
   "dependencies": {
     "better-sqlite3": "^11.8.1",
-    "zod": "^3.24.2",
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^22.13.14",
     "typescript": "^5.8.2",
     "vitest": "^3.1.1"

@@ -31,6 +31,7 @@ import { redirectRunCommand } from "./commands/redirect.js";
 import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from "./commands/onboard.js";
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
 import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand, orgActionsQueueCommand, orgActionsPreviewCommand, orgActionsApplyCommand, orgActionsRollbackCommand, orgActionsHistoryCommand } from "./commands/org.js";
+import { workbenchCommand } from "./commands/workbench.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -521,5 +522,13 @@ orgActions.command("rollback").description("Rollback an applied action").require
 orgActions.command("history").description("Show action history with receipts").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgActionsHistoryCommand(opts); });
 
 org.command("export").description("Export org data as JSON").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgExportCommand(opts); });
+
+// Workbench
+program
+  .command("workbench")
+  .description("Start the Operator Workbench (web UI)")
+  .requiredOption("--dir <path>", "Portfolio directory")
+  .option("--port <port>", "Port (default: 3200)")
+  .action(async (opts: { dir: string; port?: string }) => { await workbenchCommand(opts); });
 
 program.parse();
