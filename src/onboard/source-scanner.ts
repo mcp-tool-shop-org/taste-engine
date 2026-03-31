@@ -1,6 +1,14 @@
-import { readdirSync, statSync, existsSync } from "node:fs";
+import { readdirSync, statSync, existsSync, readFileSync } from "node:fs";
 import { join, basename, extname } from "node:path";
 import type { SourceSuggestion } from "./onboard-types.js";
+
+/** Rough token estimate: ~4 chars per token for English markdown. */
+function estimateTokens(path: string): number {
+  try {
+    const size = statSync(path).size;
+    return Math.ceil(size / 4);
+  } catch { return 0; }
+}
 
 /**
  * Scan a repo directory for candidate source artifacts.
@@ -87,6 +95,47 @@ export function scanForSources(repoRoot: string): SourceSuggestion[] {
   suggestions.sort((a, b) => order[a.priority] - order[b.priority]);
 
   return suggestions;
+}
+
+/**
+ * Cap source suggestions by estimated token budget.
+ * Returns the top-N sources that fit within the budget,
+ * prioritizing high-priority files.
+ */
+export function capByTokenBudget(
+  suggestions: SourceSuggestion[],
+  maxTokens: number = 8000,
+): { selected: SourceSuggestion[]; dropped: SourceSuggestion[]; totalTokens: number } {
+  const selected: SourceSuggestion[] = [];
+  const dropped: SourceSuggestion[] = [];
+  let totalTokens = 0;
+
+  for (const s of suggestions) {
+    const tokens = estimateTokens(s.path);
+    if (totalTokens + tokens <= maxTokens) {
+      selected.push(s);
+      totalTokens += tokens;
+    } else {
+      dropped.push(s);
+    }
+  }
+
+  return { selected, dropped, totalTokens };
+}
+
+/**
+ * Get recommended source tiers.
+ */
+export function getSourceTiers(suggestions: SourceSuggestion[]): {
+  top3: SourceSuggestion[];
+  top5: SourceSuggestion[];
+  full: SourceSuggestion[];
+} {
+  return {
+    top3: suggestions.slice(0, 3),
+    top5: suggestions.slice(0, 5),
+    full: suggestions,
+  };
 }
 
 function safeReaddir(dir: string): string[] {

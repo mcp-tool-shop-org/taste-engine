@@ -462,6 +462,62 @@ export async function canonFreezeCommand(opts: {
   closeDb();
 }
 
+// ── Accept All ─────────────────────────────────────────────────
+
+export async function curateAcceptAllCommand(opts: {
+  root?: string;
+  type?: string;
+  minConfidence?: string;
+  dryRun?: boolean;
+}): Promise<void> {
+  const root = resolve(opts?.root ?? process.cwd());
+  const ctx = setup(root);
+  if (!ctx) return;
+  const { db, project } = ctx;
+
+  // Find all proposed candidates across all runs
+  let sql = "SELECT * FROM extracted_candidates WHERE project_id = ? AND status = 'proposed'";
+  const params: unknown[] = [project.id];
+
+  if (opts.type) { sql += " AND statement_type = ?"; params.push(opts.type); }
+  if (opts.minConfidence) { sql += " AND confidence >= ?"; params.push(parseFloat(opts.minConfidence)); }
+
+  sql += " ORDER BY confidence DESC";
+
+  const rows = db.prepare(sql).all(...params) as any[];
+  const candidates = rows.map((r: any) => ({
+    ...r,
+    suggested_scope: JSON.parse(r.suggested_scope),
+    suggested_artifact_types: JSON.parse(r.suggested_artifact_types),
+    tags: JSON.parse(r.tags),
+    evidence_refs: JSON.parse(r.evidence_refs),
+  }));
+
+  if (candidates.length === 0) {
+    console.log("No proposed candidates matching filters.");
+    closeDb();
+    return;
+  }
+
+  if (opts.dryRun) {
+    console.log(`Would accept ${candidates.length} candidate(s):`);
+    for (const c of candidates) {
+      console.log(`  [${c.statement_type}] ${(c.confidence * 100).toFixed(0)}% — ${c.text.slice(0, 70)}`);
+    }
+    closeDb();
+    return;
+  }
+
+  let count = 0;
+  for (const c of candidates) {
+    acceptCandidate(db, c);
+    count++;
+  }
+
+  console.log(`Accepted ${count} candidate(s) into canon.`);
+  closeDb();
+}
+
 // ── Helpers ────────────────────────────────────────────────────
 
 function findCandidate(

@@ -29,6 +29,7 @@ import { repairRunCommand } from "./commands/repair.js";
 import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverrideCommand, gateReportCommand } from "./commands/gate.js";
 import { redirectRunCommand } from "./commands/redirect.js";
 import { onboardRunCommand, onboardReportCommand } from "./commands/onboard.js";
+import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -36,6 +37,7 @@ import {
   curateEditCommand,
   curateRejectCommand,
   curateDeferCommand,
+  curateAcceptAllCommand,
   curateMergeCommand,
   curateContradictionsCommand,
   curateResolveContradictionCommand,
@@ -220,6 +222,17 @@ curate
   .requiredOption("--into <statement-id>", "Target canon statement ID")
   .action(async (candidateId: string, opts: { root?: string; into: string }) => {
     await curateMergeCommand(candidateId, opts);
+  });
+
+curate
+  .command("accept-all")
+  .description("Accept all proposed candidates matching filters")
+  .option("-r, --root <path>", "Project root directory")
+  .option("-t, --type <type>", "Filter by statement type")
+  .option("-c, --min-confidence <n>", "Minimum confidence threshold")
+  .option("--dry-run", "Show what would be accepted without doing it")
+  .action(async (opts: { root?: string; type?: string; minConfidence?: string; dryRun?: boolean }) => {
+    await curateAcceptAllCommand(opts);
   });
 
 curate
@@ -458,5 +471,28 @@ onboard
   .description("Show onboarding readiness report")
   .option("-r, --root <path>", "Project root directory")
   .action(async (opts: { root?: string }) => { await onboardReportCommand(opts); });
+
+// Portfolio commands
+const portfolio = program
+  .command("portfolio")
+  .description("Portfolio intelligence across repos");
+
+portfolio
+  .command("matrix")
+  .description("Show portfolio matrix: all repos, canon state, gate readiness")
+  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .action(async (opts: { dir: string }) => { await portfolioMatrixCommand(opts); });
+
+portfolio
+  .command("findings")
+  .description("Show portfolio-level findings: drift families, patterns, gaps")
+  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .action(async (opts: { dir: string }) => { await portfolioFindingsCommand(opts); });
+
+portfolio
+  .command("export")
+  .description("Export portfolio data as JSON")
+  .requiredOption("--dir <path>", "Directory containing repo workspaces")
+  .action(async (opts: { dir: string }) => { await portfolioExportCommand(opts); });
 
 program.parse();
