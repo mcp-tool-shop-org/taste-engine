@@ -30,7 +30,7 @@ import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverr
 import { redirectRunCommand } from "./commands/redirect.js";
 import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from "./commands/onboard.js";
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
-import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand } from "./commands/org.js";
+import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand, orgActionsQueueCommand, orgActionsPreviewCommand, orgActionsApplyCommand, orgActionsRollbackCommand, orgActionsHistoryCommand } from "./commands/org.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -512,6 +512,14 @@ org.command("hotspots").description("Drift-family hotspots across repos").requir
 org.command("recommendations").description("Org-level action recommendations").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgRecommendationsCommand(opts); });
 org.command("alerts").description("Org-level alerts: promotions, demotions, spikes, enrichment").requiredOption("--dir <path>", "Portfolio directory").option("--severity <level>", "Filter: critical, warning, info").option("--category <cat>", "Filter by category").option("--repo <slug>", "Filter by repo").action(async (opts: { dir: string; severity?: string; category?: string; repo?: string }) => { await orgAlertsCommand(opts); });
 org.command("stale").description("Show stale rollout and sparse canon repos").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgStaleCommand(opts); });
+// Org actions sub-commands
+const orgActions = org.command("actions").description("Rollout action management");
+orgActions.command("queue").description("Show actionable promotion/demotion queue").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgActionsQueueCommand(opts); });
+orgActions.command("preview").description("Preview a policy change before applying").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target enforcement mode").action(async (opts: any) => { await orgActionsPreviewCommand(opts); });
+orgActions.command("apply").description("Apply a policy change with receipt").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--repo <slug>", "Repo slug").requiredOption("--surface <type>", "Artifact type").requiredOption("--to <mode>", "Target mode").requiredOption("--reason <text>", "Reason for change").action(async (opts: any) => { await orgActionsApplyCommand(opts); });
+orgActions.command("rollback").description("Rollback an applied action").requiredOption("--dir <path>", "Portfolio directory").requiredOption("--id <id>", "Action ID (prefix match)").requiredOption("--reason <text>", "Rollback reason").action(async (opts: any) => { await orgActionsRollbackCommand(opts); });
+orgActions.command("history").description("Show action history with receipts").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgActionsHistoryCommand(opts); });
+
 org.command("export").description("Export org data as JSON").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgExportCommand(opts); });
 
 program.parse();
