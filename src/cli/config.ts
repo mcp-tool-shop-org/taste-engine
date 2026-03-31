@@ -55,7 +55,7 @@ export function defaultConfig(projectSlug: string): TasteConfig {
     provider: {
       kind: "ollama",
       baseUrl: "http://127.0.0.1:11434",
-      model: "qwen3:14b",
+      model: "qwen2.5:14b",
     },
   };
 }

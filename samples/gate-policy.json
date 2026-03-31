@@ -1,0 +1,19 @@
+{
+  "canon_version": "canon-v1",
+  "default_mode": "advisory",
+  "surfaces": [
+    {
+      "artifact_type": "readme_section",
+      "mode": "warn"
+    },
+    {
+      "artifact_type": "changelog_entry",
+      "mode": "advisory"
+    }
+  ],
+  "skip_globs": [
+    "vendor/**",
+    "node_modules/**"
+  ],
+  "require_override_receipts": true
+}

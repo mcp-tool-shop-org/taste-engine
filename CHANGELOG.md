@@ -5,7 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.0.0] - 2026-03-30
+## [1.0.0] - 2026-03-31
+
+### Added (Phase 5D — Release Hardening)
+
+- `TASTE_PORTFOLIO_DIR` env var — eliminates repetitive `--dir` flags
+- `taste status` — one-liner combining org state + alerts + queue + action items
+- `taste backup repo/portfolio/restore/export/import` — complete backup/recovery system with dry-run support
+- `taste init --check` — auto-runs doctor after init
+- Graceful shutdown and port-conflict handling for workbench server
+- `TASTE_DEBUG=1` for full stack traces on CLI errors
+- RUNBOOK.md — 8-section operator reference
+- "No action items. Portfolio is healthy." message in watchtower digest
+
+### Added (Phase 6A — External Pilot + RC)
+
+- External pilot on 3 non-proving repos (CommandUI, Sensor-Humor, Registry-Stats)
+- QUICKSTART.md — complete end-to-end walkthrough
+- `samples/` — example gate-policy.json, taste.json, portfolio layout
+- PILOT-6A.md — success scorecard and RC boundary declaration
+- Default model updated from qwen3:14b to qwen2.5:14b
+
+### Fixed
+
+- Default model config now uses `qwen2.5:14b` (was `qwen3:14b` which doesn't exist)
+
+## [1.0.0-pre] - 2026-03-30
 
 ### Added
 

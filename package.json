@@ -9,6 +9,9 @@
   "files": [
     "dist/",
     "migrations/",
+    "samples/",
+    "QUICKSTART.md",
+    "RUNBOOK.md",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"

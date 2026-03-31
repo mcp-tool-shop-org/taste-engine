@@ -44,8 +44,8 @@
 
 - [x] `[all]` `verify` script exists (test + build + smoke in one command) (2026-03-30)
 - [x] `[all]` Version in manifest matches git tag (2026-03-30) — v1.0.0
-- [ ] `[all]` SKIP: Dependency scanning — no CI configured yet (manual repo, no Actions minutes)
-- [ ] `[all]` SKIP: Automated dependency updates — manual repo
+- [x] `[all]` CI workflow runs typecheck + test + build + pack on push/PR (2026-03-31) — .github/workflows/ci.yml, Node 20+22
+- [ ] `[all]` SKIP: Automated dependency updates — no dependabot unless explicitly requested
 - [x] `[npm]` `npm pack --dry-run` includes: dist/, README.md, CHANGELOG.md, LICENSE (2026-03-30)
 - [x] `[npm]` `engines.node` set (2026-03-30)
 - [x] `[npm]` Lockfile committed (2026-03-30)

@@ -35,7 +35,7 @@ describe("config", () => {
     expect(loaded).not.toBeNull();
     expect(loaded!.projectSlug).toBe("role-os");
     expect(loaded!.provider.kind).toBe("ollama");
-    expect(loaded!.provider.model).toBe("qwen3:14b");
+    expect(loaded!.provider.model).toBe("qwen2.5:14b");
   });
 
   it("taste dir is .taste under root", () => {

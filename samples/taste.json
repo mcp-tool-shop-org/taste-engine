@@ -1,0 +1,10 @@
+{
+  "projectSlug": "my-app",
+  "dbPath": ".taste/taste.db",
+  "canonDir": "canon",
+  "provider": {
+    "kind": "ollama",
+    "baseUrl": "http://127.0.0.1:11434",
+    "model": "qwen2.5:14b"
+  }
+}
