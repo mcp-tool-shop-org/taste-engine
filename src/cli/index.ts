@@ -32,6 +32,7 @@ import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
 import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand, orgActionsQueueCommand, orgActionsPreviewCommand, orgActionsApplyCommand, orgActionsRollbackCommand, orgActionsHistoryCommand } from "./commands/org.js";
 import { workbenchCommand } from "./commands/workbench.js";
+import { watchtowerScanCommand, watchtowerHistoryCommand, watchtowerDeltaCommand, watchtowerDigestCommand } from "./commands/watchtower.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -530,5 +531,12 @@ program
   .requiredOption("--dir <path>", "Portfolio directory")
   .option("--port <port>", "Port (default: 3200)")
   .action(async (opts: { dir: string; port?: string }) => { await workbenchCommand(opts); });
+
+// Watchtower
+const watchtower = program.command("watchtower").description("Scheduled scans and change detection");
+watchtower.command("scan").description("Run org scan and capture snapshot").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerScanCommand(opts); });
+watchtower.command("history").description("Show scan history").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerHistoryCommand(opts); });
+watchtower.command("delta").description("Show changes since last scan").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await watchtowerDeltaCommand(opts); });
+watchtower.command("digest").description("Daily digest with action items").requiredOption("--dir <path>", "Portfolio directory").option("--json", "JSON output").action(async (opts: { dir: string; json?: boolean }) => { await watchtowerDigestCommand(opts); });
 
 program.parse();

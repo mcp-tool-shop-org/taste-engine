@@ -1,0 +1,238 @@
+[
+  {
+    "id": "82a66a2a-517b-4e22-a2a4-eb76e7abfa8d",
+    "timestamp": "2026-03-31T04:14:51.301+00:00",
+    "repos": [
+      {
+        "slug": "dogfood-labs",
+        "name": "Dogfood Labs",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 20,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "advisory",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "advisory"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": []
+      },
+      {
+        "slug": "role-os",
+        "name": "Role-OS",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 17,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "required",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "required"
+        },
+        "override_count": 0,
+        "last_review_at": "2026-03-30T23:41:27.532+00:00",
+        "risk_flags": []
+      },
+      {
+        "slug": "multi-claude",
+        "name": "Multi-Claude",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 14,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "required",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "required"
+        },
+        "override_count": 0,
+        "last_review_at": "2026-03-30T23:27:18.192+00:00",
+        "risk_flags": []
+      },
+      {
+        "slug": "code-bearings",
+        "name": "Code Bearings",
+        "canon_confidence": "moderate",
+        "canon_version": "canon-v1",
+        "statement_count": 11,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "warn",
+          "package_blurb": "warn",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "warn"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": []
+      },
+      {
+        "slug": "repo-knowledge",
+        "name": "Repo Knowledge",
+        "canon_confidence": "moderate",
+        "canon_version": "canon-v1",
+        "statement_count": 9,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "warn",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "advisory"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": [
+          "No voice/naming"
+        ]
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "category": "enrichment_needed",
+        "repo_slug": "repo-knowledge",
+        "surface": null,
+        "title": "repo-knowledge missing voice/naming canon",
+        "description": "Gate cannot assess language alignment without voice/naming statements.",
+        "recommended_action": "Run taste extract run --passes voice_naming"
+      }
+    ],
+    "total_statements": 71,
+    "gate_ready_count": 5,
+    "promotion_ready_count": 0,
+    "override_total": 0
+  },
+  {
+    "id": "418cc5b3-3c89-4259-8654-7fd8f99ac427",
+    "timestamp": "2026-03-31T04:15:01.793+00:00",
+    "repos": [
+      {
+        "slug": "dogfood-labs",
+        "name": "Dogfood Labs",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 20,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "advisory",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "advisory"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": []
+      },
+      {
+        "slug": "role-os",
+        "name": "Role-OS",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 17,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "required",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "required"
+        },
+        "override_count": 0,
+        "last_review_at": "2026-03-30T23:41:27.532+00:00",
+        "risk_flags": []
+      },
+      {
+        "slug": "multi-claude",
+        "name": "Multi-Claude",
+        "canon_confidence": "strong",
+        "canon_version": "canon-v1",
+        "statement_count": 14,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "required",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "required"
+        },
+        "override_count": 0,
+        "last_review_at": "2026-03-30T23:27:18.192+00:00",
+        "risk_flags": []
+      },
+      {
+        "slug": "code-bearings",
+        "name": "Code Bearings",
+        "canon_confidence": "moderate",
+        "canon_version": "canon-v1",
+        "statement_count": 11,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "warn",
+          "package_blurb": "warn",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "warn"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": []
+      },
+      {
+        "slug": "repo-knowledge",
+        "name": "Repo Knowledge",
+        "canon_confidence": "moderate",
+        "canon_version": "canon-v1",
+        "statement_count": 9,
+        "gate_ready": true,
+        "surfaces": {
+          "readme_section": "advisory",
+          "package_blurb": "warn",
+          "feature_brief": "advisory",
+          "cli_help": "advisory",
+          "release_note": "advisory",
+          "naming_proposal": "advisory"
+        },
+        "override_count": 0,
+        "last_review_at": null,
+        "risk_flags": [
+          "No voice/naming"
+        ]
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "category": "enrichment_needed",
+        "repo_slug": "repo-knowledge",
+        "surface": null,
+        "title": "repo-knowledge missing voice/naming canon",
+        "description": "Gate cannot assess language alignment without voice/naming statements.",
+        "recommended_action": "Run taste extract run --passes voice_naming"
+      }
+    ],
+    "total_statements": 71,
+    "gate_ready_count": 5,
+    "promotion_ready_count": 0,
+    "override_total": 0
+  }
+]

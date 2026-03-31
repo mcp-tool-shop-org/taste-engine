@@ -94,5 +94,30 @@ export function createApi(portfolioDir: string, port: number = 3200) {
     res.json({ drift_families: families, findings });
   });
 
+  // ── Watchtower ──────────────────────────────────────────────
+  app.post("/api/watchtower/scan", async (_req, res) => {
+    const { runScan } = await import("../watchtower/watchtower-engine.js");
+    const snapshot = runScan(portfolioDir);
+    res.json(snapshot);
+  });
+
+  app.get("/api/watchtower/delta", async (_req, res) => {
+    const { getLatestDelta } = await import("../watchtower/watchtower-engine.js");
+    const delta = getLatestDelta(portfolioDir);
+    res.json({ delta });
+  });
+
+  app.get("/api/watchtower/digest", async (_req, res) => {
+    const { generateDigest } = await import("../watchtower/watchtower-engine.js");
+    const digest = generateDigest(portfolioDir);
+    res.json(digest);
+  });
+
+  app.get("/api/watchtower/history", async (_req, res) => {
+    const { getSnapshotHistory } = await import("../watchtower/watchtower-engine.js");
+    const history = getSnapshotHistory(portfolioDir);
+    res.json({ snapshots: history.slice(-20) });
+  });
+
   return { app };
 }
