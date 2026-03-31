@@ -30,7 +30,7 @@ import { gateRunCommand, gatePolicyInitCommand, gatePolicyShowCommand, gateOverr
 import { redirectRunCommand } from "./commands/redirect.js";
 import { onboardRunCommand, onboardReportCommand, onboardRecommendCommand } from "./commands/onboard.js";
 import { portfolioMatrixCommand, portfolioFindingsCommand, portfolioExportCommand } from "./commands/portfolio.js";
-import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand } from "./commands/org.js";
+import { orgMatrixCommand, orgQueueCommand, orgOverridesCommand, orgHotspotsCommand, orgRecommendationsCommand, orgExportCommand, orgAlertsCommand, orgStaleCommand } from "./commands/org.js";
 import {
   curateQueueCommand,
   curateInspectCommand,
@@ -510,6 +510,8 @@ org.command("queue").description("Promotion and demotion queue").requiredOption(
 org.command("overrides").description("Override hotspot analysis").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgOverridesCommand(opts); });
 org.command("hotspots").description("Drift-family hotspots across repos").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgHotspotsCommand(opts); });
 org.command("recommendations").description("Org-level action recommendations").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgRecommendationsCommand(opts); });
+org.command("alerts").description("Org-level alerts: promotions, demotions, spikes, enrichment").requiredOption("--dir <path>", "Portfolio directory").option("--severity <level>", "Filter: critical, warning, info").option("--category <cat>", "Filter by category").option("--repo <slug>", "Filter by repo").action(async (opts: { dir: string; severity?: string; category?: string; repo?: string }) => { await orgAlertsCommand(opts); });
+org.command("stale").description("Show stale rollout and sparse canon repos").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgStaleCommand(opts); });
 org.command("export").description("Export org data as JSON").requiredOption("--dir <path>", "Portfolio directory").action(async (opts: { dir: string }) => { await orgExportCommand(opts); });
 
 program.parse();

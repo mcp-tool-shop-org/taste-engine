@@ -8,6 +8,7 @@ import {
 } from "../../org/org-engine.js";
 import { detectDriftFamilies } from "../../portfolio/portfolio-engine.js";
 import { discoverRepos } from "../../portfolio/portfolio-engine.js";
+import { generateOrgAlerts, filterAlerts } from "../../org/org-alerts.js";
 
 export async function orgMatrixCommand(opts: { dir: string }): Promise<void> {
   const statuses = buildOrgStatus(resolve(opts.dir));
@@ -111,6 +112,64 @@ export async function orgRecommendationsCommand(opts: { dir: string }): Promise<
   }
 }
 
+export async function orgAlertsCommand(opts: { dir: string; severity?: string; category?: string; repo?: string }): Promise<void> {
+  const dir = resolve(opts.dir);
+  const statuses = buildOrgStatus(dir);
+  let alerts = generateOrgAlerts(statuses, dir);
+
+  alerts = filterAlerts(alerts, {
+    severity: opts.severity as any,
+    category: opts.category,
+    repo: opts.repo,
+  });
+
+  if (alerts.length === 0) { console.log("No alerts."); return; }
+
+  const icons = { critical: "[!!]", warning: "[!]", info: "[~]" };
+
+  console.log("=== Org Alerts ===");
+  for (const a of alerts) {
+    console.log(`  ${icons[a.severity]} [${a.category}] ${a.title}`);
+    console.log(`    ${a.description}`);
+    console.log(`    Action: ${a.recommended_action}`);
+    console.log();
+  }
+
+  const critCount = alerts.filter((a) => a.severity === "critical").length;
+  const warnCount = alerts.filter((a) => a.severity === "warning").length;
+  const infoCount = alerts.filter((a) => a.severity === "info").length;
+  console.log(`${alerts.length} alert(s): ${critCount} critical, ${warnCount} warning, ${infoCount} info`);
+}
+
+export async function orgStaleCommand(opts: { dir: string }): Promise<void> {
+  const statuses = buildOrgStatus(resolve(opts.dir));
+  const alerts = generateOrgAlerts(statuses, resolve(opts.dir));
+  const stale = filterAlerts(alerts, { category: "stale_rollout" });
+  const sparse = filterAlerts(alerts, { category: "sparse_canon" });
+
+  if (stale.length === 0 && sparse.length === 0) {
+    console.log("No stale or sparse repos.");
+    return;
+  }
+
+  if (sparse.length > 0) {
+    console.log("=== Sparse Canon ===");
+    for (const a of sparse) {
+      console.log(`  ${a.severity === "critical" ? "[!!]" : "[!]"} ${a.title}`);
+      console.log(`    ${a.recommended_action}`);
+    }
+    console.log();
+  }
+
+  if (stale.length > 0) {
+    console.log("=== Stale Rollout ===");
+    for (const a of stale) {
+      console.log(`  [~] ${a.title}`);
+      console.log(`    ${a.recommended_action}`);
+    }
+  }
+}
+
 export async function orgExportCommand(opts: { dir: string }): Promise<void> {
   const dir = resolve(opts.dir);
   const statuses = buildOrgStatus(dir);
@@ -119,5 +178,6 @@ export async function orgExportCommand(opts: { dir: string }): Promise<void> {
   const hotspots = buildOverrideHotspots(dir);
   const recs = generateOrgRecommendations(statuses, promotions, demotions);
 
-  console.log(JSON.stringify({ statuses, promotions, demotions, hotspots, recommendations: recs }, null, 2));
+  const alerts = generateOrgAlerts(statuses, dir);
+  console.log(JSON.stringify({ statuses, promotions, demotions, hotspots, recommendations: recs, alerts }, null, 2));
 }
