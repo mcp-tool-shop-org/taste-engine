@@ -1,35 +1,40 @@
 # taste-engine: how it works
 
-Mapped at 2026-09-24 from commit ac181ee.
+Mapped at 2026-09-30 from commit 00527bb by Atlas 1.24.0.
 
 ## What this is
 
-11 parts, mostly TypeScript (142 files). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. People run taste.
+11 parts, mostly TypeScript (142 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.
 
-## What changed since the last map
+## What changed since 2026-09-24 (ac181ee)
 
-This is the first map.
+- CI's pull request trigger now also names `codecov.yml`.
+- CI's push trigger now also names `codecov.yml`.
+- migrations/ is now read by src/db/migrate.ts.
+- src/workbench/ui/app.js is now read by src/workbench/ui/index.html.
+- canon was generated and is now authored.
+- 1 file added and 235 changed content, across 10 parts.
 
 ## What comes in
 
-1. **CI.** On a pull request touching 11 paths; on a push to main touching 11 paths; or by hand. Runs test/; checks src/.
+1. **CI.** On a pull request to main touching 12 paths; on a push to main touching 12 paths; or by hand. Runs test/; builds src/.
 2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
 3. **taste** (a command people run). Runs src/cli/index.ts.
 
 ## What happens through CI
 
-1. The workflow runs test/ in test; it checks src/ in src.
-2. It writes to canon/.
+1. The workflow runs test/ in test; it builds src/ in src.
+2. It uploads coverage to Codecov.
 
 ## Who reads the results
 
-Only CI itself reads what it writes.
+CI writes nothing this map can see.
 
 ## The other doors
 
 **Deploy site to GitHub Pages** runs site/astro.config.mjs and site/src/, and deploys the site.
 
-**taste** (a command people run) runs src/cli/index.ts and writes to canon/.
+**taste** (a command people run) runs src/cli/index.ts.
 
 ## What breaks what
 
@@ -39,7 +44,7 @@ Only CI itself reads what it writes.
 
 No two source files changed together often enough to name.
 
-Window: 180 days; a pair counts from 3 shared commits, since 1 source file reaches 10 revisions; the floor rises to 10 when 25 do.
+Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits.
 
 ## What no test touches
 
@@ -47,7 +52,7 @@ Every code part is imported by at least one test.
 
 ## Written but never read
 
-- **canon/** is written by src/backup/backup-engine.ts and read by nothing else in this repository.
+No place this map can see is written, so none goes unread.
 
 ## Helpers that look duplicated
 
@@ -55,23 +60,24 @@ No two parts export a helper that looks alike.
 
 ## Generated, never hand-edited
 
-- **canon/** is written by src/backup/backup-engine.ts.
+Nothing in this repository writes to a tracked place this map can see.
 
 ## Hand-authored
 
-People write .claude/, .github/, docs/, migrations/, proving/, the repository root, samples/ and site/; 14 writes with paths built at run time may land here.
+People write .claude/, .github/, canon/, docs/, migrations/, proving/, the repository root, samples/ and site/. Nothing in this repository writes to them.
 
 ## Where to start
 
-.github/workflows/ci.yml → test/backup/backup-engine.test.ts → src/backup/backup-engine.ts
+.github/workflows/ci.yml → src/cli/index.ts → src/cli/commands/init.ts → src/cli/config.ts → src/core/types.ts → src/core/enums.ts
 
 Read those in order to follow one pull request end to end.
 
 ## What this map cannot see
 
-- 14 writes and 44 reads use paths built at run time and are not named here.
-- 1 write and 6 reads go to the directory the command is run in, the home directory or a path its caller passes, not to this repository.
+- 7 reads use paths built at run time and are not named here.
+- 15 writes and 73 reads go to a path their caller passes, not to this repository.
+- 4 writes and 13 reads go to the directory the command is run in or a path their caller passes, not to this repository.
 - 1 command is built at run time and not followed.
-- Statistics confidence is low: fewer than 20 source files reach 10 revisions in the window.
+- Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions.
 
 Regenerate with `npx --yes @dogfood-lab/atlas map`.
