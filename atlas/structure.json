@@ -9,7 +9,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "6cd6bb4ed8d9cf14949904770acf3cae81699b3cae6ec3d912d8194b0dd5c5a1",
+          "hash": "22838bcb1871863573350faf04d637dcae2b36e413ca2433558537017ba281a1",
           "path": ".claude/launch.json"
         }
       ],
@@ -32,11 +32,11 @@
       "externals": 0,
       "files": [
         {
-          "hash": "47a5c30a1a7a979862fc69127977933eb72155ed255b92f5d3dfc0f27e128d62",
+          "hash": "077b05a3ea90fccdc87c72c68643d15aa8e0135599f690a3a65411b30e61da76",
           "path": ".github/workflows/ci.yml"
         },
         {
-          "hash": "4eb81eeb113bdba84a09846e4b80ab63d20507cb41935566c110e37f99afe899",
+          "hash": "93dc62c74dfddae3a1dc3291b236a3e266cc0f9963100f2967357b3f3833b310",
           "path": ".github/workflows/pages.yml"
         }
       ],
@@ -68,7 +68,7 @@
       ],
       "importConfidence": "full",
       "name": "canon",
-      "origin": "generated",
+      "origin": "authored",
       "role": "config",
       "testedBy": 0,
       "unresolvedSites": 0
@@ -82,7 +82,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "e0012e3893020fd267888a06b4eeaafa63bf0dc220e30a986b37b31f8f42c39c",
+          "hash": "1a30aec2ce3c5192b2fd64a1e6f980a34ada9c45f404e259b515cfbafbc22d93",
           "path": "docs/PROMOTION-DOCTRINE.md"
         }
       ],
@@ -105,23 +105,23 @@
       "externals": 0,
       "files": [
         {
-          "hash": "41c2fa114e0855d8554af88e79dd5215fdaf8d3af3b5fe8c162094956c8fe515",
+          "hash": "e08c41a46a69920f6d88b4bb0d0dc21f19bddf644c1d73b56c9d2c756da62404",
           "path": "migrations/001_init.sql"
         },
         {
-          "hash": "d04c0abe7ba47eff691d7d59d1cecf54ce6fb4190a387bbf8f8db8559e941ba0",
+          "hash": "9b497a606bf0d54294255111c97f775204dfdf6cd882a7ef225517e29889c523",
           "path": "migrations/002_extraction.sql"
         },
         {
-          "hash": "207586d882d17b203c58010e423afe120e0351c0eb4fc11b42f337c809a2941b",
+          "hash": "4a5d7d626636195124f1a1cf3668be17048f7cf1c6783db5473a6ca32bd5c6a9",
           "path": "migrations/003_curation.sql"
         },
         {
-          "hash": "cc0704dbff299279fee92f2888c03413a90282d5adc5f9f9092509854ba6b1d8",
+          "hash": "37ac07dc7d75d9f17fa54b5557c8038c7f6163762334eb4aeb6f9aa18f414fba",
           "path": "migrations/004_review.sql"
         },
         {
-          "hash": "7f7a72384553b63a81bd463fe7989d7c539dc3d9c6bec5117201006f7c5dd085",
+          "hash": "696d86a355370d31fc2f40fc4e51720ed83acb3c455adc54483145ee3e96ea19",
           "path": "migrations/005_calibration.sql"
         }
       ],
@@ -144,23 +144,23 @@
       "externals": 0,
       "files": [
         {
-          "hash": "6b3c4b71aa4e02d57db72cd5b8cf3111c37705ef1dcd8302ef1fe16a2e411c2c",
+          "hash": "9eb22943c8985b05ebdf69cbbe1e29c42e3bf5c4f2adb33e36e740faefe266d6",
           "path": "proving/DOGFOOD-5D.md"
         },
         {
-          "hash": "3b1d3383778f23d478499a7cc02303b736ca8d53a61cc4641c03ac765f784d93",
+          "hash": "421fce34829e4420fa992895cd432af1bc547da266112394b81c9d8e8c4f5e60",
           "path": "proving/PILOT-6A.md"
         },
         {
-          "hash": "4086dfbef115d6cef8f7297c8a1f4fdb99faad9f0f598a51ac9f69257bab7ac6",
+          "hash": "4e543f03366cd276d443dc69b548ac599849e6ee5e03665260679dcbeb21840c",
           "path": "proving/bulk-accept.cjs"
         },
         {
-          "hash": "6e5d30a1f33307a2e8010641e299388c8c1dbe14a1b4b21ca3beb174ac2c0c92",
+          "hash": "3b24fe903d4639ce669d0ebdd967720e62be2997c9f62d6ce98f4e5b94ad7817",
           "path": "proving/code-bearings/canon/code-bearings-canon-v1.json"
         },
         {
-          "hash": "1539de6d362c459d0327fb9a115433f51f03e4a79b3b3dc089b1445e91214766",
+          "hash": "e73f8e42dcd552e1eb9f608690ece1156d73a3c0b99cd9e3d56ff7600a8bdda0",
           "path": "proving/dogfood-labs/canon/dogfood-labs-canon-v1.json"
         },
         {
@@ -168,11 +168,11 @@
           "path": "proving/multi-claude/artifacts/ma1-aligned-blurb.md"
         },
         {
-          "hash": "d044f1ace46cd4d52568b451b5ca25511af32515862c9e5cd213ffed8953450f",
+          "hash": "8db7eb97602c5ca57419b80129fd117ec6cb3ec4a051b9ab35ffcbf0565f88e4",
           "path": "proving/multi-claude/artifacts/ma2-aligned-feature.md"
         },
         {
-          "hash": "80fcbbb8e9c0d5a7b87dcf3d04334c4b162535005827d726def2b3c5984979ec",
+          "hash": "68ffeb4db82d6e1712c6c4fa632df07cce6062ee351f64d250b1e2d232840a00",
           "path": "proving/multi-claude/artifacts/ma3-aligned-release.md"
         },
         {
@@ -180,15 +180,15 @@
           "path": "proving/multi-claude/artifacts/mb1-salvageable-blurb.md"
         },
         {
-          "hash": "c9c1ad4b8c8d082245d40bc933de968cddf90a34dc38f62a7cf3e8c9d4ad96b0",
+          "hash": "a4fbdaf0519c345b031b3b7d1a52dd3674e2f85ea4b8abf1af43d1bc95630554",
           "path": "proving/multi-claude/artifacts/mb2-salvageable-feature.md"
         },
         {
-          "hash": "0abf3591e77a3bdd7e21fda9b097711abd15fc0e33fc046b01c27efc6b439296",
+          "hash": "abce040f80d310281a21c8db82c739824b1690e761718e83a083e139bfeb4801",
           "path": "proving/multi-claude/artifacts/mb3-salvageable-readme.md"
         },
         {
-          "hash": "f7b70c69dedf65859ac66e1147bec0bf79f157196349308ba52e3149d6079427",
+          "hash": "0cf123916de508565f70174c30cc748ead40e36abd333290eeaddf4bc4b74cdc",
           "path": "proving/multi-claude/artifacts/mb4-salvageable-cli.md"
         },
         {
@@ -196,31 +196,31 @@
           "path": "proving/multi-claude/artifacts/mc1-harddrift-blurb.md"
         },
         {
-          "hash": "76cfe556bbe48d10c12a6f3b7745f0afdd3bed23c0c95b8e1a835835ed1807f9",
+          "hash": "e8eb26bb8d6c753c9a71d1a2a6ee2fb2733d50efce36df814f898f2bb722325a",
           "path": "proving/multi-claude/artifacts/mc2-harddrift-feature.md"
         },
         {
-          "hash": "a667ee5b1c1cef5d18076ca344aedf68147b0496d1d5fe8462caec22dfdc52e3",
+          "hash": "c423d6a16e852c90596e15b75c55ad87a663d4e4fc90219daa90324311d47825",
           "path": "proving/multi-claude/artifacts/mc3-harddrift-readme.md"
         },
         {
-          "hash": "aa2bbe84d897dace464130ace26d51ff5233f37925652b51bafe7cf7b99c8c06",
+          "hash": "fc2c64c60345014bee220f9306c6b431ed7603f350a4eaa0080e75d9cff2bc73",
           "path": "proving/multi-claude/artifacts/structural/s2-autonomous-swarm.md"
         },
         {
-          "hash": "d06c73c81be457b55eee1342b1452635f4ced80714275b90a4b5e9219751c232",
+          "hash": "aabd330044b90ed59bf60fbb91e65cda1b6400fb419073ccbbc411ec4373bac9",
           "path": "proving/multi-claude/canon/multi-claude-canon-v1.json"
         },
         {
-          "hash": "d74ee93f8a6ccbe772b4397719ff1833cfbdeac571bdcdfb433fd080cf873e7a",
+          "hash": "0d66e084b7750ef775496b4543e10ca9ad10f7b0d3be0d456f54327a50e2405f",
           "path": "proving/multi-claude/run-trial.sh"
         },
         {
-          "hash": "22df664ca3f292171b006cc1699ce48e1562bbd3b535b278c16f8389b0d30c02",
+          "hash": "6ccd263c2404e7b42f1146c167066569ca8b7818429c75439735ad9ce061e699",
           "path": "proving/org-actions.json"
         },
         {
-          "hash": "b4c452eee51fcd84823399087fb89efd34a044a0d471bba64732e6604b27654f",
+          "hash": "60b63aad1ee6da9a0a31a0e826ed8ae615dbd4b52035172c74f1a1ae3fe2a49a",
           "path": "proving/repo-knowledge/canon/repo-knowledge-canon-v1.json"
         },
         {
@@ -228,19 +228,19 @@
           "path": "proving/role-os/artifacts/aligned/a1-package-blurb.md"
         },
         {
-          "hash": "bacf5753c752a3a568d29645a25f1bcbfe770082696e333cf81c7772020e358d",
+          "hash": "336c51f800187769e48c3b27d8ca3095ecf0311404266a9e4ffa1c09e9641ef5",
           "path": "proving/role-os/artifacts/aligned/a2-readme-section.md"
         },
         {
-          "hash": "3a450f9526d14a6cf6582e6b552c57d9b8fa04bca852a72cdcaeef861e427a4c",
+          "hash": "b0601a0e3bd0f5cd57291d28c963b52a67da171ea8f31bd2a03215050ad52531",
           "path": "proving/role-os/artifacts/aligned/a3-cli-help.md"
         },
         {
-          "hash": "5f5e2676e84861c013ae63776f9cdef792e9519115d0ff38255cba5701dc3227",
+          "hash": "2272ab6c14be3148d4db9c8b1973333cfd51259b5a63f0ad0a60eb0bb8ec862a",
           "path": "proving/role-os/artifacts/aligned/a4-feature-brief.md"
         },
         {
-          "hash": "29695936335b9ec35eb289aace19753db96d0d85cd659f15b2233b69a8c53d04",
+          "hash": "ae354a141ded96be635fbf396e34b71b75d17968ea80eea08e077e84aa6106cf",
           "path": "proving/role-os/artifacts/aligned/a5-release-note.md"
         },
         {
@@ -252,27 +252,27 @@
           "path": "proving/role-os/artifacts/calibration/cal2-b1-boundary.md"
         },
         {
-          "hash": "e933cce93ec45e73f07c6b59be7342088d8b87a51c9dfd9098e22d977c87ea33",
+          "hash": "51d942a0931994324b1e3763765e2a01157c9e26ade4712617dbee4a5f0684d1",
           "path": "proving/role-os/artifacts/calibration/cal3-b6-boundary.md"
         },
         {
-          "hash": "b02fc7fd7f8736d50d0cd3d3b59864e41fa2cb4cc0e382e998fb11e4cc40bfca",
+          "hash": "21999156a3998cb6c42b1fa290025b9d20fdd10b5b9e29eeaab8b75730af1d77",
           "path": "proving/role-os/artifacts/calibration/cal4-b6-boundary.md"
         },
         {
-          "hash": "ceddef9b5304b0881c0a7c75418b95f07740b5b90bda33b712a8cdff02e0cfc0",
+          "hash": "78d370b520386ad7b5e67c8ac59dcbdf459e258ca3c90caf5c535a521a68a6bd",
           "path": "proving/role-os/artifacts/calibration/cal5-c3-boundary.md"
         },
         {
-          "hash": "153cbf51db71e3d6135c17eeeba32efa6b56236b861629e5ee41c44e33ff8d01",
+          "hash": "f90067ac410367c9d100fdda0a6d120062ef5e97186feab72e20bd6b558853d4",
           "path": "proving/role-os/artifacts/calibration/cal6-c3-boundary.md"
         },
         {
-          "hash": "f0a3fcd44f0b4fbe3f12df580c03b2f25ddc3f3b1b9cd6c0a0dd5bb6f8c6fcc8",
+          "hash": "6123978f947379561357f9556e80315f81c8dc1ab22d85142356f3f274de6384",
           "path": "proving/role-os/artifacts/calibration/cal7-aligned-novel.md"
         },
         {
-          "hash": "8108849552aeb0a524d688fe88231ffca97e1df7dd32d4c24cfca551407b861e",
+          "hash": "89d79e8505ffa13106ee5dd6ef5dd8158d83fc9cc1fbbd84d266b666f247245e",
           "path": "proving/role-os/artifacts/calibration/cal8-aligned-novel.md"
         },
         {
@@ -280,15 +280,15 @@
           "path": "proving/role-os/artifacts/hard-drift/c1-package-blurb.md"
         },
         {
-          "hash": "d853cfa37ccac13486e4dcd4cbc21875fb971272b65ce0b69c4819507d54042a",
+          "hash": "ac31af110895e133a810b8b307f4a6e6d1a3b7deaa138680f462a6ca2078907f",
           "path": "proving/role-os/artifacts/hard-drift/c2-feature-brief.md"
         },
         {
-          "hash": "e46e3c323f70a19c383930f9a79a882fe7be820ef0dba9bf086607c03944b5b3",
+          "hash": "1ba0cc9533fab3e9b4b6617665ef71e66c0a35fd43d62427e85d0287aab676fc",
           "path": "proving/role-os/artifacts/hard-drift/c3-readme-section.md"
         },
         {
-          "hash": "9f67ad68197eae413354101a6b246a616f7b3d41048b337e152868163b431d00",
+          "hash": "57b3e228047f475b53bb3a8ea7e23a3772657f39043a7d3a6fdeed2445986368",
           "path": "proving/role-os/artifacts/hard-drift/c4-naming-proposal.md"
         },
         {
@@ -296,63 +296,63 @@
           "path": "proving/role-os/artifacts/salvageable/b1-package-blurb.md"
         },
         {
-          "hash": "2db9c588140af488dd9a3476a7d32b9dd495ccdb6b9d4e24da788c42029f8505",
+          "hash": "73f2789b8c15cf29ce2f514280fe5c7f9c6f1ccaf8f32fc2dbc043e3431dfb62",
           "path": "proving/role-os/artifacts/salvageable/b2-feature-brief.md"
         },
         {
-          "hash": "2c5087e912deaac1ccf39538af39b35d4b30d90b268209fa2f09f609e6b3c401",
+          "hash": "5f6282d34187b72e720cda54b50909c931eb1c9e30b51854685c51c3ec4a7090",
           "path": "proving/role-os/artifacts/salvageable/b3-readme-section.md"
         },
         {
-          "hash": "a75398006a02bdb41427ac6839546f3e1055bf1335fa8c87545933ea128be714",
+          "hash": "5cbc87efdc66fb43f078cdd9d056f2b32589f549ffa624c4c36b41ba0d6f9c57",
           "path": "proving/role-os/artifacts/salvageable/b4-cli-help.md"
         },
         {
-          "hash": "6543b17d12aba45351c76d8282b8d53e7f8fc18a9a73a88c74fd53b2db8eebcc",
+          "hash": "4f357b65d51a0d28fae468fe94feb7686b6cbb32c4cf801cb872244e1dc6050d",
           "path": "proving/role-os/artifacts/salvageable/b5-release-note.md"
         },
         {
-          "hash": "7bb09199fab3506d600bcad0876492d0c5fad38e315e46aa0db158b90a5c0223",
+          "hash": "2f58849ba8f29705a3d361dd3b0059a051fd6f7989c00aa0eb06cc985a0ac40f",
           "path": "proving/role-os/artifacts/salvageable/b6-naming-proposal.md"
         },
         {
-          "hash": "6a58a3f144cffc20b31489fc12368c711de20cebaa4d066f1f99ade2a4af3649",
+          "hash": "889564b0a010f148914a1c5c63dd69287064a41a8c0722048574c98784a0c7e4",
           "path": "proving/role-os/artifacts/structural/s1-persona-routing.md"
         },
         {
-          "hash": "c0a682388187264c9e676cd93e1b5ccd337f1e4af2aa091bd170a0522a2978cc",
+          "hash": "ea63e5d955ebc0cf2e23c6431444c4de10af01bed19f2543e1dabcc30f342212",
           "path": "proving/role-os/artifacts/structural/s3-approachable-onboarding.md"
         },
         {
-          "hash": "47523305f39123626b597369ea1955123d4fb486253cdcc3a68145b581f7b6fd",
+          "hash": "bad3fad4c36470a89bc8a16b124120171f5df2c38448bceab3c91fd6fccd70b3",
           "path": "proving/role-os/canon/role-os-canon-v1.json"
         },
         {
-          "hash": "3b0dbfc8c8091e0a303bad91d171b59896b8fc6974293fe32052bd697b1f6c94",
+          "hash": "7e638f865c6596bd54aadd91cc609694e1db451561355316ef8e51f499bda37f",
           "path": "proving/role-os/run-batch.sh"
         },
         {
-          "hash": "0ac1ab672db7a8b7734c565b7f29f57405bdfdec811acaf0242acc82ea94b130",
+          "hash": "84b9df5ffa45f27bcde8ef294778f442fe78ca763dfd9e20b6552cc75112e3d7",
           "path": "proving/role-os/run-calibration.sh"
         },
         {
-          "hash": "b0945fa441543736b79d0c8f17581be7527f193118ec7876abe6259c2e2d6e2e",
+          "hash": "00495e93e1868b5114fb5ec6d4e3a249de281d1d10dfef0ffea7b1168ef27e20",
           "path": "proving/run-3b-rollout.sh"
         },
         {
-          "hash": "c8ea8a29cff5b9449a980187b50ba9975d357cd5921bd8c64e182168a3619722",
+          "hash": "86857120dd5df7ef6f5b57d028cc0cdd1e266e67624825f5b0fb3a92dba40809",
           "path": "proving/run-repairs-only.sh"
         },
         {
-          "hash": "17706e8bca51530f388d2179a546cfc5953bf4c4d141eb5eab967fd51c0c6e6a",
+          "hash": "6ec62825eaa7939bffd4715a3eafe33fbf278481060e77de36d3ea6c8522d172",
           "path": "proving/run-revisions.sh"
         },
         {
-          "hash": "44169cfe3ea79e76b146f84064faf078890176aa61a4631fe7fd4abad6602722",
+          "hash": "e901509915b2cf6b01e91607a1e64f762082ae5b6b6e9eb42899c118c28d153c",
           "path": "proving/run-structural.sh"
         },
         {
-          "hash": "df0ad6af7d06b6b0e9c87d20af2d11655cc111bb266b9f74936837d693c65746",
+          "hash": "bae461cefab71040c521a236ce5d0f63a3494d5ef1c67c38f3ceab3b29ae547d",
           "path": "proving/watchtower-snapshots.json"
         }
       ],
@@ -375,83 +375,87 @@
       "externals": 0,
       "files": [
         {
-          "hash": "65a0167720a91b088b768e433ee1cfaa490ae237c45403820dd320a215e2b51b",
+          "hash": "2c6765bf88dcde22a34d56b3e7545885c3955e47ab702f39d2716e991221e19f",
           "path": ".gitignore"
         },
         {
-          "hash": "2512379a75fea7c2015c355cc4b807fea9f7b9656e621ac40e563a91f70bd1b2",
+          "hash": "e4389a612ca1740d4f8079e0c45975908806c478a640635ae80ec9a1b8a10873",
           "path": "CHANGELOG.md"
         },
         {
-          "hash": "5ae6b3c8f446f0a7cb95176e4dadb91b68aaffb16b3be09f64f5de248b6a973a",
+          "hash": "367e5141e4f5884e5791c4021f33a9faa958840a5decf44e1b273a87aad1c459",
           "path": "LICENSE"
         },
         {
-          "hash": "0c9d67480383b2b131a1bd7ba82d66b63e13c2da79a8420cca0edeec914d4ac3",
+          "hash": "d9b058d1682caa8a94d18297c4644ba0fe2fd17692667f41f68733f5ba3cefd2",
           "path": "QUICKSTART.md"
         },
         {
-          "hash": "3c0c83f0d266ed8a91bb8c91ea6cf511e6c11272d4e4356f9a189b1653c8857a",
+          "hash": "75c748a2f3cc5c615231d26b9cf712065936d7483b278f95bfe3e2032f098026",
           "path": "README.es.md"
         },
         {
-          "hash": "d8b6e380df019439fbd54efccfa25eb31af108931be644f9b7d4bf7f522a736a",
+          "hash": "bec3c33ebabd3cbc3a290a6353366015eb9ec47d3321914a462a53909c9ea6df",
           "path": "README.fr.md"
         },
         {
-          "hash": "1aab2a8bdab9c032503da733a2666af4b0724588850814a187bc03ef3d0d2fc6",
+          "hash": "70a099d04f4a6d516059f7ab2735613975b3062bfcc7cd4b437d3965c3e561cd",
           "path": "README.hi.md"
         },
         {
-          "hash": "e493cb623ee83ad2996bbedcb93658102ffebb315f43a8d46b81c7c4e9dde808",
+          "hash": "373715b42e25e6a93d62bf8ffedc9bcf147681ed784e592d946d6c3592936d0c",
           "path": "README.it.md"
         },
         {
-          "hash": "77b62a0c0eaf6f936d3b78f75b4181aa5de7077cbd74b345ac0852d0e286264e",
+          "hash": "ce0f49d3dd593cdf6e4bf1f6cd5433d1d623cf6f2763bad540fc3abaed619365",
           "path": "README.ja.md"
         },
         {
-          "hash": "a943015311652a85f86dfad3e8bbb22495674f2c480d28bc50178ad01114861d",
+          "hash": "cf0f900b667bc9baf8993b35844629f67386e4d94f1a05f9d653fa3f01826294",
           "path": "README.md"
         },
         {
-          "hash": "051674da321ade53476f2824019f87e184f769dc2ff6fe8105b02ce29023b53d",
+          "hash": "e6d4bd8a5e0d966dce6826a1261301e826600ea276ad8850304aa34cd7bd98da",
           "path": "README.pt-BR.md"
         },
         {
-          "hash": "1deb79345f158aaf1f2f4092b0f24385ca5e5fac05458c0fb67e82d3af54d631",
+          "hash": "d55338907004dc651731a9350c5209acb7f1d6bea2fb6eac54f532405cddb405",
           "path": "README.zh.md"
         },
         {
-          "hash": "be036708bf784d173af572a0a8e67a3d12a85f007c7efcfaf299f7beffe5acb7",
+          "hash": "cf6b54ac9523330f94f9424cd9b6b8b80a394c926d37165d54e813601ac12f56",
           "path": "RUNBOOK.md"
         },
         {
-          "hash": "3c97799787538a61aed96675d7e9a21bf189a77e9bd7afa414113c5aa7840dfc",
+          "hash": "b00fe74cf255d8d6944fb5374a73f2502e777569e36e2d5f52656be9af010c32",
           "path": "SCORECARD.md"
         },
         {
-          "hash": "32c0942db22b709c80be5b4ca1ff79e30037c3f7cff9037fb49d7034d127f1c1",
+          "hash": "b8cf3c4da090dc1ddcf813bc6810f85c636295cf2fc678bbc066851f5cddd2fd",
           "path": "SECURITY.md"
         },
         {
-          "hash": "e7494b2d5cd9d853eaad261c59a328477b62c39faabfcfee2831bf4eca4a5ed5",
+          "hash": "4b9098cd6fa24efd70cd40613ca65ffbe222b62bb1eb4e182d6bd81a553ceab1",
           "path": "SHIP_GATE.md"
         },
         {
-          "hash": "bed4a5db1bd6a6f06f9ca33419bff7ea2bd613274d4860cfdf139c7be5542611",
+          "hash": "59ca3f6a5be96b80fee73bebf2b778211208d17cd3fb82e2134608dff0729c76",
+          "path": "codecov.yml"
+        },
+        {
+          "hash": "54c5b25d2ca1136dd742342dc767e2553ace0d184b8b9b0e532ccba498877264",
           "path": "package-lock.json"
         },
         {
-          "hash": "a485f0ecf299ea6170c77f73b6cc44f34ad7edce215f3f090e7088fe38c518b2",
+          "hash": "3c2000f1155a8819b94482abfb3e6e3779f51cb335600f093285a686a6d52292",
           "path": "package.json"
         },
         {
-          "hash": "fc78f5f648d659e3ecdb7098539906e9e58cb2c0f59bb9fba043d056904fc84a",
+          "hash": "cda1c4d8382105e58e9d18c6bb9ec106b7f4febf37d1a3c409e5006ad8bf1d3c",
           "path": "tsconfig.json"
         },
         {
-          "hash": "b4202406eb8c8b21dd38473abef2f5c9d0fd7b1aecab75c2de5e5a26e2ba0603",
+          "hash": "a103b7e8048cf6ec0740f85c52ef9ffe91d4b70fb49a6c5ce85afd7298ad74d1",
           "path": "vitest.config.ts"
         }
       ],
@@ -462,7 +466,8 @@
       "name": "root",
       "origin": "authored",
       "role": "config",
-      "testedBy": 0,
+      "testedBy": 1,
+      "testedByScript": true,
       "unresolvedSites": 0
     },
     {
@@ -474,15 +479,15 @@
       "externals": 0,
       "files": [
         {
-          "hash": "8886b6977b7eb3566ccfc7b18b6eadcc93328c9c175c1b8eb3db074a36abbafb",
+          "hash": "9c849bfd894b8cfb819b54f84022d92e78eb53a77a12abb61a737a29a7f0828a",
           "path": "samples/gate-policy.json"
         },
         {
-          "hash": "2b07ac506c51dcb6f5890701478035e1c308e432e8f3db24e562e517dab12969",
+          "hash": "f503b25960273648e59fdc82b70c26d621874e28e3d3d45a9b955f4b4cb57756",
           "path": "samples/portfolio-layout/README.md"
         },
         {
-          "hash": "50e817b1a9cbef2591cad33544d54c08f3fed0e42b3dff7c7303f9d9afe512cf",
+          "hash": "c057abac9f15ff6496c95797b85a64786893f735a18ccd9a06d9d08b34d45907",
           "path": "samples/taste.json"
         }
       ],
@@ -505,71 +510,81 @@
       "externals": 0,
       "files": [
         {
-          "hash": "2fefe9fa9718b674ca737424df363002a4280bce5d4c96844e0199a66e1f5465",
+          "hash": "528dec1d0d71f4d45fb24b533a53a22439e24fadd5b782f298066febcf276f89",
           "path": "site/astro.config.mjs"
         },
         {
-          "hash": "b5578baf42cab82e5e7b451b6992cb929aeb6ff8d02d8e11ab690e6f67fea144",
+          "hash": "af5d4f54dca60686724d306eb58759fb25b6f5ba4d66559ab84a968112a184e5",
           "path": "site/package-lock.json"
         },
         {
-          "hash": "0fe0343f8ddb0628d954129b02a72b3b2c8f8f884b1380c5567403c4f55942f8",
+          "hash": "ede5fe47605b55555e8d3ed7b2eb904e0c9b03a975348882ae0a870ef5b98bb7",
           "path": "site/package.json"
         },
         {
-          "hash": "ec030f2e4bf6dc57eaca075d390c228b3212cf29db267e32ef92e110de1acdcc",
+          "constantOnly": true,
+          "hash": "ee756dfba4122d2acc94a39b2555d9f200fff56a87a8c0b10f9cd01df26a8b62",
           "path": "site/src/content.config.ts"
         },
         {
-          "hash": "7605b9bd4dd57b068d27dab4809c50bd45be5808d8fbed70b66db2f7e91b5bbf",
+          "hash": "0c964f95128e62b433e6e59679017d9dfb1d72f36049932f80e1893b7471355c",
           "path": "site/src/content/docs/handbook/extraction.md"
         },
         {
-          "hash": "3be7fab62da2bf15991f21be59b241998a3b12726355b1dd8b149d97155e1336",
+          "hash": "2570c6470398fb5054120931dccf776f3cabf64c1825416ce221b095d52f8aaa",
           "path": "site/src/content/docs/handbook/gate.md"
         },
         {
-          "hash": "3e245b3cc0d7383215468ff9567ba8a7e1f8ca8c28264564fafc106e9bfcd8a8",
+          "hash": "4838bbb7c53e27d0f0bf354aee66ef8cccbb11668e704d99314873a6202be1a3",
           "path": "site/src/content/docs/handbook/getting-started.md"
         },
         {
-          "hash": "a25d5bb886e90affe5dfc4af43cfc5b2ea340a36fdf9952874f2627547a61577",
+          "hash": "da4d1e76349de99076e369119f377f01faea7fb818b24240547e6f9d3a1c62dd",
           "path": "site/src/content/docs/handbook/index.md"
         },
         {
-          "hash": "3b0c073d7313d8523b4a46a2dcedc9ab1220056bf73a2002b8215c0d7a9aeb3d",
+          "hash": "eb54b856ff6025317de9c8baf945ca7e3dde4127dea53fad6dc224c751c497bf",
           "path": "site/src/content/docs/handbook/portfolio.md"
         },
         {
-          "hash": "746846b803d864c812f80f83c2ba5c5ead49b290e3781d7409d33131c4a63259",
+          "hash": "95b30c8d9ac4a963839cbcde5ab29d9191f92c43bec90512d40f38fca1c0a97e",
           "path": "site/src/content/docs/handbook/reference.md"
         },
         {
-          "hash": "5b73efc0e8046a89a8e46e978459dcf0067a449c2770f6159805725102f08075",
+          "hash": "c9eb4c8ffdb2678ccf8504ad2aae4206c1e11759b37435472a6c5c574b3e19e0",
           "path": "site/src/content/docs/handbook/repair.md"
         },
         {
-          "hash": "b5ea126a33f5bed9b0e7dba52414fc361c7b83a1865eaebb6cb020ca3627b8f5",
+          "hash": "9f4b253450877c7aa8667b6b90db4c8122ffab407bc8e5d66bd9ba87924ee519",
           "path": "site/src/content/docs/handbook/review.md"
         },
         {
-          "hash": "a699ad78a6d27d6864ccfe4c3a4a01993aca28ecb4a3d20893f37db9f9b1a522",
+          "hash": "391533713539035d3c92282579d43de0f137067867fdb502d7eaea3c74601d2a",
+          "importOrder": [
+            "site/src/styles/global.css",
+            "site/src/site-config.ts"
+          ],
+          "importsFiles": [
+            "site/src/site-config.ts",
+            "site/src/styles/global.css"
+          ],
           "path": "site/src/pages/index.astro"
         },
         {
-          "hash": "00c9b211c074770200ced8d4e37f7e32ab9291a4e189e2b63726d89afe96ce20",
+          "constantOnly": true,
+          "hash": "b4f3ac7bda3a8486a365920fc12c531935b4a3ed9de19580b2d9e5a4e559463b",
           "path": "site/src/site-config.ts"
         },
         {
-          "hash": "5995279a40a9a63426a93feec129006b261cc7200426a398914d0317722ef19b",
+          "hash": "29ee8df91833e694bdba973126b34a6177de4cf01dab6d9ef7d3126e8e2b67fb",
           "path": "site/src/styles/global.css"
         },
         {
-          "hash": "04bf00704f1a83aa9de96fe004f5b4bc1c81efdd6241b746e359639c78fccf36",
+          "hash": "2a311a0a90b692f20eb2577cd9d486b807b87c41b6ee478dd3341f94f43028da",
           "path": "site/src/styles/starlight-custom.css"
         },
         {
-          "hash": "61fc24492db9aef7ec38eb91cfeebaef96155014bb5f22648fd8ed2327c6cae2",
+          "hash": "b5b0a5b04a14cddd7713c5e1c82e86c79c17c2f86b170e26e9b170b3d5e01cd9",
           "path": "site/tsconfig.json"
         }
       ],
@@ -584,10 +599,10 @@
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 44,
+      "dynamicReads": 7,
       "dynamicSpawns": 1,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 14,
+      "dynamicWrites": 0,
       "entryPoints": [
         "src/cli/index.ts"
       ],
@@ -598,7 +613,14 @@
             "getCandidateArtifacts",
             "insertCandidateArtifact"
           ],
-          "hash": "c86a9f55bf3384e93b4665e81c108c6ef29ec6905b49915282c542d6fcd308ec",
+          "hash": "899e2b0a05e5ba1b2566b91f92974920b97cc22171d6fda25b5fc6afeb56537a",
+          "importOrder": [
+            "src/core/types.ts",
+            "src/db/schema.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -614,7 +636,13 @@
             "getEvidenceForStatement",
             "insertEvidence"
           ],
-          "hash": "8a498e20a7fa2c6e1966e5fc846b054a2ca7ec1933611280cfdbdb8c010d3268",
+          "hash": "888251bcb626a3edea0535849f75a156fcb19d2b4ff6fe960b014d4f65d7bb68",
+          "importOrder": [
+            "src/core/types.ts",
+            "src/db/schema.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -629,7 +657,15 @@
             "getSourceArtifacts",
             "insertSourceArtifact"
           ],
-          "hash": "74c3e23cb176d4af42fe54699950b44bacb14babf9376d828cc17477d77b5650",
+          "hash": "4fe2b11cffdef2ca31aeadf3d4f68ac087a863b501d7fb4697061c313490d019",
+          "importOrder": [
+            "src/core/types.ts",
+            "src/db/schema.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts",
+            "src/util/hashing.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -648,7 +684,28 @@
             "importState",
             "restoreBackup"
           ],
-          "hash": "938858ae72e7ab4a6b696f2af4319dd8d8d0d42108987c4d5027d83fd26437e1",
+          "failurePaths": [
+            {
+              "in": "backupRepo",
+              "kind": "throw",
+              "line": 37
+            },
+            {
+              "in": "backupPortfolio",
+              "kind": "throw",
+              "line": 83
+            },
+            {
+              "in": "restoreBackup",
+              "kind": "throw",
+              "line": 146
+            }
+          ],
+          "hash": "430009a5ddfb2c0eb7af273eb9a865bd4901ecfa070bb2b0b2fc60955c3c9667",
+          "importOrder": [
+            "src/util/timestamps.ts",
+            "src/util/json.ts"
+          ],
           "importsFiles": [
             "src/util/json.ts",
             "src/util/timestamps.ts"
@@ -668,7 +725,13 @@
             "insertPacketFeedback",
             "insertReviewFeedback"
           ],
-          "hash": "709a8500ff8f6457a5e01e42f07af112f735c25d4d46736bdc590db443946cb8",
+          "hash": "6584fa36987101ae1e61a7b7f4a9abb764076bf25ff10f1e67004a8379c5c665",
+          "importOrder": [
+            "src/calibration/calibration-types.ts",
+            "src/review/review-run-types.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/calibration/calibration-types.ts",
             "src/core/ids.ts",
@@ -678,7 +741,7 @@
           "path": "src/calibration/calibration-store.ts"
         },
         {
-          "hash": "d31b15f5e1f3d52254a1207a7e647017f9a2f785f4da6f37e619a9b43500f5ce",
+          "hash": "bddaf4820e913b5eae00a5505ddb2c507da6e86a3f5bff436397913b08cfca19",
           "importsFiles": [
             "src/review/review-run-types.ts"
           ],
@@ -690,7 +753,13 @@
             "getFindings",
             "persistFindings"
           ],
-          "hash": "e28661cba8bbbbb4a0d47a36b64030f0490c1e4e0f2b5f0a3613db7e1e327c2c",
+          "hash": "96aba66dce409793dfddbd4d4a7908acd91ed2977179108398cd891368c8d3e3",
+          "importOrder": [
+            "src/calibration/calibration-types.ts",
+            "src/calibration/calibration-store.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/calibration/calibration-store.ts",
             "src/calibration/calibration-types.ts",
@@ -705,7 +774,13 @@
             "readCanonFile",
             "writeCanonFile"
           ],
-          "hash": "32b2ca61e985d505ab8684e781ff5e9a5c8563e6d6a2958ebb29d71a1bb63e2d",
+          "hash": "c9fa0134117a8a734e1207ce748b8fbae6fdc4e0f55b421f2589a6a1f9b0c4ef",
+          "importOrder": [
+            "src/util/json.ts",
+            "src/core/validate.ts",
+            "src/util/timestamps.ts",
+            "src/core/types.ts"
+          ],
           "importsFiles": [
             "src/core/types.ts",
             "src/core/validate.ts",
@@ -724,7 +799,14 @@
             "updateStatementHardness",
             "updateStatementLifecycle"
           ],
-          "hash": "9a95997f5cd76b4a355e5eea487a39a972de85043cc187544cea8571aaa5b307",
+          "hash": "3435732bfd3291b41df4422698721ee1ac2406edc6d40bcede53f500a916a23b",
+          "importOrder": [
+            "src/core/types.ts",
+            "src/db/schema.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -741,7 +823,12 @@
             "getCurrentVersion",
             "listVersions"
           ],
-          "hash": "2dd411c982c4a283d94110c541d716dcbca124d0bf949f36db2b5aca87c3dc45",
+          "hash": "d93a03be86fa43c00b358f1b62adb7f71b0f59878d38514c0f1f2220a44dffad",
+          "importOrder": [
+            "src/db/schema.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/ids.ts",
             "src/db/schema.ts",
@@ -750,11 +837,12 @@
           "path": "src/canon/canon-version.ts"
         },
         {
-          "hash": "23fd4ed7787153c470345aac619cadb31b7442926bf77c35d2c91e319cce4035",
+          "hash": "d4bce17a94f2f99175f34cd6d8419ae7649e7078ed2ec08cc5e341d93fa16392",
           "importsFiles": [
             "src/canon/canon-store.ts"
           ],
-          "path": "src/canon/statements.ts"
+          "path": "src/canon/statements.ts",
+          "reexportsOnly": true
         },
         {
           "exports": [
@@ -764,7 +852,34 @@
             "importStateCommand",
             "restoreCommand"
           ],
-          "hash": "88589d80ca99971ab5ef023fbbd195378879fbf9decf0d9f63621c184d43c1f9",
+          "failurePaths": [
+            {
+              "in": "backupRepoCommand",
+              "kind": "catch",
+              "line": 17
+            },
+            {
+              "in": "backupPortfolioCommand",
+              "kind": "catch",
+              "line": 35
+            },
+            {
+              "in": "restoreCommand",
+              "kind": "catch",
+              "line": 61
+            },
+            {
+              "in": "exportStateCommand",
+              "kind": "catch",
+              "line": 80
+            },
+            {
+              "in": "importStateCommand",
+              "kind": "catch",
+              "line": 107
+            }
+          ],
+          "hash": "5a413b20d286c2bb03a29628ed1b18a3ec4e5a9483de448bc7b01b26e19c9063",
           "importsFiles": [
             "src/backup/backup-engine.ts",
             "src/util/json.ts"
@@ -778,7 +893,17 @@
             "calibrateSummaryCommand",
             "reviewFeedbackCommand"
           ],
-          "hash": "a28176a6d0e79e2f04cb9dd1307ed78eba972285e0ea79b2c842da4b69a38354",
+          "hash": "f86024b022b9e87bf362c38489f4bb948cdbc1d326e76ff3481c942161e08e24",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/calibration/calibration-store.ts",
+            "src/calibration/findings-engine.ts",
+            "src/calibration/calibration-types.ts",
+            "src/review/review-run-types.ts"
+          ],
           "importsFiles": [
             "src/calibration/calibration-store.ts",
             "src/calibration/calibration-types.ts",
@@ -795,7 +920,14 @@
           "exports": [
             "canonStatusCommand"
           ],
-          "hash": "fda676c6b461ad2553ee74973e3a5f6b989a3ff664c9a217093408385c443b35",
+          "hash": "ab69330c0c25c62bed18cb19fcbdaf5ad930553485b4198fc78a52baa111542a",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/canon/canon-version.ts",
@@ -819,7 +951,18 @@
             "curateRejectCommand",
             "curateResolveContradictionCommand"
           ],
-          "hash": "82309aa83384e6c5f8f3880251bf74ce524dbe783b38ff213bda9abd88c10d21",
+          "hash": "7c95081b36cdb4b58bb6058933cbb8f905955f709b20d4ac0a45b7fb6133367a",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/extraction/extraction-store.ts",
+            "src/curation/curation-store.ts",
+            "src/canon/canon-files.ts",
+            "src/extraction/extraction-types.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-files.ts",
             "src/canon/canon-store.ts",
@@ -837,7 +980,20 @@
           "exports": [
             "doctorCommand"
           ],
-          "hash": "f4568d534dccffff6e2467d95dfb744bfa1a8cd2fd05fc38e0db23a220efdbd0",
+          "failurePaths": [
+            {
+              "in": "doctorCommand",
+              "kind": "catch",
+              "line": 38
+            }
+          ],
+          "hash": "c2b0d57d7e2190396c1db3ca38a837f8bc6423a8bb2f3d64223598a2b85130ad",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/providers/ollama/ollama-provider.ts"
+          ],
           "importsFiles": [
             "src/cli/config.ts",
             "src/db/migrate.ts",
@@ -854,7 +1010,18 @@
             "extractRunCommand",
             "extractStatusCommand"
           ],
-          "hash": "8ed269d70e485bba944cccb1b0a2603cc83aef43ca561bf443e8c21c43698763",
+          "hash": "2a41bc891dd72bd1966ac9706567720969440bae7dfa8b7526fb94ee2abd5e2f",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/extraction/extraction-store.ts",
+            "src/extraction/extract.ts",
+            "src/extraction/extraction-types.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -876,7 +1043,20 @@
             "gateReportCommand",
             "gateRunCommand"
           ],
-          "hash": "77ff2fdacd969eddb8c716eda48b09fb7eb0300e69fa0e8cbf01ee74cf44643c",
+          "hash": "744e57d99fe2ffbbd63646e001e2bde43ecab2f8a16f1d7c681b19b343e221da",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/gate/artifact-detector.ts",
+            "src/gate/gate-engine.ts",
+            "src/gate/gate-types.ts",
+            "src/gate/policy.ts",
+            "src/gate/policy-types.ts",
+            "src/gate/rollout-report.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/cli/config.ts",
@@ -896,7 +1076,16 @@
           "exports": [
             "ingestCommand"
           ],
-          "hash": "0019f41cccb0c08e0f2296c33e22d1eeee58c26ba814f72de05df00fc12d3b27",
+          "hash": "efdd5a8083b03a5ab54776972d65e4840e305dffcd295b9779b44f8b25849bb7",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/util/hashing.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -912,7 +1101,14 @@
           "exports": [
             "initCommand"
           ],
-          "hash": "bf9cfcf3d1d9a365d4f4cedc86bdf03e094f8086686e8bbe43867cd9006eae95",
+          "hash": "ddf2907784ac89dbd1359d455f3cafc35f565053bc577d294e0a30c770e8b865",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/cli/commands/doctor.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/cli/commands/doctor.ts",
@@ -928,7 +1124,22 @@
             "onboardReportCommand",
             "onboardRunCommand"
           ],
-          "hash": "b66ad3fd19a2c44733d66a570022ddb8497a65f680281c061354cbbc6faea74e",
+          "hash": "6c535f15ff5f84e432479a72ec60eecb18d22576f8801c50c5e0ed64105753a3",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/onboard/source-scanner.ts",
+            "src/onboard/policy-presets.ts",
+            "src/onboard/onboard-report.ts",
+            "src/onboard/recommend.ts",
+            "src/portfolio/portfolio-engine.ts",
+            "src/gate/policy.ts",
+            "src/cli/commands/init.ts",
+            "src/cli/commands/ingest.ts",
+            "src/onboard/onboard-types.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/cli/commands/ingest.ts",
@@ -962,7 +1173,14 @@
             "orgRecommendationsCommand",
             "orgStaleCommand"
           ],
-          "hash": "ae37bed9b0fc3aa5af4185171a3d6d4b5495224101f6b61f2825bc70f95136b5",
+          "hash": "f9d79e178dd8f667956a08001c77d6839e9584f6077b553c9eca2844c5a4d1d7",
+          "importOrder": [
+            "src/org/org-engine.ts",
+            "src/portfolio/portfolio-engine.ts",
+            "src/org/org-alerts.ts",
+            "src/org/org-actions.ts",
+            "src/gate/gate-types.ts"
+          ],
           "importsFiles": [
             "src/gate/gate-types.ts",
             "src/org/org-actions.ts",
@@ -978,7 +1196,7 @@
             "portfolioFindingsCommand",
             "portfolioMatrixCommand"
           ],
-          "hash": "ad47d07843b9c59d0610f7247b5d45502c886b2b655f4b5ccf05d7c582b8b7d0",
+          "hash": "0547e5153bea20c0a6544e0e434baac643aa8f56c257acd430278f538591733c",
           "importsFiles": [
             "src/portfolio/portfolio-engine.ts"
           ],
@@ -988,7 +1206,17 @@
           "exports": [
             "redirectRunCommand"
           ],
-          "hash": "62f3fa8811be9de2b679342d23bf6a16ad73bb1fba0e454fbaa18271de66ead5",
+          "hash": "106ae8940eac6bb5330814ce4dc337c4e7a2d49acef76d7c6ca32748fc8e3754",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/review/review-store.ts",
+            "src/redirect/redirect-engine.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1005,7 +1233,17 @@
           "exports": [
             "repairRunCommand"
           ],
-          "hash": "0678f0c7aeaf8a8e37cbde4c5589748527d548e34dade4041db6fc7510ca3c92",
+          "hash": "598364951c79a2e31f851acef40f1967d874123348e4fa60bc522873d2b246ec",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/review/review-store.ts",
+            "src/revision/structural-engine.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1025,7 +1263,18 @@
             "reviewRunCommand",
             "reviewShowCommand"
           ],
-          "hash": "f10981d7c6918fd3d60dc0dea4850b75468bb312e74e7a11d491cf5d62b0cf7a",
+          "hash": "628bf239005e1c1475e373628caea8c765762d12416bda620985ac5e7436712c",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/review/review-engine.ts",
+            "src/review/review-store.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1043,7 +1292,17 @@
           "exports": [
             "reviseRunCommand"
           ],
-          "hash": "00c3801d1e538ee5c4d4f41bb905a9eb56e006b1b093badafaae881330d3da41",
+          "hash": "32d7b63a8f67852e3c9ac18e8104c01a132cc55ea91aeaaca474f4fd98bd9290",
+          "importOrder": [
+            "src/cli/config.ts",
+            "src/db/sqlite.ts",
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/providers/ollama/ollama-provider.ts",
+            "src/review/review-store.ts",
+            "src/revision/revision-engine.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1060,7 +1319,19 @@
           "exports": [
             "statusCommand"
           ],
-          "hash": "f0d6ddc43e33ae8c3dea71f2ad528873d40b61ade87f49a1deccd21bd73c93b8",
+          "failurePaths": [
+            {
+              "in": "statusCommand",
+              "kind": "catch",
+              "line": 59
+            }
+          ],
+          "hash": "6425dc4ca0fdf3f2384069f8d08ae50e8b9ed2f30e5ceb3b70b3e25d49b0d374",
+          "importOrder": [
+            "src/org/org-engine.ts",
+            "src/org/org-alerts.ts",
+            "src/watchtower/watchtower-engine.ts"
+          ],
           "importsFiles": [
             "src/org/org-alerts.ts",
             "src/org/org-engine.ts",
@@ -1075,7 +1346,7 @@
             "watchtowerHistoryCommand",
             "watchtowerScanCommand"
           ],
-          "hash": "029af38c332263fd9407026b331d86e1e29a40d4b5fa9d5ba4d102986eab00d3",
+          "hash": "f54efa6b1dee052472cc587c534ba37f4e24716f3658db57d591303f57a6bdae",
           "importsFiles": [
             "src/watchtower/watchtower-engine.ts"
           ],
@@ -1085,7 +1356,7 @@
           "exports": [
             "workbenchCommand"
           ],
-          "hash": "69c4c267cd55e4a799b6cc90da24650484d844e385ce97673f2cef57b78bc126",
+          "hash": "ae8769365ed7e29f7de5a7a08ee620ec8a87fd831aac221491e8889a286e0d4d",
           "importsFiles": [
             "src/workbench/server.ts"
           ],
@@ -1101,7 +1372,7 @@
             "saveConfig",
             "tasteDir"
           ],
-          "hash": "15a2afbf4f9f590ce02f751affb4c4b1d30908edf337ae4b6b25d4a2c34797a4",
+          "hash": "4dd09f1a6ec1f84181a6fad6ad5875f6e6ba0998dbf87442dc5fcaa0c4968421",
           "importsFiles": [
             "src/core/types.ts",
             "src/core/validate.ts",
@@ -1110,7 +1381,28 @@
           "path": "src/cli/config.ts"
         },
         {
-          "hash": "6b6271ae7431cfbc9bdf417044db19dcc07eec9a2573556304be08beabdb8996",
+          "hash": "e4cc0e21440936fbaaa9579a066369271fc40aff1798f74275daa2399486e14f",
+          "importOrder": [
+            "src/cli/commands/init.ts",
+            "src/cli/commands/doctor.ts",
+            "src/cli/commands/canon.ts",
+            "src/cli/commands/ingest.ts",
+            "src/cli/commands/extract.ts",
+            "src/cli/commands/review.ts",
+            "src/cli/commands/calibrate.ts",
+            "src/cli/commands/revise.ts",
+            "src/cli/commands/repair.ts",
+            "src/cli/commands/gate.ts",
+            "src/cli/commands/redirect.ts",
+            "src/cli/commands/onboard.ts",
+            "src/cli/commands/portfolio.ts",
+            "src/cli/commands/org.ts",
+            "src/cli/commands/workbench.ts",
+            "src/cli/commands/status.ts",
+            "src/cli/commands/watchtower.ts",
+            "src/cli/commands/backup.ts",
+            "src/cli/commands/curate.ts"
+          ],
           "importsFiles": [
             "src/cli/commands/backup.ts",
             "src/cli/commands/calibrate.ts",
@@ -1135,7 +1427,7 @@
           "path": "src/cli/index.ts"
         },
         {
-          "hash": "7d00914ebfdd241503c255fe9515fc1f77ec3cda171b8f9c11006fce67959e56",
+          "hash": "891c6269ffd1f2dd476b7b81c932a3c074402e12a683e7422f44d63c2258053b",
           "path": "src/core/enums.ts"
         },
         {
@@ -1143,18 +1435,18 @@
             "contentId",
             "newId"
           ],
-          "hash": "11ad1cac5f8df065aa14360ff5d4cda392beb5903eef3641f8057de2c104a7e3",
+          "hash": "f035489043097b05803bd7e4b99c0658cbf353e0de50039d6bcf78bf5b148d74",
           "path": "src/core/ids.ts"
         },
         {
-          "hash": "c704e48f710dd2f839ca2375cf040a7500db8c0b4f9344c6759652921bb1e6fc",
+          "hash": "eb7bac415dd52e300bd1862881998555d28b08520c7516362f8363a0845cd300",
           "importsFiles": [
             "src/core/enums.ts"
           ],
           "path": "src/core/types.ts"
         },
         {
-          "hash": "8622d4005e741262adfd73e3d624660ab63ac905c618f69f568bfbe6a952746a",
+          "hash": "34fa2d7c80937f8cbf48b1c5edc754e5fd6e2ca91fffb9cc8f7467855b57baaf",
           "importsFiles": [
             "src/core/enums.ts"
           ],
@@ -1173,7 +1465,18 @@
             "recordDecision",
             "rejectCandidate"
           ],
-          "hash": "abf8276e694eaadf6ee655c8f5010025c4c4120ac27709d5d46eff9b5d98bc29",
+          "hash": "2c2043452226bd80b7fa62a045a910c2b38d9494e90e5937e33723b6e0f4c376",
+          "importOrder": [
+            "src/curation/curation-types.ts",
+            "src/core/types.ts",
+            "src/extraction/extraction-types.ts",
+            "src/core/enums.ts",
+            "src/canon/canon-store.ts",
+            "src/extraction/extraction-store.ts",
+            "src/canon/canon-version.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/canon/canon-version.ts",
@@ -1188,7 +1491,7 @@
           "path": "src/curation/curation-store.ts"
         },
         {
-          "hash": "db1ade05b4b19bc18d879a2dc94f0d9849c25184d44d127550d11997a95fe6e2",
+          "hash": "05c78331e5f82f85b377c3679ca6277eb2284c9d23be2497cfd440b06b08ccad",
           "path": "src/curation/curation-types.ts"
         },
         {
@@ -1196,11 +1499,18 @@
             "currentVersion",
             "migrate"
           ],
-          "hash": "7f7eaf42b2d6b89daead152088275dccd55b5809aa4051299ba1bd2de97bc8e1",
+          "failurePaths": [
+            {
+              "in": "currentVersion",
+              "kind": "catch",
+              "line": 50
+            }
+          ],
+          "hash": "2eca51219460b5f8b255975160ecc5a3b3a82ad9d52c7b11a27ee9c444e30db0",
           "path": "src/db/migrate.ts"
         },
         {
-          "hash": "588cf7314614d79cd5a9b8a7cad50d35515c378f9a47fea5e2e1f3a353fe971c",
+          "hash": "d38aad62bd5181f6b8b1ea6a4027fe6a8d3381cc62f69cfda77c1dea6184e7b7",
           "path": "src/db/schema.ts"
         },
         {
@@ -1209,7 +1519,14 @@
             "getDb",
             "openDb"
           ],
-          "hash": "268f5ca98a43a4b5691940ea5be10c3c88c7346e35f8b4674056c03cbfb84247",
+          "failurePaths": [
+            {
+              "in": "getDb",
+              "kind": "throw",
+              "line": 24
+            }
+          ],
+          "hash": "4d60a16a61331a9645c5b4adb02d0ec274371662ee2274473e13f7aade636b7e",
           "path": "src/db/sqlite.ts"
         },
         {
@@ -1217,7 +1534,11 @@
             "areSimilar",
             "consolidateCandidates"
           ],
-          "hash": "fe83b40351f565ae694adfea581251af5aaca1fdae0fdfd42e959e5792703d55",
+          "hash": "1f68567ed24f9fe8a81c79ba38122fa31eea97543b724e55cb47cc998f871efe",
+          "importOrder": [
+            "src/extraction/extraction-types.ts",
+            "src/extraction/extraction-store.ts"
+          ],
           "importsFiles": [
             "src/extraction/extraction-store.ts",
             "src/extraction/extraction-types.ts"
@@ -1228,7 +1549,15 @@
           "exports": [
             "runExtraction"
           ],
-          "hash": "3315abcf5f078bd3ad522b100e6dd76a2d514fb4506d30ae8fd70d6a150b1f38",
+          "hash": "137cbcf69a8cd115f255c02454990015de12efd95c317f1adbeffe6ea3c3b004",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/extraction/extraction-types.ts",
+            "src/extraction/extraction-store.ts",
+            "src/extraction/pass-runner.ts",
+            "src/extraction/consolidation.ts"
+          ],
           "importsFiles": [
             "src/core/types.ts",
             "src/extraction/consolidation.ts",
@@ -1257,7 +1586,13 @@
             "updateCandidateStatus",
             "updatePassResult"
           ],
-          "hash": "665600ba9b1fe3b7a052b58dcc0f82d9206dad80da329257d93f9bf26c392185",
+          "hash": "d5e16df0a1fdfbee4a9566cf41291de116dc952f490f33a94808891609bd78a1",
+          "importOrder": [
+            "src/extraction/extraction-types.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -1267,14 +1602,14 @@
           "path": "src/extraction/extraction-store.ts"
         },
         {
-          "hash": "eb92c87926d603b46c3358f5ae70e03bfe0899ee50a48cf46edf34cf91607f3a",
+          "hash": "8e4b9f5047750af53174cd078e93cce220b60033d0b5b43dc6a7e90f4c7bb3fa",
           "importsFiles": [
             "src/core/enums.ts"
           ],
           "path": "src/extraction/extraction-types.ts"
         },
         {
-          "hash": "9f121bd39c73c3fe5672db14c9d493bb6ce842c1d791aaefbb2ac864ba1582b7",
+          "hash": "68e35db2a75627ef49066c4bfc5ff996db8ab00b4aa5cb51423432705566d850",
           "importsFiles": [
             "src/core/enums.ts",
             "src/extraction/extraction-types.ts"
@@ -1287,7 +1622,17 @@
             "isRetryableError",
             "runPass"
           ],
-          "hash": "977340d8d705b64ae54c36d1a6636ab05ca29a7d3f66e7bda4f5a32d0dd27c4a",
+          "hash": "51386a58e07bdcd34f2f920adf328cc5ae52ef3983b283df714f961d872ae342",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/extraction/extraction-types.ts",
+            "src/core/enums.ts",
+            "src/extraction/extraction-validate.ts",
+            "src/extraction/extraction-store.ts",
+            "src/extraction/prompts.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/types.ts",
@@ -1305,7 +1650,7 @@
             "buildSourceBlock",
             "getPassPrompt"
           ],
-          "hash": "7b8f4ad9bfe9143f86507926daccb8cde2d7d66a2bf74c4b316c3af4481f9af0",
+          "hash": "d3be663aeed33a6a69f9e9abb4473789bccf284c1087e7fa0f84c923d4792bd9",
           "importsFiles": [
             "src/extraction/extraction-types.ts"
           ],
@@ -1316,7 +1661,19 @@
             "detectArtifacts",
             "getChangedFiles"
           ],
-          "hash": "1bdcac28274d2a58087864d89b58a7aa0efa9503d603d0d50ccbda0e96501fd6",
+          "failurePaths": [
+            {
+              "in": "detectPackageBlurb",
+              "kind": "catch",
+              "line": 53
+            },
+            {
+              "in": "getChangedFiles",
+              "kind": "catch",
+              "line": 116
+            }
+          ],
+          "hash": "c37ede22868a058352691cf3943d15dfbdb62819275608688c39c1892c3fb207",
           "importsFiles": [
             "src/core/enums.ts",
             "src/gate/gate-types.ts"
@@ -1328,7 +1685,21 @@
             "gateResultToJson",
             "runGate"
           ],
-          "hash": "0bcac2c230dcdc131aec03420815ac0b3ea0643a30416078d4a85e71a6885f06",
+          "failurePaths": [
+            {
+              "in": "runGate",
+              "kind": "catch",
+              "line": 80
+            }
+          ],
+          "hash": "9256534af0e47ad15eeee122294224cad72fc81c03d0dbf3b40c5834fc1380fd",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/gate/gate-types.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-engine.ts",
+            "src/review/review-store.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/gate/gate-types.ts",
@@ -1344,14 +1715,18 @@
             "verdictToGateResult",
             "verdictToRepairPath"
           ],
-          "hash": "4c8b033717d19174c49a01d39fd7697bf106cb7194ac58babf5c2ef504f7356b",
+          "hash": "2d2e37b2d50767892fbf407ede3a855bc59169b4f3e7ca769b662fd6e355bc77",
           "importsFiles": [
             "src/core/enums.ts"
           ],
           "path": "src/gate/gate-types.ts"
         },
         {
-          "hash": "782c1ff33b5bc90ff93830df6661edf8918cea0158a31df8c4d279cab5e0c219",
+          "hash": "f30688540cb5cd16ef2a5fe4814a871d49199297344e852ebc9f170edd93f075",
+          "importOrder": [
+            "src/gate/gate-types.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/gate/gate-types.ts"
@@ -1368,7 +1743,27 @@
             "savePolicy",
             "shouldSkip"
           ],
-          "hash": "30ba23aff7dfdf4facb53e070b65e6e38582ec44e7a2e51b9b104a522fdfa98c",
+          "failurePaths": [
+            {
+              "in": "getOverrides",
+              "kind": "catch",
+              "line": 118
+            },
+            {
+              "in": "getOverrideCount",
+              "kind": "catch",
+              "line": 126
+            }
+          ],
+          "hash": "8c8833e4b24eab89242d3671d83b4de9844aa1410d068f3ac49c9f1d87f9f4c9",
+          "importOrder": [
+            "src/gate/policy-types.ts",
+            "src/core/enums.ts",
+            "src/gate/gate-types.ts",
+            "src/util/json.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -1383,7 +1778,14 @@
           "exports": [
             "computeRolloutReport"
           ],
-          "hash": "ebce4ce5327af4707786f98cbbac56f3919422fca39bfc8fa8d04f0edacd11b9",
+          "failurePaths": [
+            {
+              "in": "computeRolloutReport",
+              "kind": "catch",
+              "line": 108
+            }
+          ],
+          "hash": "22e119e905ea3c8ee5061bfe540ec102c8d5d95531a1e96e0d371c93ad269969",
           "importsFiles": [
             "src/gate/policy-types.ts",
             "src/gate/policy.ts",
@@ -1395,7 +1797,12 @@
           "exports": [
             "generateOnboardReport"
           ],
-          "hash": "15efb5146ba6e0d4e669a9672954513d7f0a590dc464ffe1aebf20577c40e554",
+          "hash": "7a99a6e3eabf517f8a5fdcde621454fad905f56d9049abac3f8ea7eca42ab524",
+          "importOrder": [
+            "src/onboard/onboard-types.ts",
+            "src/core/enums.ts",
+            "src/canon/canon-store.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/core/enums.ts",
@@ -1404,7 +1811,7 @@
           "path": "src/onboard/onboard-report.ts"
         },
         {
-          "hash": "0d90485c69de03213cab1f40fce61f147439fa545ba84b86f013b3802b5bee6f",
+          "hash": "e52e3edee2b73d62e7c26913ded5fea52d7533f51a75a26ce467e916e2fd5df7",
           "importsFiles": [
             "src/core/enums.ts",
             "src/gate/gate-types.ts"
@@ -1415,7 +1822,7 @@
           "exports": [
             "getPreset"
           ],
-          "hash": "e4b70b8c1515844edad9474713f8117e169dd7ac86de1328aa17e14c7ddcaeef",
+          "hash": "cee0261c1c132f6cb7ef5c5aa5381f795baa8167bdd9ef1a8e787c56a6203ea9",
           "importsFiles": [
             "src/gate/policy-types.ts",
             "src/onboard/onboard-types.ts"
@@ -1426,7 +1833,13 @@
           "exports": [
             "generateRecommendation"
           ],
-          "hash": "504b0576ae47c8ec1c38720b24943b6a40146a9a48caa76394ed3df93691d38b",
+          "hash": "ad927f17d3035011ba381a810f4f926621d96773441487ad33ab7203f34fab0c",
+          "importOrder": [
+            "src/onboard/onboard-types.ts",
+            "src/gate/policy-types.ts",
+            "src/onboard/source-scanner.ts",
+            "src/onboard/policy-presets.ts"
+          ],
           "importsFiles": [
             "src/gate/policy-types.ts",
             "src/onboard/onboard-types.ts",
@@ -1441,7 +1854,24 @@
             "getSourceTiers",
             "scanForSources"
           ],
-          "hash": "c2f7b04cf3b951fa220abf898e6c8300e91b6be145320cb2f88a0fe8194760fa",
+          "failurePaths": [
+            {
+              "in": "estimateTokens",
+              "kind": "catch",
+              "line": 10
+            },
+            {
+              "in": "scanForSources",
+              "kind": "catch",
+              "line": 90
+            },
+            {
+              "in": "safeReaddir",
+              "kind": "catch",
+              "line": 144
+            }
+          ],
+          "hash": "49ec47aa6e8f58031c0972d55e9e1c46ad7bc079f7705aed83df0ebff36e1405",
           "importsFiles": [
             "src/onboard/onboard-types.ts"
           ],
@@ -1456,7 +1886,15 @@
             "previewAction",
             "rollbackAction"
           ],
-          "hash": "3f137019235e0b9883f9f3ca8fa6abddd8d812c2e7e058cede7e48a9c896c07e",
+          "hash": "2f962c7fed49d5d18b097eaf551757cf13d98160179677e67026c56784a6c053",
+          "importOrder": [
+            "src/gate/gate-types.ts",
+            "src/gate/policy.ts",
+            "src/cli/config.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts",
+            "src/util/json.ts"
+          ],
           "importsFiles": [
             "src/cli/config.ts",
             "src/core/ids.ts",
@@ -1472,7 +1910,11 @@
             "filterAlerts",
             "generateOrgAlerts"
           ],
-          "hash": "1ed1b987bb27eb3dde33f9b22020d79861b40905d5aff8e4bb8dc5133dddc3a1",
+          "hash": "3d7c0da4585b5b7a92f99895fb7cffad3c005d96a7b314c7f5982be6b538f3d0",
+          "importOrder": [
+            "src/org/org-types.ts",
+            "src/org/org-engine.ts"
+          ],
           "importsFiles": [
             "src/org/org-engine.ts",
             "src/org/org-types.ts"
@@ -1487,7 +1929,35 @@
             "buildPromotionQueue",
             "generateOrgRecommendations"
           ],
-          "hash": "43f6aee57d7dc9efdd4b0fd4801b6b1709593631198b8a5f966423f5a81c2e1c",
+          "failurePaths": [
+            {
+              "in": "buildOrgStatus",
+              "kind": "catch",
+              "line": 57
+            },
+            {
+              "in": "buildOrgStatus",
+              "kind": "catch",
+              "line": 64
+            },
+            {
+              "in": "buildOrgStatus",
+              "kind": "catch",
+              "line": 91
+            },
+            {
+              "in": "buildOverrideHotspots",
+              "kind": "catch",
+              "line": 226
+            }
+          ],
+          "hash": "078785add154250107cfee95ac924d80c2f5ea5805c0c85ec7e7360449890aaa",
+          "importOrder": [
+            "src/org/org-types.ts",
+            "src/cli/config.ts",
+            "src/gate/policy.ts",
+            "src/core/enums.ts"
+          ],
           "importsFiles": [
             "src/cli/config.ts",
             "src/core/enums.ts",
@@ -1497,7 +1967,7 @@
           "path": "src/org/org-engine.ts"
         },
         {
-          "hash": "002bdc75a615772cac7318e4d489b8e963e40997fadb0774953ea46e99f007eb",
+          "hash": "9220397fa3664f26c70b765290b8bc07cb6b261c46ff2d2f7f66bd74eb17cf8c",
           "path": "src/org/org-types.ts"
         },
         {
@@ -1507,7 +1977,25 @@
             "discoverRepos",
             "generatePortfolioFindings"
           ],
-          "hash": "f05819a26a58db7a75f86e9e8954504be5dd8afe68c9714fd7ca75eb91b41b96",
+          "failurePaths": [
+            {
+              "in": "discoverRepos",
+              "kind": "catch",
+              "line": 85
+            },
+            {
+              "in": "detectDriftFamilies",
+              "kind": "catch",
+              "line": 130
+            }
+          ],
+          "hash": "79659318275c6f32071b7e78dbcab16e6b94ebdd10b85c6097a59558902d6257",
+          "importOrder": [
+            "src/portfolio/portfolio-types.ts",
+            "src/onboard/onboard-report.ts",
+            "src/gate/policy.ts",
+            "src/cli/config.ts"
+          ],
           "importsFiles": [
             "src/cli/config.ts",
             "src/gate/policy.ts",
@@ -1517,21 +2005,45 @@
           "path": "src/portfolio/portfolio-engine.ts"
         },
         {
-          "hash": "5dabb8c9c290b337991904dd94f466f67ef7448189aa059a343b73a890713d93",
+          "hash": "a49570dcae3073f81208ebe58e6dc400886a897fc4c0c35a221071198542e275",
           "path": "src/portfolio/portfolio-types.ts"
         },
         {
           "exports": [
             "checkOllamaHealth"
           ],
-          "hash": "db50b7a5e53135d646b757ebf6597fcceb9bd12de3695ac785a7bf74f83841b9",
+          "failurePaths": [
+            {
+              "in": "checkOllamaHealth",
+              "kind": "catch",
+              "line": 41
+            }
+          ],
+          "hash": "e02c2fd3bba868b8b872f84a5ad198e72a37bd817c6d6b2635c84186ebbefb0b",
           "importsFiles": [
             "src/providers/ollama/ollama-types.ts"
           ],
           "path": "src/providers/ollama/ollama-health.ts"
         },
         {
-          "hash": "0faf51e7087662e03ec45f5024c2ebdaad3b7ec2f25e82c2b3bde637c3a8d8de",
+          "failurePaths": [
+            {
+              "in": "completeJson",
+              "kind": "catch",
+              "line": 78
+            },
+            {
+              "in": "completeJson",
+              "kind": "catch",
+              "line": 93
+            }
+          ],
+          "hash": "f36f5018bfe65782b38f6ce6cd877265791918c4e85a39eeaeb1eb0c99e38586",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/providers/ollama/ollama-types.ts",
+            "src/providers/ollama/ollama-health.ts"
+          ],
           "importsFiles": [
             "src/providers/ollama/ollama-health.ts",
             "src/providers/ollama/ollama-types.ts",
@@ -1540,18 +2052,28 @@
           "path": "src/providers/ollama/ollama-provider.ts"
         },
         {
-          "hash": "9688bac96a4859ca47eddb2d1088629dd3360d92f69b3d03f30d5660ff112a49",
+          "hash": "6dbf6ee27df8e007fb96ac66eb04fcbb4da8a4fef702e6341e306da2c448236c",
           "path": "src/providers/ollama/ollama-types.ts"
         },
         {
-          "hash": "c28d6ac1f3022ed0461220599fb273c70f85c21ab3520912309703ed53bf51cb",
+          "hash": "150ef0b6bfd209552bca7508d95958e173cb524d30b0a2f581be956306035365",
           "path": "src/providers/provider.ts"
         },
         {
           "exports": [
             "runRedirect"
           ],
-          "hash": "b249bc63a5beef28975572178c457bfed6ffcb846217668afd4147f12b493248",
+          "hash": "d9345703705f68f8c66a7510efd16917e41bea585d0eec563a5655be0062b9a6",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/redirect/redirect-types.ts",
+            "src/review/canon-packet.ts",
+            "src/review/review-store.ts",
+            "src/redirect/redirect-prompts.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/ids.ts",
             "src/core/types.ts",
@@ -1565,11 +2087,11 @@
           "path": "src/redirect/redirect-engine.ts"
         },
         {
-          "hash": "aaf2b7050c0e8fc6bb8729f3b5abbd0563fa126e071bd7879cebf2768d6984f0",
+          "hash": "9f6c924538ed6bc62274875418cc6399f1708ad321b0219f2bdd09c8a240b555",
           "path": "src/redirect/redirect-prompts.ts"
         },
         {
-          "hash": "20c5a232a21612adcb4a17e0b747aba1bbb516db05999b0fbc024a94e21ecccd",
+          "hash": "6fca9b26c810ff6731ad4cbfc1781b6dca8137a652c3f8a70ad091b4229a741b",
           "path": "src/redirect/redirect-types.ts"
         },
         {
@@ -1577,7 +2099,16 @@
             "buildCanonPacket",
             "formatPacketForPrompt"
           ],
-          "hash": "5ce7bc04c043d4eb3322344a78b92a36108f41ae7d91321dda1b20d9c5976e0e",
+          "hash": "49018b81fe7d1af6c26ba405df6f92692d0add4ad32e1790a5bc809ee01a4f4e",
+          "importOrder": [
+            "src/core/types.ts",
+            "src/core/enums.ts",
+            "src/review/review-run-types.ts",
+            "src/curation/curation-types.ts",
+            "src/canon/canon-store.ts",
+            "src/curation/curation-store.ts",
+            "src/core/ids.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/core/enums.ts",
@@ -1594,7 +2125,7 @@
             "fillPrompt",
             "getDimensionPrompt"
           ],
-          "hash": "6758c64a85bcbff9691437512b1f7828005e5ab550b8031d423487f124f59919",
+          "hash": "b6e6d68e16bd7f44678141fde140adf609e08ce53ac90fd4180c2d909e98c53a",
           "importsFiles": [
             "src/review/review-run-types.ts"
           ],
@@ -1604,7 +2135,18 @@
           "exports": [
             "runReview"
           ],
-          "hash": "5a2551f7c5686c80399df04037f061a394256918cf92e6fb0e0dde796ecfc974",
+          "hash": "518336da252199ed536552bf902979e3077bc5cd501f57c3e4d38dc7abbf55a0",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/review/review-run-types.ts",
+            "src/core/enums.ts",
+            "src/review/canon-packet.ts",
+            "src/review/dimension-prompts.ts",
+            "src/review/review-store.ts",
+            "src/review/verdict-synthesis.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/types.ts",
@@ -1619,12 +2161,12 @@
           "path": "src/review/review-engine.ts"
         },
         {
-          "hash": "90314980ba825d0da6b76eb1b6fe6f9d4ba6042fa9c287c7c5f0a445ceaa10df",
+          "hash": "67685c4837936da0f51641f9188fe9cb352e149604383d2d6122d063e7ffc70d",
           "noStatements": true,
           "path": "src/review/review-report.ts"
         },
         {
-          "hash": "ceecc02b76cbc2f1eb8b93d84732eb244b144e9c9b459866c1453eb1a585fadb",
+          "hash": "9a77e41b9cf55047d6fc120f1e4fe94f2c694968d2cc2e00304c2774f0172daa",
           "importsFiles": [
             "src/core/enums.ts"
           ],
@@ -1649,7 +2191,14 @@
             "insertSuggestions",
             "listReviewRuns"
           ],
-          "hash": "f4848f2466a13ef3268d590bcdc0fbe56080281d9dd55b77bbc499e621b50e2a",
+          "hash": "ffdaa9e3e882d4d4285dc4bcd26df087fb71b7d1e541b3434a5d54cadbb25e7d",
+          "importOrder": [
+            "src/review/review-run-types.ts",
+            "src/core/types.ts",
+            "src/core/enums.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/core/enums.ts",
             "src/core/ids.ts",
@@ -1660,11 +2209,12 @@
           "path": "src/review/review-store.ts"
         },
         {
-          "hash": "6b1326fabce2f215632391401808dc5ecfca1d7e567e2578509b635aa8d94778",
+          "hash": "2dae4eaea76b1117b535eda80e8e6d2b5e1d82f8f859486a2cb9ec443b47ec52",
           "importsFiles": [
             "src/core/types.ts"
           ],
-          "path": "src/review/review-types.ts"
+          "path": "src/review/review-types.ts",
+          "reexportsOnly": true
         },
         {
           "exports": [
@@ -1676,7 +2226,7 @@
             "reconcileVerdict",
             "synthesizeVerdict"
           ],
-          "hash": "27f3e268127eec8b0025f8e0b8f84923d1fced5f3c85913bd5ec33516bd24334",
+          "hash": "ade5cec1988844e0c9d2f8e78d0b41de8c939f8305374ee069012a9d7649d226",
           "importsFiles": [
             "src/core/enums.ts",
             "src/review/review-run-types.ts"
@@ -1687,7 +2237,26 @@
           "exports": [
             "runRevision"
           ],
-          "hash": "e8b57e56fe8ed153cfb6c9fe987470f735c5afc41db33454d4dc2b5aa224b516",
+          "failurePaths": [
+            {
+              "in": "runRevision",
+              "kind": "catch",
+              "line": 232
+            }
+          ],
+          "hash": "d60613281dfe67180f63a43663f8a6888a0d400d3345a72782b601df4e9e6207",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/revision/revision-types.ts",
+            "src/review/canon-packet.ts",
+            "src/review/review-engine.ts",
+            "src/review/review-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/revision/revision-prompts.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/core/ids.ts",
@@ -1703,18 +2272,37 @@
           "path": "src/revision/revision-engine.ts"
         },
         {
-          "hash": "a1cf5bf5742d299fe148d92752b27e7b6bd62bfaee06175d842c92875aabc440",
+          "hash": "be98ecc19df6f7c308378858bf9c2786b8948585e88fb07ecd0232fa25f01ea3",
           "path": "src/revision/revision-prompts.ts"
         },
         {
-          "hash": "78cf4d3db89bd504179174d7f2cdaa6e2c97ee365dc5066794e6c3dedaa9db85",
+          "hash": "30d5c2c8118f28a0dad587dadea8e0e92c72927a2be6f95a9c019f3f50a0c078",
           "path": "src/revision/revision-types.ts"
         },
         {
           "exports": [
             "runStructuralRepair"
           ],
-          "hash": "afcd72d190189e558b1f54a0b0a2929f99560e8e6381ed8f7c6b7e70b24b248a",
+          "failurePaths": [
+            {
+              "in": "runStructuralRepair",
+              "kind": "catch",
+              "line": 280
+            }
+          ],
+          "hash": "42a310436b51fd2f3129139d5c147e696fb57bc4bb7ad1c972f05de0d1c521d6",
+          "importOrder": [
+            "src/providers/provider.ts",
+            "src/core/types.ts",
+            "src/revision/structural-types.ts",
+            "src/review/canon-packet.ts",
+            "src/review/review-engine.ts",
+            "src/review/review-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/revision/structural-prompts.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/core/ids.ts",
@@ -1730,18 +2318,18 @@
           "path": "src/revision/structural-engine.ts"
         },
         {
-          "hash": "8e95fffc8f831872a2bf9b6f1ad4ea5adaca85056f6eb435ce4893b10167942e",
+          "hash": "d341be34e7cbd16cc85cefde34d00a15d01be44c1a0d6d0034323f76f178e234",
           "path": "src/revision/structural-prompts.ts"
         },
         {
-          "hash": "d6168ec96933bc60ff2764cc89e90369b62ce11cc7e558ede4bc0237f0fa49b7",
+          "hash": "a56ab90d82896bdcea67f3c7f16e349c4ff22683ffa11fee4ba124862e66843f",
           "path": "src/revision/structural-types.ts"
         },
         {
           "exports": [
             "sha256"
           ],
-          "hash": "2b9c6ca9c9ab8b0caaf639412e630ac006ecdde52986ce219b58ca4bcb9148b1",
+          "hash": "d80af163ae99e677b29805142b0cee739ff78c1edc7881608b8e6fd96e076a60",
           "path": "src/util/hashing.ts"
         },
         {
@@ -1749,14 +2337,14 @@
             "readJson",
             "writeJson"
           ],
-          "hash": "39107abbd58375ecfac9df0a0bd9e48cfcab9828497174749f010aa314299d87",
+          "hash": "deb7683de135ea151cab425672ae3e4ce658c833dffe6ac1f8d2d43bff04c536",
           "path": "src/util/json.ts"
         },
         {
           "exports": [
             "now"
           ],
-          "hash": "23dba8c1c7fad7bb6d1ff422cc2f76d799f90cd3bc000c9dc2605d78d2ea0d2a",
+          "hash": "62e61c6ca6d2a12191cbb77ec040f2889d3e9b0bc3e47c0d5995ae54edafa103",
           "path": "src/util/timestamps.ts"
         },
         {
@@ -1767,7 +2355,16 @@
             "getSnapshotHistory",
             "runScan"
           ],
-          "hash": "1002565063ca4682177fabc6871e98da7af510863d555f7ae9450396248ccfac",
+          "hash": "dc41cba1456e00ee659a6f20fd82fb2182f3a208413d61ad54b80fc7f755d260",
+          "importOrder": [
+            "src/watchtower/watchtower-types.ts",
+            "src/org/org-types.ts",
+            "src/org/org-engine.ts",
+            "src/org/org-alerts.ts",
+            "src/core/ids.ts",
+            "src/util/timestamps.ts",
+            "src/util/json.ts"
+          ],
           "importsFiles": [
             "src/core/ids.ts",
             "src/org/org-alerts.ts",
@@ -1780,7 +2377,11 @@
           "path": "src/watchtower/watchtower-engine.ts"
         },
         {
-          "hash": "6eaf3a4edbb790795ad46a164af5d3de97176713a0ed222acadedf829304fcb5",
+          "hash": "ea130da0636e04b3b0b284bcbf2f3d1b685dc6d2abdf8f07e4e2e0208f2f58ae",
+          "importOrder": [
+            "src/org/org-types.ts",
+            "src/org/org-alerts.ts"
+          ],
           "importsFiles": [
             "src/org/org-alerts.ts",
             "src/org/org-types.ts"
@@ -1791,7 +2392,15 @@
           "exports": [
             "createApi"
           ],
-          "hash": "62a2e3ceebfd1124097f201cb9795f48fbf5dd6c6406b8d6be57fb9adfdb3e57",
+          "hash": "5acb701d5461604438b9edb30572550b16180b5e8f1d2030d2b1b7b95db02b26",
+          "importOrder": [
+            "src/org/org-engine.ts",
+            "src/org/org-alerts.ts",
+            "src/org/org-actions.ts",
+            "src/portfolio/portfolio-engine.ts",
+            "src/gate/gate-types.ts",
+            "src/watchtower/watchtower-engine.ts"
+          ],
           "importsFiles": [
             "src/gate/gate-types.ts",
             "src/org/org-actions.ts",
@@ -1806,18 +2415,18 @@
           "exports": [
             "startWorkbench"
           ],
-          "hash": "b1c540ee7c88cadbb2289ec952b7b6c07763f19fa384c5504f0d7d3aafc10041",
+          "hash": "3c6cf82f7500ed22c1be5103ee01eeb854dee65c95fc9fd0c18f992070886ddd",
           "importsFiles": [
             "src/workbench/api.ts"
           ],
           "path": "src/workbench/server.ts"
         },
         {
-          "hash": "05dbd8d989355b60b707b84fbb08c6ced8bab5d6d6791aca37e91ad1829ca1ad",
+          "hash": "513bee232fa1a208da6483ab6ecd3535be51f82781e41d471950dee5c0517a21",
           "path": "src/workbench/ui/app.js"
         },
         {
-          "hash": "010b4d57cfae3f1fbde94baa30e95814d7cc8eeba6f5a394b4819223c26bd4ad",
+          "hash": "7f59470afb3d22607ebe5d5691d25b4b57c01c57149c425b81fe12a66d1d4814",
           "path": "src/workbench/ui/index.html"
         }
       ],
@@ -1827,9 +2436,79 @@
       "importConfidence": "full",
       "name": "src",
       "origin": "authored",
-      "outsideReads": 6,
-      "outsideWrites": 1,
+      "outsidePlaces": [
+        {
+          "reads": 73,
+          "where": [
+            "caller"
+          ],
+          "writes": 15
+        },
+        {
+          "reads": 4,
+          "where": [
+            "caller",
+            "cwd"
+          ],
+          "writes": 2
+        },
+        {
+          "reads": 0,
+          "where": [
+            "caller",
+            "cwd",
+            "cwd:.taste/"
+          ],
+          "writes": 1
+        },
+        {
+          "reads": 1,
+          "where": [
+            "caller",
+            "cwd",
+            "cwd:docs"
+          ],
+          "writes": 0
+        },
+        {
+          "reads": 1,
+          "where": [
+            "caller",
+            "cwd:.taste"
+          ],
+          "writes": 1
+        },
+        {
+          "reads": 3,
+          "where": [
+            "caller",
+            "cwd:.taste/"
+          ],
+          "writes": 0
+        },
+        {
+          "reads": 2,
+          "where": [
+            "caller",
+            "cwd:docs"
+          ],
+          "writes": 0
+        },
+        {
+          "reads": 2,
+          "where": [
+            "caller",
+            "cwd:package.json"
+          ],
+          "writes": 0
+        }
+      ],
+      "outsideReads": 86,
+      "outsideWrites": 19,
       "role": "code",
+      "testRunners": [
+        "vitest"
+      ],
       "testedBy": 46,
       "unresolvedSites": 0
     },
@@ -1842,14 +2521,23 @@
       "externals": 0,
       "files": [
         {
-          "hash": "93d7ecd40b284505e99b38f5d1e82632e700f99145fece016de8950ae1badff2",
+          "hash": "fa5203ada5457e2eb36264ee0768fe0eb467296a27aab2d5a876fa5d44d0f3a7",
           "importsFiles": [
             "src/backup/backup-engine.ts"
           ],
-          "path": "test/backup/backup-engine.test.ts"
+          "path": "test/backup/backup-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "2dca56c6a919a24bfba4a6f1df4e7cc07e449254f72f5da6d541582829f4ce43",
+          "hash": "0c0d3029f8721079116303bf12fdc81912a7adc941cd2e8bdfb20955d44a0bd5",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-store.ts",
+            "src/calibration/calibration-store.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/calibration/calibration-store.ts",
@@ -1858,10 +2546,20 @@
             "src/db/migrate.ts",
             "src/review/review-store.ts"
           ],
-          "path": "test/calibration/calibration-store.test.ts"
+          "path": "test/calibration/calibration-store.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "a64c6738f3f5dfeb3ddcd63a893669b2b4e47a328d7d168369ccb525cf85b3c4",
+          "hash": "21f83620989fea41db249d6788d62e891c2151c2cac0d3e85cc3cd669033a08b",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-store.ts",
+            "src/calibration/calibration-store.ts",
+            "src/calibration/findings-engine.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/calibration/calibration-store.ts",
@@ -1871,24 +2569,34 @@
             "src/db/migrate.ts",
             "src/review/review-store.ts"
           ],
-          "path": "test/calibration/findings-engine.test.ts"
+          "path": "test/calibration/findings-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "158951d53f48a0232b1c78d21e2caf1b60298110f7dd5b9a1778ca0d3d02bdae",
+          "hash": "57cb0a3d6a3deb6d851b77309396629a73f41edef18c0482e1427dc1f7ff6a73",
           "importsFiles": [
             "src/canon/canon-files.ts"
           ],
-          "path": "test/canon/canon-files.test.ts"
+          "path": "test/canon/canon-files.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "de82087db95688fff55862ade7b40f39ddd5c42573dc4e4218f17fad0471755f",
+          "hash": "2181f77afd1815628f3af54adcad24036777a86775a4b3e1735e8dfdafd22de4",
           "importsFiles": [
             "src/cli/config.ts"
           ],
-          "path": "test/cli/config.test.ts"
+          "path": "test/cli/config.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "3b86fd1ae40cb6292aed83d11c5d64819d2752987d29f9f437245ae30af47c80",
+          "hash": "83d149ecfd16b60d302bdda5c979d2a30c3a75d74a26c0f668435a5cdeb6dbef",
+          "importOrder": [
+            "src/cli/commands/init.ts",
+            "src/cli/commands/ingest.ts",
+            "src/db/sqlite.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1896,54 +2604,69 @@
             "src/cli/commands/init.ts",
             "src/db/sqlite.ts"
           ],
-          "path": "test/cli/ingest.test.ts"
+          "path": "test/cli/ingest.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "bb84cb76073f5532d71b58128c5c989bc23a04d58d77028ee8306d88cac414f7",
+          "hash": "db6d232960242d18534dfcf6b135e0e25522e7043f6c03e3865c713413c9f5df",
           "importsFiles": [
             "src/cli/commands/init.ts",
             "src/cli/config.ts"
           ],
-          "path": "test/cli/init.test.ts"
+          "path": "test/cli/init.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "a8b8e114f796226a0f74ce32eef27f3a3c55a553ac84addd16d381f2b197f420",
+          "hash": "a8a1166c1ca48cac9426220f2a3bdcc974e36235f3aa17c0bc58f50abddfe07e",
           "importsFiles": [
             "src/cli/commands/init.ts",
             "src/cli/config.ts"
           ],
-          "path": "test/cli/startup.test.ts"
+          "path": "test/cli/startup.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "c033a51bd2c2f68beb8b52b36eb7a33e17f8f0b1fe52b40099d70c8b03a68c38",
+          "hash": "adbeddb95385d6bf1536d8e6373460f01c198e1a7ff286242c9a98b7f0fd755e",
           "importsFiles": [
             "src/cli/commands/status.ts"
           ],
-          "path": "test/cli/status.test.ts"
+          "path": "test/cli/status.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "044cde909be8e63ed2972fe01e1bf8cd4b526b77ccf3662208d41ca5895ed5aa",
+          "hash": "4e83e92379cbe89b381379a0ad75330092f25262c5029644065c2334920b8e78",
           "importsFiles": [
             "src/core/enums.ts"
           ],
-          "path": "test/core/enums.test.ts"
+          "path": "test/core/enums.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "807a2a444f97d0ac6480221302f3aa4c04a0bb90016194c5cd92b565fdc3ce9c",
+          "hash": "2e9bd3fea5f7de946ff17c35d1a0bef839fc11a9c1001f9a23ef515002fc1a00",
           "importsFiles": [
             "src/core/ids.ts"
           ],
-          "path": "test/core/ids.test.ts"
+          "path": "test/core/ids.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "23d46672386cb6faed7cb6b02f2fb4516c957f302cf6b2d4ac56a38b00eeafd9",
+          "hash": "33ffb86d0dc831246d2e3bb2d7250f078991d46a20e4197c8bcb60e3eeeba8f9",
           "importsFiles": [
             "src/core/validate.ts"
           ],
-          "path": "test/core/validate.test.ts"
+          "path": "test/core/validate.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "c5c69fb708e3e484f71852cd3442403a777c50187366ecb594b34315020e6bca",
+          "hash": "a6b2e64142307be8f4d217d1eea7fd2b5429f72cbe1f4f73d05eb14da1905744",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/extraction/extraction-store.ts",
+            "src/curation/curation-store.ts",
+            "src/extraction/extraction-types.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -1952,10 +2675,20 @@
             "src/extraction/extraction-store.ts",
             "src/extraction/extraction-types.ts"
           ],
-          "path": "test/curation/curation-store.test.ts"
+          "path": "test/curation/curation-store.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "a1d5b3b78072df9982d97879f5e309bba231b6d67ddda62e552a2c54ed4acac7",
+          "hash": "a40b5e60e4aceb5d02a25be4eef63453313194e19956bade0e054045112da481",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/extraction/extraction-store.ts",
+            "src/curation/curation-store.ts",
+            "src/canon/canon-files.ts",
+            "src/extraction/extraction-types.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-files.ts",
@@ -1965,17 +2698,28 @@
             "src/extraction/extraction-store.ts",
             "src/extraction/extraction-types.ts"
           ],
-          "path": "test/curation/freeze-integration.test.ts"
+          "path": "test/curation/freeze-integration.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "f6e6f3d6a630586359d36bcc7256daf510055b29faf9f267ef8468bd1788341d",
+          "hash": "daae9cb528843c73946a14ee8057976556409f9c95ed7813dd5149daf932676f",
           "importsFiles": [
             "src/db/migrate.ts"
           ],
-          "path": "test/db/migrate.test.ts"
+          "path": "test/db/migrate.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "7cc97bfc9c0e09f5c6106f152aa67479be7b19878788fc74d870af150ad03ebe",
+          "hash": "0dff28e1ab0161314955c915789a0d81de8ea6778196c7c5db60f3cc6f632409",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/artifacts/evidence.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/util/hashing.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/artifacts/evidence.ts",
@@ -1985,20 +2729,36 @@
             "src/db/migrate.ts",
             "src/util/hashing.ts"
           ],
-          "path": "test/db/roundtrip.test.ts"
+          "path": "test/db/roundtrip.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "a30792b57bdafa9ed87874bc33e8e9b4c6058d77b893e5e8335944c9874fdf23",
+          "hash": "203b5c9183e5ea7356e4c03cdd0afa2e3ed59b7268ea79ed1e71c057541885e0",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/extraction/extraction-store.ts",
+            "src/extraction/consolidation.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/db/migrate.ts",
             "src/extraction/consolidation.ts",
             "src/extraction/extraction-store.ts"
           ],
-          "path": "test/extraction/consolidation.test.ts"
+          "path": "test/extraction/consolidation.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "5642431901c25aeaa1b03677cae77224d4e25aae5c0ed9bf18a6eaef251d288a",
+          "hash": "949f75349dd89490b1665316462bb23dffc60c787cb51a47559a2e9ca59e4b66",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/extraction/extraction-store.ts",
+            "src/extraction/extract.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2007,49 +2767,73 @@
             "src/extraction/extraction-store.ts",
             "src/providers/provider.ts"
           ],
-          "path": "test/extraction/extract-integration.test.ts"
+          "path": "test/extraction/extract-integration.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "76a8ad74666d5a6c236597ad903524e7a9ba6c3a641b62264c4adfc3e19cb0d3",
+          "hash": "a850f7a005c70b35304180244bf59a77964b25b44749bf320d70e5270d9aa825",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/source-artifacts.ts",
+            "src/extraction/extraction-store.ts"
+          ],
           "importsFiles": [
             "src/artifacts/source-artifacts.ts",
             "src/canon/canon-store.ts",
             "src/db/migrate.ts",
             "src/extraction/extraction-store.ts"
           ],
-          "path": "test/extraction/extraction-store.test.ts"
+          "path": "test/extraction/extraction-store.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "854518f7661d3ead03ab9a4aa8e5d2fb6cf551d40e72179c0979c7b56540d01e",
+          "hash": "b01bf06e460887381ae1ce8cd5d2cf2fc621581467ed66252dd65b6bde7f546b",
           "importsFiles": [
             "src/extraction/extraction-validate.ts"
           ],
-          "path": "test/extraction/extraction-validate.test.ts"
+          "path": "test/extraction/extraction-validate.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "3a42670ab8acc91581504872f2ae53a6bac3691f4e7ecca91c81f3204fe3f0f9",
+          "hash": "f80fe3abc95ec99eb9f57cd9183d6e257b745d1a89e225383b0908241302131f",
           "importsFiles": [
             "src/extraction/pass-runner.ts"
           ],
-          "path": "test/extraction/pass-runner.test.ts"
+          "path": "test/extraction/pass-runner.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "efe357f7548273bcb3c86cf3bcdc7407f8927facea8aad920624c31c524a4d09",
+          "hash": "c1aa5f253041c0c749e283253c8f47df7c31740cd57ac7bae4b0d859d98df07a",
+          "importOrder": [
+            "src/extraction/prompts.ts",
+            "src/extraction/extraction-types.ts"
+          ],
           "importsFiles": [
             "src/extraction/extraction-types.ts",
             "src/extraction/prompts.ts"
           ],
-          "path": "test/extraction/prompts.test.ts"
+          "path": "test/extraction/prompts.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "ebb34547b672f7f4b9b5d352278e4fd6a6a63765c967e4eaffe5cc77a888b11d",
+          "hash": "6ae74448338d50fb35765e2df6a1dd40e0dd1b62cc32fe136a458addf1fee2bf",
           "importsFiles": [
             "src/gate/artifact-detector.ts"
           ],
-          "path": "test/gate/artifact-detector.test.ts"
+          "path": "test/gate/artifact-detector.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "7acab6ae461e1cde634dde199914b4a708b0d99e31e140a351da5ea5eb455847",
+          "hash": "607214691367c69698b2e8f910434dd5a719241f24772bf97ed0a307fba99aec",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/gate/gate-engine.ts",
+            "src/gate/gate-types.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/canon/canon-version.ts",
@@ -2058,17 +2842,26 @@
             "src/gate/gate-types.ts",
             "src/providers/provider.ts"
           ],
-          "path": "test/gate/gate-engine.test.ts"
+          "path": "test/gate/gate-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "231c2d7a7f64336743c029c0b3a4b3aee2f595b3d2c8cb537a15a2d90e1d0782",
+          "hash": "1122352aef6bbfa6f94077cae90823fb2d4b6dba9800217ee511b4c853da19c0",
           "importsFiles": [
             "src/gate/gate-types.ts"
           ],
-          "path": "test/gate/gate-types.test.ts"
+          "path": "test/gate/gate-types.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "e8b777f2b35b416e08d20c19107ee4667613987a15a579e722a82874c729686e",
+          "hash": "0d1b68f4de21856d362106caf21dfc0075d3599b750a691162ba6b00483d381a",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/gate/policy.ts",
+            "src/gate/policy-types.ts",
+            "src/gate/gate-types.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/db/migrate.ts",
@@ -2076,10 +2869,20 @@
             "src/gate/policy-types.ts",
             "src/gate/policy.ts"
           ],
-          "path": "test/gate/policy.test.ts"
+          "path": "test/gate/policy.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "4975f9b46160ddf1d42d76c8bb14eab418e8640a4b0d311750ba8bb9231051e8",
+          "hash": "4d8cf155b08c0c55e9192088d08839a1fdd74c053e30484f0f0a00e648e2844b",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-store.ts",
+            "src/gate/policy.ts",
+            "src/gate/rollout-report.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2089,89 +2892,124 @@
             "src/gate/rollout-report.ts",
             "src/review/review-store.ts"
           ],
-          "path": "test/gate/rollout-report.test.ts"
+          "path": "test/gate/rollout-report.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "e99603aac66601cedfeace46f3572d00cff81e1ff2714a7ea04c3a028a1db17c",
+          "hash": "8a30416e4f99f70c9581a4d995749145adea01319d45a8ccb783b6a36652d569",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/onboard/onboard-report.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/db/migrate.ts",
             "src/onboard/onboard-report.ts"
           ],
-          "path": "test/onboard/onboard-report.test.ts"
+          "path": "test/onboard/onboard-report.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "a3491824be54d54a74ebba95f29514fbaa76c28aabb67ebc51e9c63726398fe9",
+          "hash": "dc099a3c7eaab4fd190193360311b5c64c711dfef95d09be129bfaf26e65e097",
           "importsFiles": [
             "src/onboard/policy-presets.ts"
           ],
-          "path": "test/onboard/policy-presets.test.ts"
+          "path": "test/onboard/policy-presets.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "730d2bfeaf50a82c0060703b1de7eb5075cdcc102c44c719b24909612d898da6",
+          "hash": "4a7213c852c1b42fbc6a2e8c33678ce3743fac81fb693f2131a6f6c1f9ee4ca1",
+          "importOrder": [
+            "src/onboard/recommend.ts",
+            "src/onboard/onboard-types.ts"
+          ],
           "importsFiles": [
             "src/onboard/onboard-types.ts",
             "src/onboard/recommend.ts"
           ],
-          "path": "test/onboard/recommend.test.ts"
+          "path": "test/onboard/recommend.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "8c60842dec97343730d10830985391dc2ac6f5d58dc6ddd8d6abe441d79ab4ff",
+          "hash": "a37fca9a246f757800b727d8269e54583f7b3a6a5d20a1c55def74bd30bc9a26",
           "importsFiles": [
             "src/onboard/source-scanner.ts"
           ],
-          "path": "test/onboard/source-scanner.test.ts"
+          "path": "test/onboard/source-scanner.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "ef9ce0d3116b29ff67ee3c24a66c76213ee6e42e584ef97f1ebd7de0fe241c44",
+          "hash": "7f0e05b9a5f5cf7ace02c06766dfbb88060c6616963ebcbca3271e8c1835de0f",
+          "importOrder": [
+            "src/org/org-actions.ts",
+            "src/gate/policy.ts",
+            "src/gate/policy-types.ts",
+            "src/util/json.ts"
+          ],
           "importsFiles": [
             "src/gate/policy-types.ts",
             "src/gate/policy.ts",
             "src/org/org-actions.ts",
             "src/util/json.ts"
           ],
-          "path": "test/org/org-actions.test.ts"
+          "path": "test/org/org-actions.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "79e7f637f365b00eaaff7291c262e08d2b6b74bd29b616e3ab312a09ba0838fb",
+          "hash": "a9d1a88be80b25acfe3ab36346a1815295257a01e0367001f7365c85c7f6306e",
           "importsFiles": [
             "src/org/org-alerts.ts",
             "src/org/org-types.ts"
           ],
-          "path": "test/org/org-alerts.test.ts"
+          "path": "test/org/org-alerts.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "4dc62a4a898271779b1e61f6e59fc9d69e2b9d164732cf7cece72392cacaad19",
+          "hash": "b7a9d434f0fdb26eea582afb986296a46f806aa39e5afcdc537e2bb7e60828c3",
           "importsFiles": [
             "src/org/org-engine.ts",
             "src/org/org-types.ts"
           ],
-          "path": "test/org/org-engine.test.ts"
+          "path": "test/org/org-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "d3f62a623a83674458fd40ed5d3c98528272dca89c932d0008af62869fae9961",
+          "hash": "b63fa84238db862ebd8149b380a4e09e0f40fccce11128249bf5a0c5ab6484f4",
           "importsFiles": [
             "src/portfolio/portfolio-engine.ts",
             "src/portfolio/portfolio-types.ts"
           ],
-          "path": "test/portfolio/portfolio-engine.test.ts"
+          "path": "test/portfolio/portfolio-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "8a0ea8064ae3d3de1ee58365d0c5b9ee8e8398fcb65e96a46765d781baba535b",
+          "hash": "48ac1eb9b249648d070ed5f19e719d0a279b7174b89246e35dc1aa8ccfe6b482",
           "importsFiles": [
             "src/providers/ollama/ollama-health.ts"
           ],
-          "path": "test/providers/ollama-health.test.ts"
+          "path": "test/providers/ollama-health.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "5030ce1a2310f30f214c4e54150a029a37bec601b5142e887c2d2ac3f93267db",
+          "hash": "4c8d8da68bd511590df5c17aa5ab96a9fb16e6f4e6061c73e7ec9935bbfe5aac",
           "importsFiles": [
             "src/providers/ollama/ollama-provider.ts"
           ],
-          "path": "test/providers/ollama-provider.test.ts"
+          "path": "test/providers/ollama-provider.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "2c25dfe147841b14179d9c89295ddf637420c899718a52a868568830d3549c73",
+          "hash": "954e60530144488d36c0d72dc96271793c852aff44a1efc502ed25c162fd7d1a",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-engine.ts",
+            "src/redirect/redirect-engine.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2181,10 +3019,18 @@
             "src/redirect/redirect-engine.ts",
             "src/review/review-engine.ts"
           ],
-          "path": "test/redirect/redirect-engine.test.ts"
+          "path": "test/redirect/redirect-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "f1ea44d349180ee2bcca4dfd5b12ab2e97f7e0d3fb8d01bfe4a252c32b642164",
+          "hash": "64e8addd8fbddfe04a82f4f784ec740c16306692808c19bbddcac1811c39d11d",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/curation/curation-store.ts",
+            "src/review/canon-packet.ts"
+          ],
           "importsFiles": [
             "src/canon/canon-store.ts",
             "src/canon/canon-version.ts",
@@ -2192,18 +3038,29 @@
             "src/db/migrate.ts",
             "src/review/canon-packet.ts"
           ],
-          "path": "test/review/canon-packet.test.ts"
+          "path": "test/review/canon-packet.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "1f1c71f552b30e18f13cf2a3607d88eeb050814bfa25a01fe3629c8675190d7e",
+          "hash": "43dcbbc7029c6de5c1f65b27d120318e545dd5adc89c19b85a0fe787c72f94a3",
           "importsFiles": [
             "src/review/dimension-prompts.ts",
             "src/review/review-run-types.ts"
           ],
-          "path": "test/review/dimension-prompts.test.ts"
+          "path": "test/review/dimension-prompts.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "5fbb5175cbdc46bbf51e87dfab5ba6f4d31fa65bd82ef373584453bc7d9fd80a",
+          "hash": "6cbf151a399a23209256405b427f67868c99aa83bed00f93335c56ca6a782a13",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-engine.ts",
+            "src/review/review-store.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2213,28 +3070,50 @@
             "src/review/review-engine.ts",
             "src/review/review-store.ts"
           ],
-          "path": "test/review/review-engine.test.ts"
+          "path": "test/review/review-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "ccfa0b3e0f16894bfa79041ca2010860187090750448942fc2eb5ce289a5c696",
+          "hash": "a3acd1b9ab3ad5ac82ba36fd3d69d4816a6b0838a1a0b7e7cf89d6d95e129c81",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-store.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
             "src/db/migrate.ts",
             "src/review/review-store.ts"
           ],
-          "path": "test/review/review-store.test.ts"
+          "path": "test/review/review-store.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "f255721e73b22e98c275510504bd44dc4cd2e59a06d7ab821a44ca1ac7fca5df",
+          "hash": "a536e9e320c8e13da0a31a3aa2ea7af16b86d9090e9e8893c22f35476feb6849",
+          "importOrder": [
+            "src/review/verdict-synthesis.ts",
+            "src/review/review-run-types.ts"
+          ],
           "importsFiles": [
             "src/review/review-run-types.ts",
             "src/review/verdict-synthesis.ts"
           ],
-          "path": "test/review/verdict-synthesis.test.ts"
+          "path": "test/review/verdict-synthesis.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "362673f576d52fe39391100e784da5cc41d534d5fe6ca2c4158b3bb76de94aea",
+          "hash": "8d4fdc823faf404baef9766f0a58e7d67da2efadbbc9b09f61f072651face0f0",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-engine.ts",
+            "src/revision/revision-engine.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2244,10 +3123,20 @@
             "src/review/review-engine.ts",
             "src/revision/revision-engine.ts"
           ],
-          "path": "test/revision/revision-engine.test.ts"
+          "path": "test/revision/revision-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "13e66a964532ca72a223e41cf3aea7900cee040bfec85a119c83bfad7d48627e",
+          "hash": "8c6ca76f185b73d9d2c380b240f6ee337837e4945dfa11e0302d69fe731a947f",
+          "importOrder": [
+            "src/db/migrate.ts",
+            "src/canon/canon-store.ts",
+            "src/canon/canon-version.ts",
+            "src/artifacts/candidate-artifacts.ts",
+            "src/review/review-engine.ts",
+            "src/revision/structural-engine.ts",
+            "src/providers/provider.ts"
+          ],
           "importsFiles": [
             "src/artifacts/candidate-artifacts.ts",
             "src/canon/canon-store.ts",
@@ -2257,16 +3146,23 @@
             "src/review/review-engine.ts",
             "src/revision/structural-engine.ts"
           ],
-          "path": "test/revision/structural-engine.test.ts"
+          "path": "test/revision/structural-engine.test.ts",
+          "testFramework": "vitest"
         },
         {
-          "hash": "f8337094818de731762e429a32fcc80a70d552e93360e6b1c696cd026ec2ed06",
+          "hash": "d4e4258729149cef8ee64c4f56578e3c3b53b0edfd2ea6fb3c5e1b63529b8134",
+          "importOrder": [
+            "src/watchtower/watchtower-engine.ts",
+            "src/watchtower/watchtower-types.ts",
+            "src/org/org-types.ts"
+          ],
           "importsFiles": [
             "src/org/org-types.ts",
             "src/watchtower/watchtower-engine.ts",
             "src/watchtower/watchtower-types.ts"
           ],
-          "path": "test/watchtower/watchtower-engine.test.ts"
+          "path": "test/watchtower/watchtower-engine.test.ts",
+          "testFramework": "vitest"
         }
       ],
       "globs": [
@@ -2276,53 +3172,126 @@
       "name": "test",
       "origin": "authored",
       "role": "test",
+      "testRunners": [
+        "vitest"
+      ],
       "testedBy": 0,
       "unresolvedSites": 0
     }
   ],
   "doors": [
     {
-      "checksCount": 1,
+      "checksCount": 0,
       "commands": [
         {
+          "dir": "",
           "job": "ci",
-          "step": "Atlas check",
-          "text": "npx --yes @dogfood-lab/atlas@1.16.0 check"
+          "programs": [
+            "npx"
+          ],
+          "step": "Atlas check"
         },
         {
+          "dir": "",
           "job": "ci",
-          "step": "3",
-          "text": "npm ci"
+          "programs": [
+            "npm"
+          ],
+          "step": "3"
         },
         {
+          "dir": "",
           "job": "ci",
-          "step": "Typecheck",
-          "text": "npx tsc --noEmit"
+          "programs": [
+            "npx"
+          ],
+          "step": "Typecheck"
         },
         {
+          "dir": "",
           "job": "ci",
-          "step": "Test",
-          "text": "npm test"
+          "programs": [
+            "npm"
+          ],
+          "step": "Test"
         },
         {
+          "dir": "",
           "job": "ci",
-          "step": "Build",
-          "text": "npm run build"
+          "programs": [
+            "npm"
+          ],
+          "step": "Build"
         },
         {
+          "dir": "",
           "job": "ci",
-          "step": "Pack check",
-          "text": "npm pack --dry-run"
+          "programs": [
+            "npm"
+          ],
+          "step": "Pack check"
         }
       ],
       "elsewhere": [],
       "file": ".github/workflows/ci.yml",
-      "landings": [
-        "canon"
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "ci",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "20",
+                  "range": ">=20.0.0 <21.0.0-0"
+                },
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-node",
+              "version": "${{ matrix.node-version }}"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "codecov",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ]
+        }
       ],
+      "landings": [],
       "mentions": [],
       "name": "CI",
-      "permissions": [],
+      "permissions": [
+        "contents:read",
+        "id-token:write"
+      ],
       "pushes": false,
       "reach": [
         {
@@ -2336,33 +3305,15 @@
           "files": 46
         }
       ],
-      "readers": [
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "existsSync",
-          "confidence": "ast",
-          "target": "canon"
-        },
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "readdirSync",
-          "confidence": "ast",
-          "target": "canon"
-        },
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "statSync",
-          "confidence": "ast",
-          "target": "canon"
-        }
-      ],
+      "readers": [],
       "runs": [
         {
+          "built": true,
           "directory": true,
           "job": "ci",
           "matched": true,
           "path": "src/",
-          "runKind": "checks",
+          "runKind": "executes",
           "via": "tsc tsconfig.json"
         },
         {
@@ -2387,6 +3338,20 @@
         "releases": false
       },
       "stages": [],
+      "tests": [
+        {
+          "config": "vitest.config.ts",
+          "coverage": true,
+          "files": 46,
+          "job": "ci",
+          "junit": true,
+          "runner": "vitest",
+          "step": "Test",
+          "through": [
+            "npm test"
+          ]
+        }
+      ],
       "triggers": [
         {
           "branches": [
@@ -2396,6 +3361,7 @@
           "paths": [
             ".github/workflows/ci.yml",
             "atlas/**",
+            "codecov.yml",
             "migrations/**",
             "package-lock.json",
             "package.json",
@@ -2415,6 +3381,7 @@
           "paths": [
             ".github/workflows/ci.yml",
             "atlas/**",
+            "codecov.yml",
             "migrations/**",
             "package-lock.json",
             "package.json",
@@ -2432,7 +3399,10 @@
       ],
       "uses": [
         "actions/checkout",
-        "actions/setup-node"
+        "actions/download-artifact",
+        "actions/setup-node",
+        "actions/upload-artifact",
+        "codecov/codecov-action"
       ],
       "usesWorkflowToken": false
     },
@@ -2440,18 +3410,74 @@
       "checksCount": 0,
       "commands": [
         {
+          "dir": "site",
           "job": "build",
-          "step": "Install site dependencies",
-          "text": "npm ci"
+          "programs": [
+            "npm"
+          ],
+          "step": "Install site dependencies"
         },
         {
+          "dir": "site",
           "job": "build",
-          "step": "Build site",
-          "text": "npm run build"
+          "programs": [
+            "npm"
+          ],
+          "step": "Build site"
         }
       ],
       "elsewhere": [],
       "file": ".github/workflows/pages.yml",
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "build",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-node",
+              "version": "22"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "environment": {
+            "name": "github-pages"
+          },
+          "name": "deploy",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ]
+        }
+      ],
       "landings": [],
       "mentions": [],
       "name": "Deploy site to GitHub Pages",
@@ -2465,7 +3491,7 @@
         {
           "boundary": "site",
           "depth": 0,
-          "files": 3
+          "files": 5
         }
       ],
       "readers": [],
@@ -2528,9 +3554,7 @@
       "elsewhere": [],
       "file": "package.json",
       "kind": "command",
-      "landings": [
-        "canon"
-      ],
+      "landings": [],
       "mentions": [],
       "name": "taste",
       "permissions": [],
@@ -2542,26 +3566,7 @@
           "files": 89
         }
       ],
-      "readers": [
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "existsSync",
-          "confidence": "ast",
-          "target": "canon"
-        },
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "readdirSync",
-          "confidence": "ast",
-          "target": "canon"
-        },
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "statSync",
-          "confidence": "ast",
-          "target": "canon"
-        }
-      ],
+      "readers": [],
       "runs": [
         {
           "path": "src/cli/index.ts",
@@ -2594,9 +3599,10 @@
       "to": "src"
     }
   ],
+  "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "ac181ee84f0579d0d276c2ac4a1776659f75d091",
-    "tracked": 244
+    "commit": "00527bb4e671ff447487046968fbd215e6dbeb10",
+    "tracked": 245
   },
   "landings": [
     {
@@ -2631,57 +3637,21 @@
     {
       "readers": [
         {
-          "by": "src/backup/backup-engine.ts",
-          "call": "existsSync",
+          "by": "src/db/migrate.ts",
+          "call": "readFileSync",
           "confidence": "ast"
         },
         {
-          "by": "src/backup/backup-engine.ts",
+          "by": "src/db/migrate.ts",
           "call": "readdirSync",
           "confidence": "ast"
-        },
-        {
-          "by": "src/backup/backup-engine.ts",
-          "call": "statSync",
-          "confidence": "ast"
         }
       ],
-      "target": "canon",
-      "writers": [
-        {
-          "by": "src/backup/backup-engine.ts",
-          "confidence": "ast"
-        }
-      ]
-    },
-    {
-      "readers": [
-        {
-          "by": "src/onboard/source-scanner.ts",
-          "call": "existsSync",
-          "confidence": "ast"
-        },
-        {
-          "by": "src/onboard/source-scanner.ts",
-          "call": "statSync",
-          "confidence": "ast"
-        }
-      ],
-      "target": "docs",
+      "target": "migrations",
       "writers": []
     },
     {
       "readers": [
-        {
-          "by": "src/onboard/source-scanner.ts",
-          "call": "existsSync",
-          "confidence": "weak"
-        },
-        {
-          "by": "src/onboard/source-scanner.ts",
-          "call": "readFileSync",
-          "confidence": "weak"
-        },
         {
           "by": "test/gate/policy.test.ts",
           "call": "literal",
@@ -2723,6 +3693,17 @@
         }
       ],
       "target": "src/workbench/ui",
+      "writers": []
+    },
+    {
+      "readers": [
+        {
+          "by": "src/workbench/ui/index.html",
+          "call": "script",
+          "confidence": "ast"
+        }
+      ],
+      "target": "src/workbench/ui/app.js",
       "writers": []
     },
     {
