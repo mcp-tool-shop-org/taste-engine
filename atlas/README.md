@@ -1,23 +1,19 @@
 # taste-engine: how it works
 
-Mapped at 2026-09-30 from commit 00527bb by Atlas 1.24.0.
+Mapped at 2026-10-01 from commit 51efe46 by Atlas 1.24.0.
 
 ## What this is
 
 11 parts, mostly TypeScript (142 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.
 
-## What changed since 2026-09-24 (ac181ee)
+## What changed since 2026-09-30 (00527bb)
 
-- CI's pull request trigger now also names `codecov.yml`.
-- CI's push trigger now also names `codecov.yml`.
-- migrations/ is now read by src/db/migrate.ts.
-- src/workbench/ui/app.js is now read by src/workbench/ui/index.html.
-- canon was generated and is now authored.
-- 1 file added and 235 changed content, across 10 parts.
+- CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `migrations/**`, `package-lock.json`, `package.json`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json`, `src/**`, `test/**` and `tsconfig.json`.
+- 1 file changed content, across 1 part.
 
 ## What comes in
 
-1. **CI.** On a pull request to main touching 12 paths; on a push to main touching 12 paths; or by hand. Runs test/; builds src/.
+1. **CI.** On a pull request to main; on a push to main touching 12 paths; or by hand. Runs test/; builds src/.
 2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
 3. **taste** (a command people run). Runs src/cli/index.ts.
 
