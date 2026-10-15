@@ -24,40 +24,33 @@
   ],
   "changes": {
     "fileCounts": {
-      "added": 0,
-      "changed": 1,
+      "added": 2,
+      "changed": 6,
       "moved": 0,
-      "parts": 1,
+      "parts": 4,
       "removed": 0
     },
     "items": [
       {
-        "kind": "door",
-        "sentence": "CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `migrations/**`, `package-lock.json`, `package.json`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json`, `src/**`, `test/**` and `tsconfig.json`.",
-        "subjects": [
-          ".github/workflows/ci.yml"
-        ]
-      },
-      {
         "kind": "counts",
-        "sentence": "1 file changed content, across 1 part.",
+        "sentence": "Nothing structural changed since 2026-10-01; 2 files added and 6 changed content.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "00527bb4e671ff447487046968fbd215e6dbeb10",
-      "generatedAt": "2026-09-30T20:14:01.727Z"
+      "commit": "51efe460d9f9c55132925d84a01453cd7285d909",
+      "generatedAt": "2026-10-01T02:14:25.225Z"
     },
-    "unchanged": false
+    "unchanged": true
   },
   "changesTogether": [],
   "changesTogetherNote": [
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "51efe460d9f9c55132925d84a01453cd7285d909",
+  "commit": "a8298b1a7248a4963a627aa26eca5df574ecca47",
   "defaultBranch": "main",
-  "derived": "11 parts, mostly TypeScript (142 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.",
+  "derived": "11 parts, mostly TypeScript (144 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.",
   "doors": [
     {
       "builds": [
@@ -75,12 +68,12 @@
         {
           "boundary": "src",
           "depth": 0,
-          "files": 94
+          "files": 95
         },
         {
           "boundary": "test",
           "depth": 0,
-          "files": 46
+          "files": 47
         }
       ],
       "runs": [
@@ -143,7 +136,7 @@
         {
           "boundary": "src",
           "depth": 0,
-          "files": 89
+          "files": 90
         }
       ],
       "runs": [
@@ -162,10 +155,10 @@
   "edges": [],
   "engine": "1.24.0",
   "generated": [],
-  "generatedAt": "2026-10-01T02:14:25.225Z",
+  "generatedAt": "2026-10-15T01:16:54.077Z",
   "limits": [
     "7 reads use paths built at run time and are not named here.",
-    "15 writes and 73 reads go to a path their caller passes, not to this repository.",
+    "15 writes and 70 reads go to a path their caller passes, not to this repository.",
     "4 writes and 13 reads go to the directory the command is run in or a path their caller passes, not to this repository.",
     "1 command is built at run time and not followed.",
     "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions."
@@ -199,9 +192,9 @@
   ],
   "summary": null,
   "summaryFrom": null,
-  "testFiles": 46,
+  "testFiles": 47,
   "testedBy": {
-    "src": 46
+    "src": 47
   },
   "unnamedWrites": 0,
   "unread": [],

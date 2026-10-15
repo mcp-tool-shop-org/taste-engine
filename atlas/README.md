@@ -1,15 +1,14 @@
 # taste-engine: how it works
 
-Mapped at 2026-10-01 from commit 51efe46 by Atlas 1.24.0.
+Mapped at 2026-10-15 from commit a8298b1 by Atlas 1.24.0.
 
 ## What this is
 
-11 parts, mostly TypeScript (142 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.
+11 parts, mostly TypeScript (144 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.
 
-## What changed since 2026-09-30 (00527bb)
+## What changed since 2026-10-01 (51efe46)
 
-- CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `migrations/**`, `package-lock.json`, `package.json`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json`, `src/**`, `test/**` and `tsconfig.json`.
-- 1 file changed content, across 1 part.
+Nothing structural changed since 2026-10-01; 2 files added and 6 changed content.
 
 ## What comes in
 
@@ -71,7 +70,7 @@ Read those in order to follow one pull request end to end.
 ## What this map cannot see
 
 - 7 reads use paths built at run time and are not named here.
-- 15 writes and 73 reads go to a path their caller passes, not to this repository.
+- 15 writes and 70 reads go to a path their caller passes, not to this repository.
 - 4 writes and 13 reads go to the directory the command is run in or a path their caller passes, not to this repository.
 - 1 command is built at run time and not followed.
 - Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions.
