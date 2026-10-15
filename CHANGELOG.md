@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - **The workbench cannot write outside the portfolio.** The `repo` value in the body of the workbench's org-action routes was joined onto the portfolio directory without a check, so a value such as `../x` made `applyAction` write `gate-policy.json` outside it. A repo name is now one path segment of letters, digits, `.`, `_` or `-`, resolved and checked to lie under the portfolio, in `createAction`, `previewAction`, `applyAction`, `rollbackAction` (which re-checks the name stored in `org-actions.json`) and `importState` (which skips an invalid name in a backup bundle). The routes answer 400. CORS and the server's host binding are unchanged. (CodeQL `js/path-injection`, four alerts.)
 
+### Changed
+
+- **Releases publish from CI.** `release.yml` publishes to npm through Trusted Publishing (OIDC, with provenance) when a GitHub Release is published; 1.0.1 was published by hand.
+
 ## [1.0.1] - 2026-03-31
 
 ### Added
