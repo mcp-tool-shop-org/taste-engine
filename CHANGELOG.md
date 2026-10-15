@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.3] - 2026-10-15
+
+### Fixed
+
+- **The package manifest is complete for a CI publish.** `package.json` gains `repository`, `homepage` and `bugs`: npm's provenance check requires `repository.url` to match the repository, and refused 1.0.2 without it. The `taste` bin path is written as `dist/cli/index.js`; npm 11 drops a bin entry written as `./dist/cli/index.js`.
+- 1.0.2 was tagged but never reached npm. 1.0.3 carries its path-confinement fix.
+
 ## [1.0.2] - 2026-10-14
 
 ### Security
