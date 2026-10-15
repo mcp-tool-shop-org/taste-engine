@@ -1,10 +1,10 @@
 {
   "name": "@mcptoolshop/taste-engine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Canon-and-judgment system for creative and product work",
   "type": "module",
   "bin": {
-    "taste": "./dist/cli/index.js"
+    "taste": "dist/cli/index.js"
   },
   "files": [
     "dist/",
@@ -25,6 +25,14 @@
   },
   "author": "mcp-tool-shop",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcp-tool-shop-org/taste-engine.git"
+  },
+  "homepage": "https://github.com/mcp-tool-shop-org/taste-engine#readme",
+  "bugs": {
+    "url": "https://github.com/mcp-tool-shop-org/taste-engine/issues"
+  },
   "engines": {
     "node": ">=20"
   },
