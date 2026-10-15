@@ -4,12 +4,24 @@ import { buildOrgStatus, buildPromotionQueue, buildDemotionQueue, buildOverrideH
 import { generateOrgAlerts } from "../org/org-alerts.js";
 import { createAction, previewAction, applyAction, rollbackAction, getActions, getActionHistory } from "../org/org-actions.js";
 import { discoverRepos, buildPortfolioMatrix, detectDriftFamilies, generatePortfolioFindings } from "../portfolio/portfolio-engine.js";
+import { InvalidRepoSlugError, resolveRepoDir } from "../org/repo-path.js";
 import type { EnforcementMode } from "../gate/gate-types.js";
 
 export function createApi(portfolioDir: string, port: number = 3200) {
   const app = express();
   app.use(cors());
   app.use(express.json());
+
+  // Reject a request-supplied repo slug that would leave portfolioDir before it reaches org-actions.
+  const checkRepoSlug = (repo: unknown): string | null => {
+    try {
+      resolveRepoDir(portfolioDir, repo);
+      return null;
+    } catch (err) {
+      if (err instanceof InvalidRepoSlugError) return err.message;
+      throw err;
+    }
+  };
 
   // ── Org Matrix ─────────────────────────────────────────────
   app.get("/api/org/matrix", (_req, res) => {
@@ -50,6 +62,8 @@ export function createApi(portfolioDir: string, port: number = 3200) {
   app.post("/api/org/actions/preview", (req, res) => {
     const { repo, surface, to } = req.body;
     if (!repo || !surface || !to) return res.status(400).json({ error: "repo, surface, to required" });
+    const slugError = checkRepoSlug(repo);
+    if (slugError) return res.status(400).json({ error: slugError });
     const preview = previewAction(portfolioDir, repo, surface, to as EnforcementMode);
     res.json(preview);
   });
@@ -58,6 +72,8 @@ export function createApi(portfolioDir: string, port: number = 3200) {
   app.post("/api/org/actions/apply", (req, res) => {
     const { repo, surface, to, reason } = req.body;
     if (!repo || !surface || !to || !reason) return res.status(400).json({ error: "repo, surface, to, reason required" });
+    const slugError = checkRepoSlug(repo);
+    if (slugError) return res.status(400).json({ error: slugError });
 
     const preview = previewAction(portfolioDir, repo, surface, to as EnforcementMode);
     const action = createAction(portfolioDir, {

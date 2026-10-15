@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-10-14
+
+### Security
+
+- **The workbench cannot write outside the portfolio.** The `repo` value in the body of the workbench's org-action routes was joined onto the portfolio directory without a check, so a value such as `../x` made `applyAction` write `gate-policy.json` outside it. A repo name is now one path segment of letters, digits, `.`, `_` or `-`, resolved and checked to lie under the portfolio, in `createAction`, `previewAction`, `applyAction`, `rollbackAction` (which re-checks the name stored in `org-actions.json`) and `importState` (which skips an invalid name in a backup bundle). The routes answer 400. CORS and the server's host binding are unchanged. (CodeQL `js/path-injection`, four alerts.)
+
 ## [1.0.1] - 2026-03-31
 
 ### Added

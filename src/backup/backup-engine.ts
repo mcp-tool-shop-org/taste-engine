@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, copyFileSync, readdirSync, statSync } from "node
 import { join, basename } from "node:path";
 import { now } from "../util/timestamps.js";
 import { readJson, writeJson } from "../util/json.js";
+import { InvalidRepoSlugError, resolveRepoDir } from "../org/repo-path.js";
 
 export type BackupManifest = {
   version: "1";
@@ -208,7 +209,14 @@ export function importState(portfolioDir: string, state: StateExport, opts?: { d
 
   // Restore policies
   for (const { repo_slug, policy } of state.policies) {
-    const tasteDir = join(portfolioDir, repo_slug, ".taste");
+    let tasteDir: string;
+    try {
+      tasteDir = join(resolveRepoDir(portfolioDir, repo_slug), ".taste");
+    } catch (err) {
+      if (!(err instanceof InvalidRepoSlugError)) throw err;
+      skipped.push(`${String(repo_slug)}: invalid repo slug`);
+      continue;
+    }
     if (!existsSync(tasteDir)) {
       skipped.push(`${repo_slug}: .taste directory not found`);
       continue;

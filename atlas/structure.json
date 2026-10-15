@@ -379,7 +379,7 @@
           "path": ".gitignore"
         },
         {
-          "hash": "e4389a612ca1740d4f8079e0c45975908806c478a640635ae80ec9a1b8a10873",
+          "hash": "200e2e85c50c0b17a9ae4e7e348cf306e6f3bd0f56bc0be939e3a4e308ed0e9c",
           "path": "CHANGELOG.md"
         },
         {
@@ -447,7 +447,7 @@
           "path": "package-lock.json"
         },
         {
-          "hash": "3c2000f1155a8819b94482abfb3e6e3779f51cb335600f093285a686a6d52292",
+          "hash": "93150deec22752a6cd7a05c2e6b3e7595d0a7a5eebe20463e2fe48ed23bddad4",
           "path": "package.json"
         },
         {
@@ -514,7 +514,7 @@
           "path": "site/astro.config.mjs"
         },
         {
-          "hash": "af5d4f54dca60686724d306eb58759fb25b6f5ba4d66559ab84a968112a184e5",
+          "hash": "0607a19c4f60b635244a906c7ad2424359b50e20c4a83bc140f202abce4a941e",
           "path": "site/package-lock.json"
         },
         {
@@ -688,25 +688,37 @@
             {
               "in": "backupRepo",
               "kind": "throw",
-              "line": 37
+              "line": 38
             },
             {
               "in": "backupPortfolio",
               "kind": "throw",
-              "line": 83
+              "line": 84
             },
             {
               "in": "restoreBackup",
               "kind": "throw",
-              "line": 146
+              "line": 147
+            },
+            {
+              "in": "importState",
+              "kind": "catch",
+              "line": 215
+            },
+            {
+              "in": "importState",
+              "kind": "throw",
+              "line": 216
             }
           ],
-          "hash": "430009a5ddfb2c0eb7af273eb9a865bd4901ecfa070bb2b0b2fc60955c3c9667",
+          "hash": "2e903594ec32f17b90c93577621a0f7d49de089f890e8149ea55fa43f0cdcc91",
           "importOrder": [
             "src/util/timestamps.ts",
-            "src/util/json.ts"
+            "src/util/json.ts",
+            "src/org/repo-path.ts"
           ],
           "importsFiles": [
+            "src/org/repo-path.ts",
             "src/util/json.ts",
             "src/util/timestamps.ts"
           ],
@@ -1886,20 +1898,44 @@
             "previewAction",
             "rollbackAction"
           ],
-          "hash": "2f962c7fed49d5d18b097eaf551757cf13d98160179677e67026c56784a6c053",
+          "failurePaths": [
+            {
+              "in": "applyAction",
+              "kind": "catch",
+              "line": 146
+            },
+            {
+              "in": "applyAction",
+              "kind": "throw",
+              "line": 148
+            },
+            {
+              "in": "rollbackAction",
+              "kind": "catch",
+              "line": 204
+            },
+            {
+              "in": "rollbackAction",
+              "kind": "throw",
+              "line": 206
+            }
+          ],
+          "hash": "867cba538ece711c9da248d0e2475747051a4c32840f93f998342f37ca4695a8",
           "importOrder": [
             "src/gate/gate-types.ts",
             "src/gate/policy.ts",
             "src/cli/config.ts",
             "src/core/ids.ts",
             "src/util/timestamps.ts",
-            "src/util/json.ts"
+            "src/util/json.ts",
+            "src/org/repo-path.ts"
           ],
           "importsFiles": [
             "src/cli/config.ts",
             "src/core/ids.ts",
             "src/gate/gate-types.ts",
             "src/gate/policy.ts",
+            "src/org/repo-path.ts",
             "src/util/json.ts",
             "src/util/timestamps.ts"
           ],
@@ -1969,6 +2005,25 @@
         {
           "hash": "9220397fa3664f26c70b765290b8bc07cb6b261c46ff2d2f7f66bd74eb17cf8c",
           "path": "src/org/org-types.ts"
+        },
+        {
+          "exports": [
+            "resolveRepoDir"
+          ],
+          "failurePaths": [
+            {
+              "in": "resolveRepoDir",
+              "kind": "throw",
+              "line": 20
+            },
+            {
+              "in": "resolveRepoDir",
+              "kind": "throw",
+              "line": 26
+            }
+          ],
+          "hash": "a5ebb91517c0d6b2babb3159b499e2468b5eb42889264140eecd118b2198a736",
+          "path": "src/org/repo-path.ts"
         },
         {
           "exports": [
@@ -2392,12 +2447,25 @@
           "exports": [
             "createApi"
           ],
-          "hash": "5acb701d5461604438b9edb30572550b16180b5e8f1d2030d2b1b7b95db02b26",
+          "failurePaths": [
+            {
+              "in": "checkRepoSlug",
+              "kind": "catch",
+              "line": 20
+            },
+            {
+              "in": "checkRepoSlug",
+              "kind": "throw",
+              "line": 22
+            }
+          ],
+          "hash": "b19423c4300870a269cdc6b979cb96ac7d2fa7ad9be3d3feba7c1cd83b48f8cc",
           "importOrder": [
             "src/org/org-engine.ts",
             "src/org/org-alerts.ts",
             "src/org/org-actions.ts",
             "src/portfolio/portfolio-engine.ts",
+            "src/org/repo-path.ts",
             "src/gate/gate-types.ts",
             "src/watchtower/watchtower-engine.ts"
           ],
@@ -2406,6 +2474,7 @@
             "src/org/org-actions.ts",
             "src/org/org-alerts.ts",
             "src/org/org-engine.ts",
+            "src/org/repo-path.ts",
             "src/portfolio/portfolio-engine.ts",
             "src/watchtower/watchtower-engine.ts"
           ],
@@ -2438,7 +2507,7 @@
       "origin": "authored",
       "outsidePlaces": [
         {
-          "reads": 73,
+          "reads": 70,
           "where": [
             "caller"
           ],
@@ -2503,13 +2572,13 @@
           "writes": 0
         }
       ],
-      "outsideReads": 86,
+      "outsideReads": 83,
       "outsideWrites": 19,
       "role": "code",
       "testRunners": [
         "vitest"
       ],
-      "testedBy": 46,
+      "testedBy": 47,
       "unresolvedSites": 0
     },
     {
@@ -2975,6 +3044,29 @@
           "testFramework": "vitest"
         },
         {
+          "hash": "3b2ed2dc72d449177ab6553a14f33bbc21447398acdb69724107b3da771ff09f",
+          "importOrder": [
+            "src/org/repo-path.ts",
+            "src/org/org-actions.ts",
+            "src/workbench/api.ts",
+            "src/backup/backup-engine.ts",
+            "src/gate/policy.ts",
+            "src/gate/policy-types.ts",
+            "src/util/json.ts"
+          ],
+          "importsFiles": [
+            "src/backup/backup-engine.ts",
+            "src/gate/policy-types.ts",
+            "src/gate/policy.ts",
+            "src/org/org-actions.ts",
+            "src/org/repo-path.ts",
+            "src/util/json.ts",
+            "src/workbench/api.ts"
+          ],
+          "path": "test/org/repo-path.test.ts",
+          "testFramework": "vitest"
+        },
+        {
           "hash": "b63fa84238db862ebd8149b380a4e09e0f40fccce11128249bf5a0c5ab6484f4",
           "importsFiles": [
             "src/portfolio/portfolio-engine.ts",
@@ -3297,12 +3389,12 @@
         {
           "boundary": "src",
           "depth": 0,
-          "files": 94
+          "files": 95
         },
         {
           "boundary": "test",
           "depth": 0,
-          "files": 46
+          "files": 47
         }
       ],
       "readers": [],
@@ -3342,7 +3434,7 @@
         {
           "config": "vitest.config.ts",
           "coverage": true,
-          "files": 46,
+          "files": 47,
           "job": "ci",
           "junit": true,
           "runner": "vitest",
@@ -3549,7 +3641,7 @@
         {
           "boundary": "src",
           "depth": 0,
-          "files": 89
+          "files": 90
         }
       ],
       "readers": [],
@@ -3587,8 +3679,8 @@
   ],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "51efe460d9f9c55132925d84a01453cd7285d909",
-    "tracked": 245
+    "commit": "a8298b1a7248a4963a627aa26eca5df574ecca47",
+    "tracked": 247
   },
   "landings": [
     {
@@ -3707,6 +3799,6 @@
   "overlaps": [],
   "submodules": [],
   "symlinks": [],
-  "testFiles": 46,
+  "testFiles": 47,
   "unassigned": []
 }

@@ -6,6 +6,7 @@ import { loadConfig } from "../cli/config.js";
 import { newId } from "../core/ids.js";
 import { now } from "../util/timestamps.js";
 import { readJson, writeJson } from "../util/json.js";
+import { InvalidRepoSlugError, resolveRepoDir } from "./repo-path.js";
 
 export type OrgActionKind = "promote" | "demote" | "enrichment_task";
 
@@ -60,6 +61,7 @@ export function createAction(
     evidence: string;
   },
 ): OrgAction {
+  resolveRepoDir(portfolioDir, opts.repo_slug);
   const actions = loadActions(portfolioDir);
   const action: OrgAction = {
     id: newId(),
@@ -91,7 +93,7 @@ export function previewAction(
   surface: string,
   toMode: EnforcementMode,
 ): ActionPreview {
-  const repoDir = join(portfolioDir, repoSlug);
+  const repoDir = resolveRepoDir(portfolioDir, repoSlug);
   const tasteDir = join(repoDir, ".taste");
   const warnings: string[] = [];
 
@@ -138,7 +140,13 @@ export function applyAction(
   if (!action) return { success: false, receipt: null, error: "Action not found" };
   if (action.status !== "proposed") return { success: false, receipt: null, error: `Action is ${action.status}, not proposed` };
 
-  const repoDir = join(portfolioDir, action.repo_slug);
+  let repoDir: string;
+  try {
+    repoDir = resolveRepoDir(portfolioDir, action.repo_slug);
+  } catch (err) {
+    if (err instanceof InvalidRepoSlugError) return { success: false, receipt: null, error: err.message };
+    throw err;
+  }
   const tasteDir = join(repoDir, ".taste");
 
   if (!existsSync(tasteDir)) return { success: false, receipt: null, error: `Repo directory not found: ${repoDir}` };
@@ -190,7 +198,13 @@ export function rollbackAction(
   if (!action) return { success: false, error: "Action not found" };
   if (action.status !== "applied") return { success: false, error: `Action is ${action.status}, not applied` };
 
-  const repoDir = join(portfolioDir, action.repo_slug);
+  let repoDir: string;
+  try {
+    repoDir = resolveRepoDir(portfolioDir, action.repo_slug);
+  } catch (err) {
+    if (err instanceof InvalidRepoSlugError) return { success: false, error: err.message };
+    throw err;
+  }
   const tasteDir = join(repoDir, ".taste");
 
   if ((action.kind === "promote" || action.kind === "demote") && action.surface && action.from_mode) {
