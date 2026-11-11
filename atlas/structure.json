@@ -32,12 +32,16 @@
       "externals": 0,
       "files": [
         {
-          "hash": "753934fce5dffe0197a971fabf572eb111328e79c448956ac23d6f3e2470a032",
+          "hash": "6f8c068c8d8733ff1921c8d9c67f1cfc3b443d81b760f3e71eefde4affe2a139",
           "path": ".github/workflows/ci.yml"
         },
         {
           "hash": "93dc62c74dfddae3a1dc3291b236a3e266cc0f9963100f2967357b3f3833b310",
           "path": ".github/workflows/pages.yml"
+        },
+        {
+          "hash": "11010df40a793de9472e49b9e8312674d9de0bc290721cbbe8c751879fff9f2b",
+          "path": ".github/workflows/release.yml"
         }
       ],
       "globs": [
@@ -379,7 +383,7 @@
           "path": ".gitignore"
         },
         {
-          "hash": "200e2e85c50c0b17a9ae4e7e348cf306e6f3bd0f56bc0be939e3a4e308ed0e9c",
+          "hash": "3de886ca3dafa15dc39849179685d81e4395205d47680543c5168fe1b26b0448",
           "path": "CHANGELOG.md"
         },
         {
@@ -443,11 +447,11 @@
           "path": "codecov.yml"
         },
         {
-          "hash": "54c5b25d2ca1136dd742342dc767e2553ace0d184b8b9b0e532ccba498877264",
+          "hash": "a920628e7bdf60bfeed0e4837437c39caa4e344a9c9e36f8223ccfb0d18f1eae",
           "path": "package-lock.json"
         },
         {
-          "hash": "93150deec22752a6cd7a05c2e6b3e7595d0a7a5eebe20463e2fe48ed23bddad4",
+          "hash": "ec3db04c70e0ed1e132e3157a587db8963ac8acbdf215b8858450d27f90fb558",
           "path": "package.json"
         },
         {
@@ -3628,6 +3632,202 @@
     },
     {
       "checksCount": 0,
+      "commands": [
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "echo",
+            "node"
+          ],
+          "step": "Verify the tag matches package.json"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "npm"
+          ],
+          "step": "3"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "npm"
+          ],
+          "step": "Test"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "npm"
+          ],
+          "step": "Build"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "npm"
+          ],
+          "step": "Check the package shape"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "cd",
+            "echo",
+            "mkdir",
+            "npm"
+          ],
+          "step": "npm 11 for Trusted Publishing"
+        },
+        {
+          "dir": "",
+          "job": "publish",
+          "programs": [
+            "1",
+            "echo",
+            "node",
+            "npm"
+          ],
+          "step": "Publish to npm with provenance (no token)"
+        }
+      ],
+      "elsewhere": [],
+      "file": ".github/workflows/release.yml",
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "publish",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-node",
+              "version": "22"
+            }
+          ]
+        }
+      ],
+      "landings": [],
+      "mentions": [
+        {
+          "job": "publish",
+          "path": "package.json"
+        }
+      ],
+      "name": "Release",
+      "permissions": [
+        "contents:read",
+        "id-token:write"
+      ],
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "src",
+          "depth": 0,
+          "files": 95
+        },
+        {
+          "boundary": "test",
+          "depth": 0,
+          "files": 47
+        }
+      ],
+      "readers": [],
+      "runs": [
+        {
+          "built": true,
+          "directory": true,
+          "job": "publish",
+          "matched": true,
+          "path": "src/",
+          "runKind": "executes",
+          "via": "tsc tsconfig.json"
+        },
+        {
+          "directory": true,
+          "job": "publish",
+          "matched": true,
+          "path": "test/",
+          "runKind": "executes",
+          "via": "vitest vitest.config.ts"
+        }
+      ],
+      "runsCount": 2,
+      "secrets": [],
+      "sends": {
+        "deploysPages": false,
+        "dispatchesTo": [],
+        "opensIssues": false,
+        "opensIssuesOnFailure": false,
+        "opensPullRequests": false,
+        "packages": [
+          {
+            "dir": "",
+            "name": "@mcptoolshop/taste-engine",
+            "registry": "npm"
+          }
+        ],
+        "publishes": true,
+        "publishesTo": [
+          "npm"
+        ],
+        "releases": false
+      },
+      "stages": [],
+      "tests": [
+        {
+          "config": "vitest.config.ts",
+          "files": 47,
+          "job": "publish",
+          "runner": "vitest",
+          "step": "Test",
+          "through": [
+            "npm test"
+          ]
+        }
+      ],
+      "triggers": [
+        {
+          "event": "release",
+          "types": [
+            "published"
+          ]
+        },
+        {
+          "event": "workflow_dispatch"
+        }
+      ],
+      "uses": [
+        "actions/checkout",
+        "actions/setup-node"
+      ],
+      "usesWorkflowToken": false
+    },
+    {
+      "checksCount": 0,
       "commands": [],
       "elsewhere": [],
       "file": "package.json",
@@ -3677,10 +3877,10 @@
       "to": "src"
     }
   ],
-  "engine": "1.24.0",
+  "engine": "1.26.0",
   "generatedFrom": {
-    "commit": "a8298b1a7248a4963a627aa26eca5df574ecca47",
-    "tracked": 247
+    "commit": "0d7f414fa44c65f86049d1173e5fc0df06ac9e4a",
+    "tracked": 248
   },
   "landings": [
     {
@@ -3730,6 +3930,10 @@
     },
     {
       "readers": [
+        {
+          "by": ".github/workflows/release.yml",
+          "confidence": "config"
+        },
         {
           "by": "test/gate/policy.test.ts",
           "call": "literal",

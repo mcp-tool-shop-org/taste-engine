@@ -163,7 +163,7 @@
       "confidence": "low",
       "highWater": null,
       "name": "src",
-      "qualifyingSourceCommits": 0,
+      "qualifyingSourceCommits": 1,
       "rebaseline": null
     },
     {
@@ -179,7 +179,7 @@
       "confidence": "low",
       "highWater": null,
       "name": "test",
-      "qualifyingSourceCommits": 0,
+      "qualifyingSourceCommits": 1,
       "rebaseline": null
     }
   ],
@@ -197,8 +197,18 @@
         "path": ".github/workflows/pages.yml"
       },
       {
-        "commits": 6,
-        "lines": 262,
+        "commits": 1,
+        "lines": 91,
+        "path": ".github/workflows/release.yml"
+      },
+      {
+        "commits": 3,
+        "lines": 17,
+        "path": "CHANGELOG.md"
+      },
+      {
+        "commits": 7,
+        "lines": 273,
         "path": "atlas/README.md"
       },
       {
@@ -207,18 +217,18 @@
         "path": "atlas/boundaries.yaml"
       },
       {
-        "commits": 6,
-        "lines": 746,
+        "commits": 7,
+        "lines": 785,
         "path": "atlas/page.json"
       },
       {
-        "commits": 6,
-        "lines": 5454,
+        "commits": 7,
+        "lines": 5490,
         "path": "atlas/statistics.json"
       },
       {
-        "commits": 6,
-        "lines": 9080,
+        "commits": 7,
+        "lines": 9214,
         "path": "atlas/structure.json"
       },
       {
@@ -227,13 +237,13 @@
         "path": "codecov.yml"
       },
       {
-        "commits": 2,
-        "lines": 1700,
+        "commits": 3,
+        "lines": 1704,
         "path": "package-lock.json"
       },
       {
-        "commits": 2,
-        "lines": 2,
+        "commits": 4,
+        "lines": 16,
         "path": "package.json"
       },
       {
@@ -250,6 +260,31 @@
         "commits": 1,
         "lines": 6,
         "path": "site/package.json"
+      },
+      {
+        "commits": 1,
+        "lines": 10,
+        "path": "src/backup/backup-engine.ts"
+      },
+      {
+        "commits": 1,
+        "lines": 20,
+        "path": "src/org/org-actions.ts"
+      },
+      {
+        "commits": 1,
+        "lines": 29,
+        "path": "src/org/repo-path.ts"
+      },
+      {
+        "commits": 1,
+        "lines": 16,
+        "path": "src/workbench/api.ts"
+      },
+      {
+        "commits": 1,
+        "lines": 155,
+        "path": "test/org/repo-path.test.ts"
       }
     ]
   },
@@ -257,9 +292,9 @@
     "level": "low",
     "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-10-15T01:16:54.077Z",
+  "generatedAt": "2026-11-11T22:48:49.435Z",
   "generatedFrom": {
-    "commit": "a8298b1a7248a4963a627aa26eca5df574ecca47"
+    "commit": "0d7f414fa44c65f86049d1173e5fc0df06ac9e4a"
   },
   "pairs": [],
   "parameters": {
@@ -272,16 +307,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-10-01T13:28:50-07:00",
-    "inScopeFiles": 252,
+    "headDate": "2026-10-14T19:03:22-07:00",
+    "inScopeFiles": 253,
     "pinnedStart": null,
     "priorFloor": "fallen",
-    "qualifyingCommits": 9,
+    "qualifyingCommits": 12,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-04-04T20:28:50.000Z",
+    "since": "2026-04-18T02:03:22.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",
