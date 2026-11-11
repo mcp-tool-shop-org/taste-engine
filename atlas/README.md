@@ -1,20 +1,23 @@
 # taste-engine: how it works
 
-Mapped at 2026-10-15 from commit a8298b1 by Atlas 1.24.0.
+Mapped at 2026-11-11 from commit 0d7f414 by Atlas 1.26.0.
 
 ## What this is
 
-11 parts, mostly TypeScript (144 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 3 doors; the busiest is CI, which reaches 2 parts. It deploys a site to GitHub Pages. People run taste.
+11 parts, mostly TypeScript (144 files), shell (7), JavaScript (3), CSS (2), Astro (1) and HTML (1). Work enters through 4 doors; CI and Release each reach 2 parts, and CI is followed because a pull request goes through it. It publishes to npm. It deploys a site to GitHub Pages. People run taste.
 
-## What changed since 2026-10-01 (51efe46)
+## What changed since 2026-10-15 (a8298b1)
 
-Nothing structural changed since 2026-10-01; 2 files added and 6 changed content.
+- Release (.github/workflows/release.yml) is a new door. It starts when a release is published; or by hand. It runs test/. It builds src/.
+- package.json is now also read by .github/workflows/release.yml.
+- 1 file added and 4 changed content, across 2 parts.
 
 ## What comes in
 
 1. **CI.** On a pull request to main; on a push to main touching 12 paths; or by hand. Runs test/; builds src/.
-2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
-3. **taste** (a command people run). Runs src/cli/index.ts.
+2. **Release.** When a release is published; or by hand. Runs test/; builds src/.
+3. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
+4. **taste** (a command people run). Runs src/cli/index.ts.
 
 ## What happens through CI
 
@@ -27,13 +30,16 @@ CI writes nothing this map can see.
 
 ## The other doors
 
+**Release** runs test/, builds src/, and publishes to npm.
+
 **Deploy site to GitHub Pages** runs site/astro.config.mjs and site/src/, and deploys the site.
 
 **taste** (a command people run) runs src/cli/index.ts.
 
 ## What breaks what
 
-- **src** is imported only from tests, by 1 part (test), and sits on the path of 2 doors.
+- **src** is imported only from tests, by 1 part (test), and sits on the path of 3 doors.
+- **test** is imported by no other part and sits on the path of 2 doors.
 
 ## What tends to change together
 
